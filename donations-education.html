@@ -1,98 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Donations | BIHS</title>
+  <meta charset="UTF-8">
+  <title>Support Education | BIHS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Support BIHS education, scholarships, and course development.">
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
   <style>
-    :root{
-      --bihs-navy:#0b2341;
-      --bihs-gray:#555;
-      --card-bg:#fff;
-      --border:#e6e6e6;
+    :root { --radius: 8px; }
+
+    .intro-card, .donate-box {
+      background:#fff;
+      color: var(--text);
+      border-radius:var(--radius);
+      padding:26px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      border: 1px solid #e6ebf3;
+      display:flex;
+      flex-direction:column;
     }
-    body{
-      font-family: Arial, Helvetica, sans-serif;
-      margin:0;
-      background:#fafafa;
-      color:#111;
+    .intro-card h2{margin:0 0 8px;font-size:clamp(22px,3vw,30px);color:var(--bihs-navy-900)}
+    .intro-card p{margin:0 0 14px;line-height:1.65}
+
+    .page-wrap{max-width:1200px;margin:0 auto;padding: 26px 18px 50px;}
+    .crumb{margin: 6px 0 12px;}
+    .crumb a{text-decoration:none}
+    .page-title{margin: 8px 0 10px;color:var(--bihs-navy-900);font-size:clamp(26px,3.2vw,38px);}
+    .page-sub{margin:0 0 18px;line-height:1.65;color:var(--text);}
+
+    .donate-options{display:grid;gap:14px;margin-top:14px}
+
+    .opt, .opt:link, .opt:visited, .opt:hover, .opt:active {
+      all: unset;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      gap:10px;
+      padding:16px 18px;
+      border-radius:var(--radius);
+      background: var(--bihs-navy-900);
+      color: #ffffff !important;
+      font-weight:700;
+      font-size:18px;
+      text-decoration:none;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+      transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+      cursor: pointer;
     }
-    .wrap{
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 40px 18px;
+    .opt:hover {
+      filter: brightness(1.06);
+      transform: translateY(-1px);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.16);
     }
-    h1{ margin: 0 0 10px; }
-    .sub{
-      margin: 0 0 26px;
-      color: var(--bihs-gray);
-      line-height: 1.5;
-    }
+
     .grid{
       display:grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
+      gap:24px;
+      max-width:1200px;
+      margin:0 auto;
     }
-    @media (min-width: 760px){
-      .grid{ grid-template-columns: 1fr 1fr; }
+    @media(min-width:900px){
+      .grid{grid-template-columns:1.2fr .8fr; align-items:start;}
     }
-    .card{
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 22px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+
+    .small-note{font-size:14px;line-height:1.6;color:var(--text);opacity:.9;margin-top:10px}
+
+    .monthly{
+      display:grid;
+      gap:14px;
+      margin-top:16px;
     }
-    .card h2{
-      margin:0 0 8px;
-      font-size: 20px;
+    .monthly .row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
     }
-    .card p{
-      margin:0 0 16px;
-      color: var(--bihs-gray);
-      line-height: 1.5;
-    }
-    .btn{
+    .pill{
       display:inline-block;
-      background: var(--bihs-navy);
-      color:#fff;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid #e6ebf3;
+      background:#fafafa;
       text-decoration:none;
-      padding: 12px 16px;
-      border-radius: 10px;
-      font-weight: 600;
+      font-weight:700;
+      color:var(--bihs-navy-900);
     }
-    .btn:hover{ opacity: .92; }
-    .note{
-      margin-top: 22px;
-      color: var(--bihs-gray);
-      font-size: 14px;
-      line-height: 1.5;
-    }
+    .pill:hover{filter:brightness(1.02)}
   </style>
 </head>
+
 <body>
-  <div class="wrap">
-    <h1>Donations</h1>
-    <p class="sub">Thank you for supporting the Bhaktivedanta Institute for Higher Studies (BIHS). Please choose the type of support you would like to offer.</p>
 
-    <div class="grid">
-      <div class="card">
-        <h2>Support Education</h2>
-        <p>Help sustain BIHS educational programs, scholarships, faculty engagement, and course development.</p>
-        <a class="btn" href="donations-education.html">Go to Education Support</a>
-      </div>
+  <main class="page-wrap">
+    <div class="crumb"><a href="donations.html">← Back to Donations</a></div>
 
-      <div class="card">
-        <h2>General Donation</h2>
-        <p>Support BIHS broadly, including operations, events, outreach, publishing, and general needs.</p>
-        <a class="btn" href="donations-general.html">Go to General Donation</a>
-      </div>
-    </div>
-
-    <p class="note">
-      If you have questions or need help completing a donation, please email
-      <a href="mailto:info@bihstudies.org">info@bihstudies.org</a>.
+    <h1 class="page-title">Support Education</h1>
+    <p class="page-sub">
+      Your support sustains BIHS education—scholarships, faculty engagement, program development, and learning resources.
     </p>
-  </div>
+
+    <section class="grid">
+      <div class="intro-card">
+        <h2>Ways to Support</h2>
+        <p>
+          Choose the option that best matches your intention. Thank you for helping expand access to serious study and thoughtful dialogue.
+        </p>
+
+        <div class="donate-options">
+          <a class="opt" href="https://square.link/u/HcOVFxxG"><i class="fa-solid fa-book-open"></i> Enroll in Individual Unit(s)</a>
+
+          <!-- Replace with your Flexible Enrollment link -->
+          <a class="opt" href="PUT_FLEXIBLE_ENROLLMENT_LINK_HERE"><i class="fa-solid fa-hand-holding-heart"></i> Flexible Enrollment</a>
+
+          <a class="opt" href="https://help-bihs-thrive.raiselysite.com/"><i class="fa-solid fa-graduation-cap"></i> Support Education</a>
+        </div>
+
+        <p class="small-note">
+          Flexible Enrollment allows participants to choose a contribution amount that reflects their circumstances. Access to course materials remains the same.
+        </p>
+
+        <div class="monthly">
+          <h3 style="margin:20px 0 0;color:var(--bihs-navy-900);">Monthly Support</h3>
+          <p style="margin:6px 0 0;line-height:1.6;color:var(--text);">
+            If you prefer monthly giving, select an amount below (or use the Support Education button for a custom amount).
+          </p>
+
+          <!-- Replace these links with your real monthly donation links -->
+          <div class="row">
+            <a class="pill" href="PUT_MONTHLY_25_LINK_HERE">$25 / month</a>
+            <a class="pill" href="PUT_MONTHLY_54_LINK_HERE">$54 / month</a>
+            <a class="pill" href="PUT_MONTHLY_108_LINK_HERE">$108 / month</a>
+            <a class="pill" href="PUT_MONTHLY_CUSTOM_LINK_HERE">Custom monthly</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="donate-box">
+        <h2>Education Support</h2>
+        <p style="margin:0 0 14px;line-height:1.65;color:var(--text);">
+          Contributions help sustain scholarships, faculty engagement, and program development at BIHS, enabling broader access to consciousness studies worldwide.
+        </p>
+
+        <!-- Optional: embed a Raisely widget or Square iframe here if you want it on-page -->
+        <!-- <div class="raisely-donate">...</div> -->
+      </div>
+    </section>
+  </main>
+
 </body>
 </html>
