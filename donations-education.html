@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="css/site.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
-  <!-- PAGE-SPECIFIC STYLES (kept light; site.css does most styling) -->
   <style>
     :root { --radius: 10px; }
 
@@ -80,7 +79,6 @@
       margin-top: 12px;
     }
 
-    /* Button style compatible with your earlier donation buttons */
     .opt, .opt:link, .opt:visited, .opt:hover, .opt:active {
       display:flex;
       align-items:center;
@@ -143,11 +141,8 @@
 
 <body>
 
-  <!-- ============================= -->
-  <!-- PASTE YOUR SITE HEADER/NAV HERE -->
-  <!-- Example: the exact header/nav markup you use on other BIHS pages -->
-  <!-- ============================= -->
- <div id="header"></div>
+  <!-- BIHS Header/Nav loads here -->
+  <div id="header"></div>
 
   <main class="page-wrap">
 
@@ -177,7 +172,6 @@
           <p>Choose the enrollment option that best matches your needs and level of participation.</p>
 
           <div class="options">
-            <!-- Replace with your real links -->
             <a class="opt" href="PUT_FULL_PROGRAM_LINK_HERE">
               <i class="fa-solid fa-certificate"></i> Full Program Enrollment — $108
             </a>
@@ -203,7 +197,6 @@
           <h2 style="font-size:20px;margin-bottom:8px;"><i class="fa-solid fa-heart"></i> B) Give a One-Time Donation</h2>
           <p>A one-time gift strengthens BIHS education and helps us respond to immediate needs.</p>
 
-          <!-- Replace with your one-time donation link (Raisely / Stripe / etc.) -->
           <a class="opt" href="PUT_ONE_TIME_EDUCATION_DONATION_LINK_HERE">
             <i class="fa-solid fa-gift"></i> One-Time Education Donation
           </a>
@@ -217,7 +210,6 @@
           <p>Monthly giving helps BIHS plan responsibly and maintain consistent educational quality.</p>
 
           <div class="pill-row">
-            <!-- Replace with your real monthly links -->
             <a class="pill" href="PUT_MONTHLY_25_LINK_HERE">$25 / month</a>
             <a class="pill" href="PUT_MONTHLY_54_LINK_HERE">$54 / month</a>
             <a class="pill" href="PUT_MONTHLY_108_LINK_HERE">$108 / month</a>
@@ -247,9 +239,11 @@
     </div>
   </main>
 
-  <!-- ============================= -->
-  <!-- PASTE YOUR SITE FOOTER HERE (if your other pages use one) -->
-  <!-- ============================= -->
+  <!-- BIHS Footer loads here -->
+  <div id="footer"></div>
+
+  <!-- This is what actually injects header/footer -->
+  <script src="js/site.js"></script>
 
 </body>
 </html>
