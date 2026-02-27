@@ -2,248 +2,182 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Support Education | BIHS</title>
+  <title>General Donation | BIHS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Support BIHS Education: enrollment, one-time and monthly donations.">
+  <meta name="description" content="Support BIHS through general donations.">
   <link rel="stylesheet" href="css/site.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
   <style>
-    :root { --radius: 10px; }
+    :root { --radius: 8px; }
 
-    .page-wrap{
-      max-width:1200px;
-      margin:0 auto;
-      padding: 26px 18px 60px;
-    }
-
-    .page-title{
-      margin: 10px 0 10px;
-      color: var(--bihs-navy-900);
-      font-size: clamp(26px, 3.2vw, 40px);
-    }
-
-    .page-sub{
-      margin: 0 0 18px;
-      line-height: 1.7;
-      color: var(--text);
-      max-width: 980px;
-    }
-
-    .crumb{ margin: 10px 0 16px; }
-    .crumb a{ text-decoration:none; }
-
-    .grid{
-      display:grid;
-      gap:22px;
-      margin-top: 18px;
-    }
-    @media(min-width: 900px){
-      .grid{ grid-template-columns: 1.25fr .75fr; align-items:start; }
-    }
-
-    .card{
-      background:#fff;
-      border: 1px solid #e6ebf3;
-      border-radius: var(--radius);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      padding: 22px;
-    }
-
-    .card h2{
-      margin: 0 0 10px;
-      color: var(--bihs-navy-900);
-      font-size: 22px;
-    }
-
-    .card p{
-      margin: 0 0 12px;
-      line-height: 1.65;
-      color: var(--text);
-    }
-
-    .mini{
-      font-size: 14px;
-      opacity: .92;
-      margin-top: 8px;
-    }
-
-    .section{
-      margin-top: 18px;
-      padding-top: 6px;
-    }
-
-    .options{
-      display:grid;
-      gap: 12px;
-      margin-top: 12px;
-    }
-
-    .opt, .opt:link, .opt:visited, .opt:hover, .opt:active {
+    .donate-options{display:grid;gap:14px}
+    .opt, .opt:link, .opt:visited, .opt:hover, .opt:active,
+    button.opt, button.opt:hover {
+      all: unset;
       display:flex;
       align-items:center;
       justify-content:center;
-      gap:10px;
       text-align:center;
-      padding: 14px 16px;
-      border-radius: var(--radius);
+      gap:10px;
+      padding:16px 18px;
+      border-radius:var(--radius);
       background: var(--bihs-navy-900);
-      color:#fff;
+      color: #ffffff !important;
+      font-weight:700;
+      font-size:18px;
       text-decoration:none;
-      font-weight: 700;
-      font-size: 17px;
-      border: 1px solid rgba(255,255,255,.18);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
       transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
-      cursor:pointer;
+      cursor: pointer;
     }
-    .opt:hover{
+    .opt:hover, button.opt:hover {
       filter: brightness(1.06);
       transform: translateY(-1px);
-      box-shadow: 0 12px 26px rgba(0,0,0,0.16);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.16);
     }
+    .opt img{height:22px;width:auto;opacity:.9}
 
-    .pill-row{
+    .panel{display:none;margin-top:20px}
+    .card{background:#fff;color:#000;border-radius:14px;padding:20px;border:1px solid #e6ebf3}
+    .qr{text-align:center;margin-top:10px}
+    .qr img{width:100%;max-width:260px;border-radius:12px;border:1px solid #ccc}
+
+    .donate-box {
+      background:#fff;
+      color: var(--text);
+      border-radius:var(--radius);
+      padding:26px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      border: 1px solid #e6ebf3;
       display:flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 10px;
+      flex-direction: column;
+      max-width: 1200px;
+      margin: 0 auto;
     }
-
-    .pill{
-      display:inline-block;
-      padding: 10px 14px;
-      border-radius: 999px;
-      border: 1px solid #e6ebf3;
-      background: #fafafa;
-      text-decoration:none;
-      font-weight: 700;
-      color: var(--bihs-navy-900);
+    .donate-box h2{
+      margin:0 0 14px;
+      font-size:22px;
+      color:var(--bihs-navy-900);
+      text-align:center;
     }
-    .pill:hover{ filter: brightness(1.02); }
-
-    .note-box{
-      background:#fbfcff;
-      border: 1px solid #e6ebf3;
-      border-radius: var(--radius);
-      padding: 16px;
-      margin-top: 14px;
-      line-height: 1.65;
-    }
-
-    .divider{
-      height:1px;
-      background:#e6ebf3;
-      margin: 18px 0;
-    }
+    .donate-box .raisely-donate{ margin-top: 10px; }
   </style>
 </head>
 
 <body>
-
-  <!-- BIHS Header/Nav loads here -->
   <div id="header"></div>
 
-  <main class="page-wrap">
+  <main>
 
-    <div class="crumb">
-      <a href="donations.html">← Back to Donations</a>
-    </div>
+    <section class="feature-block center">
+      <div class="container">
+        <h1>General Donation</h1>
+        <p class="lead" style="max-width: 900px; margin: 0 auto;">
+          General donations support BIHS broadly, including operations, events, outreach, publishing, and other essential needs.
+        </p>
+       
+      </div>
+    </section>
 
-    <h1 class="page-title">Support Education</h1>
-    <p class="page-sub">
-      Your support sustains BIHS education—helping us strengthen academic quality, expand access, and build a stable foundation for long-term learning.
-    </p>
-
-    <div class="grid">
-
-      <!-- LEFT: Main ways to support -->
-      <section class="card">
-        <h2>Ways to Support</h2>
-        <p>
-          Contributions help cover costs associated with accreditation, support qualified faculty through competitive compensation, and strengthen the learning environment—Canvas infrastructure, course development, student support, and educational resources.
+    <!-- PAYMENT METHODS -->
+    <section class="summary-block">
+      <div class="container">
+        <h2 style="text-align:center; margin-bottom:18px;">Ways to Give</h2>
+        <p style="text-align:center; max-width:700px; margin:0 auto 20px;">
+          You can support BIHS using PayPal, UPI (India), or a credit card.
         </p>
 
-        <div class="divider"></div>
+        <div class="donate-options" style="max-width:600px; margin:0 auto;">
 
-        <!-- A) Enroll -->
-        <div class="section">
-          <h2 style="font-size:20px;margin-bottom:8px;"><i class="fa-solid fa-book-open"></i> A) Enroll in the Course</h2>
-          <p>Choose the enrollment option that best matches your needs and level of participation.</p>
-
-          <div class="options">
-            <a class="opt" href="PUT_FULL_PROGRAM_LINK_HERE">
-              <i class="fa-solid fa-certificate"></i> Full Program Enrollment — $108
-            </a>
-
-            <a class="opt" href="PUT_FLEXIBLE_ENROLLMENT_LINK_HERE">
-              <i class="fa-solid fa-hand-holding-heart"></i> Flexible Enrollment (Contribution-Based)
-            </a>
-
-            <a class="opt" href="https://square.link/u/HcOVFxxG">
-              <i class="fa-solid fa-layer-group"></i> Enroll in Individual Unit(s)
-            </a>
-          </div>
-
-          <p class="mini">
-            Flexible Enrollment allows participants to choose a contribution amount that reflects their circumstances. Access to course materials remains the same.
-          </p>
-        </div>
-
-        <div class="divider"></div>
-
-        <!-- B) One-time donation -->
-        <div class="section">
-          <h2 style="font-size:20px;margin-bottom:8px;"><i class="fa-solid fa-heart"></i> B) Give a One-Time Donation</h2>
-          <p>A one-time gift strengthens BIHS education and helps us respond to immediate needs.</p>
-
-          <a class="opt" href="PUT_ONE_TIME_EDUCATION_DONATION_LINK_HERE">
-            <i class="fa-solid fa-gift"></i> One-Time Education Donation
+          <!-- PayPal -->
+          <a class="opt"
+             href="https://www.paypal.com/donate/?hosted_button_id=HNVKEBZTFEEQ4"
+             target="_blank" rel="noopener">
+            <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="">
+            PayPal
           </a>
+
+          <!-- Credit Card via Raisely panel -->
+          <button class="opt" onclick="openPanel('raisely')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Raisely_Icon.svg/48px-Raisely_Icon.svg.png" alt="">
+            Credit Card (alternative form)
+          </button>
+
+          <!-- UPI (India) -->
+          <button class="opt" onclick="openPanel('upi')">
+            <img src="https://static.tildacdn.com/tild3236-6565-4537-b334-643966393536/UPI-logo.png" alt="">
+            UPI (India)
+          </button>
+
         </div>
 
-        <div class="divider"></div>
-
-        <!-- C) Monthly donation -->
-        <div class="section">
-          <h2 style="font-size:20px;margin-bottom:8px;"><i class="fa-solid fa-calendar-check"></i> C) Give Monthly</h2>
-          <p>Monthly giving helps BIHS plan responsibly and maintain consistent educational quality.</p>
-
-          <div class="pill-row">
-            <a class="pill" href="PUT_MONTHLY_25_LINK_HERE">$25 / month</a>
-            <a class="pill" href="PUT_MONTHLY_54_LINK_HERE">$54 / month</a>
-            <a class="pill" href="PUT_MONTHLY_108_LINK_HERE">$108 / month</a>
-            <a class="pill" href="PUT_MONTHLY_CUSTOM_LINK_HERE">Custom monthly</a>
+        <!-- Hidden Panels -->
+        <div id="panel-raisely" class="panel">
+          <div class="card">
+            <h3>Donate with Credit Card (via Raisely)</h3>
+            <div class="raisely-donate"
+                 data-campaign-path="bhaktivedanta-institute-for-higher-studies-support"
+                 data-profile=""
+                 data-width="100%"
+                 data-height="800"></div>
           </div>
+        </div>
 
-          <div class="note-box">
-            <strong>Prefer a custom amount?</strong> Choose “Custom monthly” or use the one-time donation option above.
+        <div id="panel-upi" class="panel">
+          <div class="card">
+            <h3>Donate with UPI</h3>
+            <p>Scan this QR code with your UPI app:</p>
+            <div class="qr">
+              <img src="https://static.tildacdn.com/tild6464-3635-4362-b763-383832613835/UPI-QR.jpg" alt="UPI QR Code">
+            </div>
+            <p><strong>UPI ID:</strong> Vyapar.172927995911@hdfcbank</p>
           </div>
         </div>
-      </section>
 
-      <!-- RIGHT: Short summary / reassurance -->
-      <aside class="card">
-        <h2>How Your Support Helps</h2>
-        <p><i class="fa-solid fa-check"></i> Accreditation-related costs and educational quality standards</p>
-        <p><i class="fa-solid fa-check"></i> Retaining qualified faculty through competitive compensation</p>
-        <p><i class="fa-solid fa-check"></i> Course development, learning resources, and student support</p>
-        <p><i class="fa-solid fa-check"></i> Stable infrastructure for BIHS Canvas and online delivery</p>
+      </div>
+    </section>
 
-        <div class="note-box">
-          Questions or help with enrollment?
-          Email <a href="mailto:monicad@bihstudies.org">monicad@bihstudies.org</a>.
+    <!-- GIVE ANY AMOUNT (GENERAL) -->
+    <section class="summary-block">
+      <div class="container">
+        <div class="donate-box">
+          <h2>Give Any Amount</h2>
+          <p style="line-height:1.65; margin:0 0 10px;">
+            Support BIHS in whatever way feels meaningful for you. One-time and custom gifts help sustain our library,
+            research, events, publications, and ongoing programs.
+          </p>
+          <p style="line-height:1.65; margin:0 0 10px;">
+            Every contribution—large or small—helps BIHS continue offering thoughtful resources for those exploring consciousness,
+            science, and philosophy.
+          </p>
+
+          <div class="raisely-donate"
+               data-campaign-path="bhaktivedanta-institute-for-higher-studies-support"
+               data-profile=""
+               data-width="100%"
+               data-height="800"></div>
         </div>
-      </aside>
+      </div>
+    </section>
 
-    </div>
   </main>
 
-  <!-- BIHS Footer loads here -->
   <div id="footer"></div>
 
-  <!-- This is what actually injects header/footer -->
   <script src="js/site.js"></script>
+  <script src="https://cdn.raisely.com/v3/public/embed.js"></script>
 
+  <script>
+    function openPanel(which){
+      document.querySelectorAll('.panel').forEach(p => p.style.display='none');
+      const el = document.getElementById('panel-'+which);
+      if(el){
+        el.style.display='block';
+        el.scrollIntoView({behavior:'smooth', block:'start'});
+      }
+    }
+  </script>
 </body>
 </html>
