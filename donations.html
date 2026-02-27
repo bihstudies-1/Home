@@ -8,286 +8,116 @@
   <link rel="stylesheet" href="css/site.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
-  <!-- DONATION-SPECIFIC STYLES -->
   <style>
-    :root {
-      --radius: 8px;
-    }
+    :root { --radius: 8px; }
 
-    .donate-grid{
-      display:grid;
-      gap:40px;
+    .hub-wrap{
       max-width:1200px;
       margin:0 auto;
+      padding: 10px 0 30px;
+    }
+    .hub-cards{
+      max-width: 900px;
+      margin: 0 auto;
+      display:grid;
+      gap:24px;
+      padding: 0 18px;
     }
     @media(min-width:900px){
-      .donate-grid{grid-template-columns:1.3fr 1fr;align-items:start}
+      .hub-cards{ grid-template-columns: 1fr 1fr; }
     }
-
-    .intro-card, .donate-box {
+    .hub-card{
       background:#fff;
       color: var(--text);
       border-radius:var(--radius);
       padding:26px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       border: 1px solid #e6ebf3;
-      
-      display: flex;
-      flex-direction: column;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      min-height: 220px;
     }
-    .donate-box .raisely-donate {
-    margin-top: auto;
-}
-    .intro-card h2{margin:0 0 8px;font-size:clamp(22px,3vw,30px);color:var(--bihs-navy-900)}
-    .intro-card h3{margin:8px 0 14px;font-size:clamp(18px,2.8vw,22px);color:var(--bihs-navy);font-weight:700}
-    .intro-card p{margin:0 0 14px;line-height:1.65}
-
-    .donate-box h2{
-      margin:0 0 18px;
-      font-size:22px;
+    .hub-card h3{
+      margin:0;
       color:var(--bihs-navy-900);
-      text-align:center;
+      font-size: 22px;
     }
-
-    .donation-cards{
-      max-width:1200px;
-      margin:0 auto 40px;
-      display:grid;
-      gap:24px;
+    .hub-card p{
+      margin:0 0 8px;
+      line-height:1.65;
     }
-    @media (min-width:900px){
-      .donation-cards{
-        grid-template-columns:repeat(3, minmax(0,1fr));
-      }
-    }
-
-    .donate-options{display:grid;gap:14px}
-
-    .opt, .opt:link, .opt:visited, .opt:hover, .opt:active,
-    button.opt, button.opt:hover {
-      all: unset;
+    .opt, .opt:link, .opt:visited, .opt:hover, .opt:active {
       display:flex;
       align-items:center;
       justify-content:center;
-      text-align:center;
       gap:10px;
+      text-align:center;
       padding:16px 18px;
       border-radius:var(--radius);
-      
       background: var(--bihs-navy-900);
       color: #ffffff !important;
-      
       font-weight:700;
       font-size:18px;
       text-decoration:none;
-      
       border: 1px solid rgba(255, 255, 255, 0.18);
       box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
-
       transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
       cursor: pointer;
+      margin-top:auto;
     }
-    .opt:hover, button.opt:hover {
-  filter: brightness(1.06);
-  transform: translateY(-1px);
-  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.16);
-}
-    .opt img{height:22px;width:auto;opacity:.9}
-
-    .panel{display:none;margin-top:20px}
-    .card{background:#fff;color:#000;border-radius:14px;padding:20px;border:1px solid #e6ebf3}
-    .iframe-wrap{position:relative;width:100%;height:700px;overflow:hidden;border:1px solid #e6ebf3;border-radius:12px;background:#fafafa}
-    .iframe-wrap iframe{position:absolute;inset:0;border:0;width:100%;height:100%}
-    .qr{text-align:center;margin-top:10px}
-    .qr img{width:100%;max-width:260px;border-radius:12px;border:1px solid #ccc}
+    .opt:hover{
+      filter: brightness(1.06);
+      transform: translateY(-1px);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.16);
+    }
   </style>
 </head>
-<body>
 
+<body>
   <div id="header"></div>
 
   <main>
-
-    <!-- Page Title & Short Intro -->
     <section class="feature-block center">
-      
       <div class="container">
-        <h1>Support Our Work</h1>
-        <p class="lead">
-          The Bhaktivedanta Institute for Higher Studies is more than a research center — 
-          it is a sanctuary where science and philosophy meet to explore the deepest questions:
-          What is consciousness? Where did life come from? Is there purpose behind the universe?
-          Your gift empowers scholars, students, and seekers who are working to bring these
-          conversations to the wider world.
+        <h1>Donations</h1>
+        <p class="lead" style="max-width: 900px; margin: 0 auto;">
+          Thank you for supporting the Bhaktivedanta Institute for Higher Studies (BIHS).
+          Please choose the type of support you would like to offer.
         </p>
       </div>
     </section>
 
-       <!-- OTHER PAYMENT METHODS -->
-    <section class="summary-block">
-      <div class="container">
-        <h2 style="text-align:center; margin-bottom:18px;">Ways to Give</h2>
-        <p style="text-align:center; max-width:700px; margin:0 auto 20px;">
-        You can support The Bhaktivedanta Institue for Higher Studies using PayPal, UPI (India), a Credit Card or via Zelle.
-        </p>
+    <div class="hub-wrap">
+      <div class="hub-cards">
 
-        <div class="donate-options" style="max-width:600px; margin:0 auto;">
-
-          <!-- PayPal -->
-          <a class="opt"
-             href="https://www.paypal.com/donate/?hosted_button_id=HNVKEBZTFEEQ4"
-             target="_blank" rel="noopener">
-            <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="">
-            PayPal
+        <div class="hub-card">
+          <h3><i class="fa-solid fa-graduation-cap"></i> Support Education</h3>
+          <p>
+            Support BIHS education through monthly giving that sustains learning programs,
+            faculty engagement, and long-term educational development.
+          </p>
+          <a class="opt" href="donations-education.html">
+            <i class="fa-solid fa-arrow-right"></i> Go to Education Support
           </a>
-
-          <!-- Credit Card via Raisely (generic) -->
-          <button class="opt" onclick="openPanel('raisely')">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Raisely_Icon.svg/48px-Raisely_Icon.svg.png" alt="">
-            Credit Card (alternative form)
-          </button>
-
-          <!-- UPI (India) -->
-          <button class="opt" onclick="openPanel('upi')">
-            <img src="https://static.tildacdn.com/tild3236-6565-4537-b334-643966393536/UPI-logo.png" alt="">
-            UPI (India)
-          </button>
-
         </div>
 
-        <!-- Hidden Panels for Raisely + UPI -->
-        <div id="panel-raisely" class="panel">
-          <div class="card">
-            <h3>Donate with Credit Card (via Raisely)</h3>
-            <div class="raisely-donate"
-                 data-campaign-path="bhaktivedanta-institute-for-higher-studies-support"
-                 data-profile=""
-                 data-width="100%"
-                 data-height="800">
-              <script src="https://cdn.raisely.com/v3/public/embed.js"></script>
-            </div>
-          </div>
-        </div>
-
-        <div id="panel-upi" class="panel">
-          <div class="card">
-            <h3>Donate with UPI</h3>
-            <p>Scan this QR code with your UPI app:</p>
-            <div class="qr">
-              <img src="https://static.tildacdn.com/tild6464-3635-4362-b763-383832613835/UPI-QR.jpg" alt="UPI QR Code">
-            </div>
-            <p><strong>UPI ID:</strong> Vyapar.172927995911@hdfcbank</p>
-          </div>
-        </div>
-
-        <!-- You can add Zelle instructions here if you like -->
-        <!-- <p style="text-align:center; margin-top:16px;">Zelle: ...</p> -->
-
-      </div>
-    </section>
-<div class="container">
-        <h2 style="text-align:center; margin-bottom:18px;">Friends of BIHS (Monthly)</h2>
-    <!-- THREE MAIN DONATION OPTIONS -->
-    <section class="summary-block">
-      <div class="donation-cards">
-
-        <!-- OPTION 1: $25 SUPPORT CIRCLE -->
-        
-        <div class="donate-box">
-       
-          <img src="img/25Circle.2.jpg"
-               alt="BIHS Support Circle"
-               style="width:40%; float:left; margin:0 16px 12 px 0; border-radius:8px;">
-
-          <h2>BIHS Support Circle — $25/Month</h2>
+        <div class="hub-card">
+          <h3><i class="fa-solid fa-heart"></i> General Donation</h3>
           <p>
-            Small, steady contributions make a big difference. With <strong>$25 a month</strong>,
-            you help BIHS offer courses, public programs, research initiatives, and accessible
-            learning rooted in science and philosophy.
+            Support BIHS broadly, including operations, events, outreach, publishing,
+            and general needs. Includes PayPal, credit card, and UPI options.
           </p>
-          <p>
-            The Support Circle is for anyone who wants to help sustain this mission—even if
-            they feel they can’t do much. Your monthly commitment builds the foundation that
-            allows BIHS to teach, inspire, and serve a growing community of thoughtful learners.
-          </p>
-    <div class="raisely-donate" 
-            data-campaign-path="support-circle" 
-            data-profile="" 
-            data-width="100%" 
-            data-height="800">
-            <script src="https://cdn.raisely.com/v3/public/embed.js"></script></div>
-        </div>
-      
-        <!-- OPTION 2: 108 EDUCATION STEWARD CIRCLE -->
-        <div class="donate-box">
-       
-          <img src="img/108v2.jpg"
-               alt="108 Education Steward Circle"
-                style="width:40%; float:left; margin:0 16px 12 px 0; border-radius:8px;">
-
-          <h2>Education Steward Circle — $108/Month</h2>
-          <p>
-            A monthly offering of <strong>$108</strong> supports BIHS courses and provides
-            study opportunities for sincere learners. As an Education Steward, you help
-            develop curriculum, sustain teachers, and expand our Canvas-based learning
-            programs.
-          </p>
-          <p>
-            Your contribution directly strengthens BIHS education and helps students receive
-            structured guidance and Certificates of Completion.
-          </p>
-       <div class="raisely-donate" data-campaign-path="help-bihs-thrive" 
-            data-profile=""
-            data-width="100%" 
-            data-height="800">
-            <script src="https://cdn.raisely.com/v3/public/embed.js"></script></div>
-        </div>
-      
-
-        <!-- OPTION 3: GIVE ANY AMOUNT -->
-        <div class="donate-box">
-       
-          <img src="img/BIHS.Thrive.jpg"
-               alt="Give Any Amount"
-               style="width:60%; float:left; margin:0 16px 12 px 0; border-radius:8px;">
-
-          <h2>Give Any Amount</h2>
-          <p>
-            Support BIHS in whatever way feels meaningful for you. One-time and custom gifts
-            help sustain our library, research, events, publications, and ongoing programs.
-          </p>
-          <p>
-            Every contribution—large or small—helps BIHS continue offering thoughtful,
-            accessible resources for those exploring consciousness, science, and philosophy.
-          </p>
-
-             <div class="raisely-donate" 
-            data-campaign-path="bhaktivedanta-institute-for-higher-studies-support"
-            data-profile=""
-            data-width="100%" 
-            data-height="800">
-            <script src="https://cdn.raisely.com/v3/public/embed.js"></script></div>
+          <a class="opt" href="donations-general.html">
+            <i class="fa-solid fa-arrow-right"></i> Go to General Donation
+          </a>
         </div>
 
       </div>
-    </section>
-
- 
+    </div>
   </main>
 
   <div id="footer"></div>
-
   <script src="js/site.js"></script>
-
-  <script>
-    function openPanel(which){
-      document.querySelectorAll('.panel').forEach(p => p.style.display='none');
-      const el = document.getElementById('panel-'+which);
-      if(el){
-        el.style.display='block';
-        el.scrollIntoView({behavior:'smooth', block:'start'});
-      }
-    }
-  </script>
 </body>
 </html>
