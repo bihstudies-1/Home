@@ -7,6 +7,62 @@
   <meta name="description" content="Upcoming and past events, conferences, and workshops from the Bhaktivedanta Institute for Higher Studies.">
   <link rel="stylesheet" href="css/site.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+<Style>
+  * EVENTS CARD */
+.event-card{
+  display:grid;
+  gap:18px;
+  padding:18px;
+  border:1px solid rgba(0,0,0,.10);
+  border-radius:12px;
+  background:#fff;
+  max-width:1100px;
+  margin:18px auto 28px;
+}
+
+@media (min-width: 900px){
+  .event-card{ grid-template-columns: 360px 1fr; align-items:start; }
+}
+
+.event-card__media img{
+  width:100%;
+  height:auto;
+  border-radius:10px;
+  display:block;
+}
+
+.event-card__content h3{
+  margin:0 0 8px;
+}
+
+.event-card__meta{
+  margin:10px 0 14px;
+  opacity:.92;
+  line-height:1.4;
+}
+
+.event-card__actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:8px 0 10px;
+}
+
+.event-card__details summary{
+  cursor:pointer;
+  font-weight:600;
+  margin-top:8px;
+}
+
+.section-divider{
+  border:none;
+  border-top:1px solid rgba(0,0,0,.08);
+  max-width:1100px;
+  margin:22px auto;
+}
+  </style>
+
 </head>
 <body>
   
@@ -17,7 +73,6 @@
     <section class="feature-block center">
       <div class="container">
         <h1>Events</h1>
-        <p class="lead">Join the dialogue at our upcoming conferences, workshops, and lectures.</p>
       </div>
     </section>
 
@@ -25,14 +80,63 @@
       <div class="container">
         <div class="center">
             <h2>Upcoming Events</h2>
+<!-- UPCOMING EVENT CARD -->
+<div class="event-card">
+  <div class="event-card__media">
+    <a href="images/events/ramanujan-alladi-2026.jpg" target="_blank" rel="noopener">
+      <img
+        src="images/events/ramanujan-alladi-2026.jpg"
+        alt="Flyer: The Remarkable Life, Work, and Influence of Ramanujan — Prof. Krishnaswami Alladi — March 13, 2026"
+        loading="lazy"
+      >
+    </a>
+  </div>
+
+  <div class="event-card__content">
+    <h3>The Remarkable Life, Work, and Influence of Ramanujan</h3>
+
+    <p>
+      Join us at BIHS for a special talk by <strong>Prof. Krishnaswami Alladi</strong>
+      (Department of Mathematics, University of Florida) on the life and legacy of
+      <strong>Srinivasa Ramanujan</strong>, one of history’s most extraordinary mathematical minds.
+    </p>
+
+    <p><strong>Desserts and drinks will be served.</strong></p>
+
+    <p class="event-card__meta">
+      <i class="fa-regular fa-calendar"></i> <strong>March 13, 2026</strong>
+      &nbsp;&nbsp;•&nbsp;&nbsp;
+      <i class="fa-regular fa-clock"></i> <strong>6:30 PM</strong>
+      &nbsp;&nbsp;•&nbsp;&nbsp;
+      <i class="fa-solid fa-location-dot"></i> BIHS Headquarters, 224 NE 10th Avenue, Gainesville
+    </p>
+
+    <div class="event-card__actions">
+      <a class="btn" href="mailto:Admin@bihs.org?subject=RSVP%20%E2%80%94%20Ramanujan%20Lecture%20(March%2013%2C%202026)">
+        RSVP: Admin@bihs.org
+      </a>
+      <a class="btn btn-outline" href="images/events/ramanujan-alladi-2026.jpg" target="_blank" rel="noopener">
+        View Flyer
+      </a>
+    </div>
+
+    <details class="event-card__details">
+      <summary>About the speaker</summary>
+      <p>
+        Prof. Krishnaswami Alladi is an internationally recognized number theorist at the University of Florida,
+        widely known for his contributions to mathematics and for his work preserving and promoting the legacy of Ramanujan.
+      </p>
+    </details>
+  </div>
+</div>
+
+<!-- OPTIONAL: simple divider -->
+<hr class="section-divider">
+          
         </div>
-        <ul>
-        <li> 2025 Holliday Party ~ December 27 (1pm to 4pm)</li>
-<li> Yoga with Isabella and Ben, Saturday 11 am by appointment</li>
-          <li>Richard L. Thompson Archives Reading Group VI (January 17 at 11:00 am) 
-            <a href="https://richardlthompson.com/upcoming-richard-l-thompson-archives-reading-group-vi"><strong>Read More</strong></a></li>  
-        </ul>
-      </div>
+       
+
+
       <section class="feature-block-alt">
           <div class="container">
         <div class="center">
