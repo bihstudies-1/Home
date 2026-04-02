@@ -1425,3 +1425,15 @@ html { scroll-padding-top: var(--header-offset); }
 .card-content li {
   margin-bottom: 0.75rem;
 }
+.card-content ul {
+  padding-left: 1rem;
+}
+
+.card-content ul > li {
+  margin-bottom: 0.8rem;
+}
+
+.card-content ol {
+  margin-top: 0.4rem;
+  margin-left: 1.2rem;
+}
