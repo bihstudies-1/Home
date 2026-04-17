@@ -1415,6 +1415,7 @@ html { scroll-padding-top: var(--header-offset); }
   display: flex;
   flex-direction: column;
   flex: 1;
+  padding-top: 55px;
 }
 
 .card-content ul {
