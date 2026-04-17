@@ -1413,7 +1413,7 @@ html { scroll-padding-top: var(--header-offset); }
 
 .card-content {
   display: flex;
-  flex-direction: column;
+  flex-direction:flex-start;
   flex: 1;
   padding-top: 55px;
 }
