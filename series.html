@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Summer Discovery Series 2025 | BIHS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <style>
+    /* Only Series-specific styles that site.css doesn't cover */
+    html { scroll-behavior: smooth; }
+
+    /* Secondary nav strip */
+    .series-nav {
+      background-color: var(--bihs-navy-900);
+      padding: 0.75rem 0;
+      text-align: center;
+      position: sticky;
+      top: 72px; /* sits just below the BIHS header */
+      z-index: 900;
+    }
+    .series-nav a {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .series-nav a:hover { color: var(--bihs-gold); }
+
+    /* Speaker grid */
+    .speaker-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .speaker-card {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      width: 150px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .speaker-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    .speaker-photo {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .speaker-card h3 {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: var(--bihs-navy);
+    }
+
+    /* Schedule */
+    .schedule-day { margin-bottom: 2.5rem; }
+    .schedule-day h3 { color: #a2daff; margin-bottom: 10px; }
+    .schedule-list { list-style: none; padding: 0; }
+    .schedule-list li {
+      font-size: 1rem;
+      margin: 8px 0;
+      line-height: 1.5;
+    }
+    .schedule-time { color: #ffcc66; font-weight: bold; }
+    .schedule-speaker { font-weight: bold; color: #fff; }
+    .schedule-topic { font-style: italic; color: #f1f1f1; }
+    .schedule-speaker a { color: white; text-decoration: none; }
+    .schedule-speaker a:hover { color: #ccc; text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <!-- BIHS header loads here -->
+  <div id="header"></div>
+
+  <main>
+
+    <!-- 1. BANNER IMAGE — keep exactly as-is -->
+    <section style="padding: 0; margin: 0;">
+      <img src="images/banner.jpg"
+           alt="BIHS Summer Discovery Series Banner"
+           style="width: 100%; height: auto; display: block;">
+    </section>
+
+    <!-- 2. SERIES SUB-NAV — replaces the old <nav> -->
+    <nav class="series-nav">
+      <a href="#about">About</a>
+      <a href="#speakers">Speakers</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#registration">Registration</a>
+      <a href="#contact">Contact</a>
+      <a href="https://bihstudies.github.io/Summer.Discovery.Series/CANVAS.instructure.html">
+        CANVAS</a>
+      <a href="https://www.paypal.com/donate/?hosted_button_id=HNVKEBZTFEEQ4" 
+         target="_blank">Support</a>
+      <a href="https://forms.gle/R7zL4KX8kHckta2c9" target="_blank">
+        Scholarship Application</a>
+    </nav>
+
+    <!-- 3. ABOUT — uses BIHS summary-block -->
+    <section id="about" class="summary-block">
+      <div class="container">
+        <!-- PASTE your entire About content here, unchanged -->
+      </div>
+    </section>
+
+    <!-- 4. SPEAKERS — uses BIHS feature-block (light blue) -->
+    <section id="speakers" class="feature-block">
+      <div class="container">
+        <h2>Meet the Speakers</h2>
+        <div class="speaker-grid">
+          <!-- PASTE all your speaker cards here, unchanged -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. SCHEDULE — keeps its dark navy background -->
+    <section id="schedule" 
+      style="background-color: var(--bihs-navy); color: white; padding: 3rem var(--pad);">
+      <div class="container">
+        <h2 style="color: var(--bihs-gold); text-align: center; 
+            border-bottom: 2px solid #ccc; padding-bottom: 10px;">
+          Event Schedule</h2>
+        <!-- PASTE all schedule-day blocks here, unchanged -->
+      </div>
+    </section>
+
+    <!-- 6. REGISTRATION — uses BIHS summary-block -->
+    <section id="registration" class="summary-block">
+      <div class="container center">
+        <!-- PASTE registration content here, unchanged -->
+      </div>
+    </section>
+
+    <!-- 7. CONTACT — uses BIHS feature-block -->
+    <section id="contact" class="feature-block">
+      <div class="container center">
+        <!-- PASTE contact content here, unchanged -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- BIHS footer loads here -->
+  <div id="footer"></div>
+
+  <!-- Keep your existing script -->
+  <script src="js/site.js"></script>
+  <script>
+    function openBio(id) {
+      document.getElementById(id).style.display = 'flex';
+    }
+    function closeBio(el) {
+      el.style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
