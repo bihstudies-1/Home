@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>A World Appears — Michael Pollan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1a2340;
+      --navy-mid: #243060;
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --cream: #f7f4ef;
+      --warm-white: #fdfbf8;
+      --ink: #1c1c1e;
+      --ink-soft: #3a3a3c;
+      --muted: #7a7a80;
+      --rule: #ddd8cf;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--warm-white);
+      color: var(--ink);
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background-color: var(--navy);
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 0;
+      align-items: stretch;
+      min-height: 520px;
+    }
+
+    .book-cover-col {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 48px 40px 48px 48px;
+    }
+
+    .book-cover-wrapper {
+      position: relative;
+      width: 220px;
+      flex-shrink: 0;
+    }
+
+    .book-cover-wrapper img {
+      width: 100%;
+      display: block;
+      border-radius: 3px;
+      box-shadow: 12px 20px 50px rgba(0,0,0,0.55), 4px 6px 16px rgba(0,0,0,0.4);
+    }
+
+    .gold-spine {
+      position: absolute;
+      left: -1px;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--gold-light) 0%, var(--gold) 50%, var(--gold-light) 100%);
+      border-radius: 2px 0 0 2px;
+    }
+
+    .header-text-col {
+      padding: 56px 56px 56px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-left: 1px solid rgba(201,168,76,0.25);
+    }
+
+    .category-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .book-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 700;
+      line-height: 1.08;
+      color: var(--cream);
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
+    }
+
+    .book-subtitle {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: rgba(247,244,239,0.65);
+      margin-bottom: 28px;
+      font-weight: 300;
+    }
+
+    .author-byline {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(247,244,239,0.5);
+      letter-spacing: 0.06em;
+    }
+
+    .author-byline strong {
+      color: rgba(247,244,239,0.85);
+      font-weight: 500;
+    }
+
+    .gold-rule {
+      width: 48px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      margin: 24px 0;
+    }
+
+    .header-quote {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: rgba(247,244,239,0.6);
+      line-height: 1.6;
+      max-width: 400px;
+      font-weight: 300;
+    }
+
+    /* ── MAIN LAYOUT ── */
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 72px 32px 100px;
+    }
+
+    /* ── SECTION INTRO ── */
+    .intro-block {
+      margin-bottom: 60px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .section-eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 20px;
+      line-height: 1.25;
+    }
+
+    p {
+      color: var(--ink-soft);
+      margin-bottom: 1.3em;
+      font-weight: 400;
+    }
+
+    /* ── CALLOUT NOTE ── */
+    .callout {
+      border-left: 3px solid var(--gold);
+      background: linear-gradient(135deg, #fffef9, #f9f6ef);
+      padding: 20px 24px;
+      margin: 32px 0;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .callout p {
+      font-style: italic;
+      font-size: 0.97rem;
+      color: var(--ink-soft);
+      margin: 0;
+    }
+
+    .callout p strong {
+      font-style: normal;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    /* ── PILLARS SECTION ── */
+    .pillars-section {
+      margin: 60px 0;
+      padding-bottom: 60px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .pillar-list {
+      list-style: none;
+      margin-top: 32px;
+    }
+
+    .pillar-item {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 0 24px;
+      margin-bottom: 36px;
+      align-items: start;
+    }
+
+    .pillar-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      padding-top: 2px;
+      opacity: 0.7;
+    }
+
+    .pillar-content h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .pillar-content p {
+      font-size: 0.97rem;
+      margin-bottom: 0;
+    }
+
+    /* ── PULL QUOTE ── */
+    .pull-quote {
+      margin: 60px -40px;
+      padding: 40px 60px;
+      background-color: var(--navy);
+      position: relative;
+    }
+
+    .pull-quote::before {
+      content: '\201C';
+      font-family: 'Playfair Display', serif;
+      font-size: 8rem;
+      line-height: 1;
+      color: var(--gold);
+      opacity: 0.2;
+      position: absolute;
+      top: 8px;
+      left: 32px;
+    }
+
+    .pull-quote p {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--cream);
+      line-height: 1.5;
+      margin: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── METAPHYSICAL SECTION ── */
+    .content-section {
+      margin: 60px 0;
+      padding-bottom: 60px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* ── BOTTOM LINE ── */
+    .bottom-line {
+      margin-top: 60px;
+      padding: 40px;
+      border: 1px solid var(--rule);
+      background-color: var(--cream);
+      border-radius: 4px;
+      position: relative;
+    }
+
+    .bottom-line::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: 40px; right: 40px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--navy), var(--navy-mid));
+    }
+
+    .bottom-line .section-eyebrow { margin-bottom: 12px; }
+    .bottom-line p { margin-bottom: 0; }
+
+    /* ── FOOTER ── */
+    footer {
+      background-color: var(--navy);
+      text-align: center;
+      padding: 32px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      color: rgba(247,244,239,0.3);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 680px) {
+      .header-inner {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .book-cover-col {
+        justify-content: center;
+        padding: 40px 24px 20px;
+      }
+      .book-cover-wrapper { width: 160px; }
+      .header-text-col {
+        border-left: none;
+        border-top: 1px solid rgba(201,168,76,0.25);
+        padding: 32px 24px 40px;
+      }
+      .pull-quote { margin: 60px -32px; padding: 40px 32px; }
+      main { padding: 48px 24px 80px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="book-cover-col">
+        <div class="book-cover-wrapper">
+          <div class="gold-spine"></div>
+          <img src="1777476413269_image.png" alt="A World Appears — Michael Pollan book cover" />
+        </div>
+      </div>
+      <div class="header-text-col">
+        <p class="category-label">Book Review &nbsp;·&nbsp; Philosophy of Mind</p>
+        <h1 class="book-title">A World Appears</h1>
+        <p class="book-subtitle">A Journey into Consciousness</p>
+        <div class="gold-rule"></div>
+        <p class="author-byline">by <strong>Michael Pollan</strong> &nbsp;·&nbsp; Author of <em>How to Change Your Mind</em></p>
+        <p class="header-quote">Why does physical brain activity produce a "felt" experience? Pollan maps the most stubborn mystery in philosophy.</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- PHILOSOPHICAL CORE -->
+    <section class="intro-block">
+      <p class="section-eyebrow">The Philosophical Core</p>
+      <h2 class="section-title">The Hard Problem of Consciousness</h2>
+      <p>At the heart of the book is what philosopher David Chalmers famously termed "The Hard Problem of Consciousness." This problem seeks to explain how and why physical processes in the brain give rise to <em>qualia</em> — our subjective, first-person experiences.</p>
+
+      <div class="callout">
+        <p><strong>Notable</strong>David Chalmers has credited a 1990 conference in San Francisco, organized by the Bhaktivedanta Institute, as a pivotal moment that encouraged his career-long journey into consciousness studies.</p>
+      </div>
+
+      <p>Pollan treats the Hard Problem as a central, unresolved puzzle. He surveys a landscape of competing theories, including <strong>panpsychism</strong> — the idea that consciousness is a fundamental feature of all matter — and <strong>idealism</strong>, the belief that reality is mentally constructed. However, Pollan remains grounded in a secular perspective, notably stopping short of considering the possibility of life after death.</p>
+    </section>
+
+    <!-- FOUR PILLARS -->
+    <section class="pillars-section">
+      <p class="section-eyebrow">Structure &amp; Argument</p>
+      <h2 class="section-title">Four Pillars of Pollan's Inquiry</h2>
+      <p>Pollan organizes his exploration around four key themes that move from foundational questions toward the limits of current knowledge.</p>
+
+      <ol class="pillar-list">
+        <li class="pillar-item">
+          <span class="pillar-number">I</span>
+          <div class="pillar-content">
+            <h4>Framing the Mystery</h4>
+            <p>He asks the foundational question: why does physical brain activity produce a "felt" experience? Why aren't we simply "mindless machines" — or philosophical zombies — performing tasks without an inner life?</p>
+          </div>
+        </li>
+        <li class="pillar-item">
+          <span class="pillar-number">II</span>
+          <div class="pillar-content">
+            <h4>Surveying the Landscape</h4>
+            <p>He navigates neuroscientific, philosophical, and idealist perspectives. Rather than endorsing a single answer, he argues that solving the mystery may require us to rethink our most basic assumptions about the nature of reality.</p>
+          </div>
+        </li>
+        <li class="pillar-item">
+          <span class="pillar-number">III</span>
+          <div class="pillar-content">
+            <h4>The Four Dimensions</h4>
+            <p>Pollan breaks down consciousness into four distinct categories: <em>sentience, feeling, thought,</em> and <em>selfhood</em>. This exploratory framework provides a map of internal experience rather than a biological explanation for it.</p>
+          </div>
+        </li>
+        <li class="pillar-item">
+          <span class="pillar-number">IV</span>
+          <div class="pillar-content">
+            <h4>The Limits of Science</h4>
+            <p>He highlights the vast "known unknowns," suggesting that consciousness might be a phenomenon that current scientific methodology is not yet fully equipped to measure or explain.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- PULL QUOTE -->
+    <blockquote class="pull-quote">
+      <p>Solving the mystery of consciousness may require us to rethink our most basic assumptions about the nature of reality itself.</p>
+    </blockquote>
+
+    <!-- METAPHYSICAL LIMITATIONS -->
+    <section class="content-section">
+      <p class="section-eyebrow">Critical Perspective</p>
+      <h2 class="section-title">Metaphysical Limitations</h2>
+      <p>Pollan describes himself as "spiritual but not religious," finding significant common ground with Buddhist philosophy — particularly the practice of de-centering the ego. His engagement with meditative and psychedelic experience lends the book a rare first-person urgency.</p>
+      <p>However, some readers may find that his explicit rejection of the "soul" and the possibility of post-mortem existence limits the depth of his metaphysical analysis. By tethering consciousness so closely to the living biological form, he arguably closes off some of the more radical spiritual avenues he otherwise explores.</p>
+    </section>
+
+    <!-- BOTTOM LINE -->
+    <div class="bottom-line">
+      <p class="section-eyebrow">The Verdict</p>
+      <p>Pollan doesn't claim to "solve" the Hard Problem. Instead, he brilliantly illuminates <em>why</em> the problem is so stubborn. By surveying the current theoretical landscape and sharing his own meditative and psychedelic insights, he invites readers to reconsider their assumptions about where the mind ends and the world begins.</p>
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; 2025 &nbsp;·&nbsp; Book Review &nbsp;·&nbsp; All rights reserved
+  </footer>
+
+</body>
+</html>
