@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BIHS — Becoming a Licensed Institution</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1a2a5e;
+      --gold: #b5973a;
+      --text: #2c2c2c;
+      --text-soft: #555;
+      --border: #d8d4cc;
+      --bg: #ffffff;
+      --bg-light: #f8f7f4;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    /* ── TOP BAR ── */
+    .topbar {
+      border-bottom: 1px solid var(--border);
+      padding: 12px 40px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+
+    .topbar strong {
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .topbar-sep { color: var(--border); }
+
+    /* ── HEADER ── */
+    header {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 56px 40px 40px;
+      border-bottom: 2px solid var(--navy);
+    }
+
+    .header-img {
+      width: 100%;
+      max-width: 620px;
+      display: block;
+      margin: 0 auto 40px;
+    }
+
+    .issue-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-family: 'Merriweather', serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .deck {
+      font-family: 'Merriweather', serif;
+      font-size: 1.1rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--text-soft);
+      margin-bottom: 0;
+    }
+
+    /* ── MAIN ── */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 40px 80px;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    h2 {
+      font-family: 'Merriweather', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 18px;
+    }
+
+    p {
+      color: var(--text-soft);
+      margin-bottom: 1.1em;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    /* ── ROADMAP STEPS ── */
+    .roadmap {
+      margin-top: 8px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 0;
+      border-top: 1px solid var(--border);
+      padding: 20px 0;
+    }
+
+    .step:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .step-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--navy);
+      padding-right: 24px;
+      padding-top: 2px;
+    }
+
+    .step-label span {
+      display: block;
+      font-family: 'Merriweather', serif;
+      font-size: 0.85rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--gold);
+      letter-spacing: 0;
+      text-transform: none;
+      margin-top: 4px;
+    }
+
+    .step-body h4 {
+      font-family: 'Merriweather', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .step-body p {
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    /* ── WHAT WE BUILT ── */
+    .built-list {
+      list-style: none;
+      margin-top: 8px;
+    }
+
+    .built-list li {
+      padding: 10px 0 10px 20px;
+      border-top: 1px solid var(--border);
+      font-size: 0.97rem;
+      color: var(--text-soft);
+      position: relative;
+    }
+
+    .built-list li:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .built-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* ── QUOTE ── */
+    .closing-quote {
+      background: var(--bg-light);
+      border-left: 3px solid var(--navy);
+      padding: 28px 32px;
+      margin-top: 48px;
+    }
+
+    .closing-quote p {
+      font-family: 'Merriweather', serif;
+      font-size: 1rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .closing-quote cite {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      font-style: normal;
+      color: var(--navy);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 2px solid var(--navy);
+      padding: 24px 40px;
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12.5px;
+      color: var(--text-soft);
+    }
+
+    footer strong { color: var(--navy); }
+    footer a { color: var(--gold); text-decoration: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .topbar { padding: 10px 20px; flex-wrap: wrap; gap: 6px; }
+      header, main { padding-left: 20px; padding-right: 20px; }
+      .step { grid-template-columns: 1fr; gap: 6px; }
+      .step-label { padding-right: 0; }
+      footer { flex-direction: column; gap: 8px; text-align: center; padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <strong>Bhaktivedanta Institute for Higher Studies</strong>
+    <span class="topbar-sep">|</span>
+    <span>Newsletter</span>
+    <span class="topbar-sep">|</span>
+    <span>March 2026</span>
+  </div>
+
+  <header>
+    <img class="header-img" src="img/Accreditation.jpg" alt="Bhaktivedanta Institute for Higher Studies — Academic Catalog" />
+    <p class="issue-label">Institutional Update</p>
+    <h1>Becoming a Licensed Institution — Here is What That Means for You</h1>
+    <p class="deck">Our Six-Year Journey Toward Full Academic Accreditation</p>
+  </header>
+
+  <main>
+
+    <section>
+      <p>Something significant is happening at BIHS — and we want our community to be the first to know.</p>
+      <p>The Bhaktivedanta Institute for Higher Studies is preparing to apply for a Florida State License through the Commission for Independent Education — the first formal step toward becoming a fully accredited degree-granting institution. This is not a distant dream. This is an active plan with a clear timeline, and it is already underway.</p>
+    </section>
+
+    <section>
+      <h2>Why This Matters</h2>
+      <p>For years BIHS has offered rigorous scholarly programming — conferences, seminars, courses, and symposia — to a growing global community. What we are building now is something more permanent. A licensed, accredited institution where the intersection of science, philosophy, and Vedic wisdom is not just a conversation — it is a curriculum. A degree. A credential recognized by the academic world.</p>
+      <p>This means that one day — sooner than you might think — a student will be able to earn a Bachelor of Arts, a Master of Arts, or even a PhD in Consciousness Studies from the Bhaktivedanta Institute for Higher Studies. That student could be you. That student could be your child.</p>
+    </section>
+
+    <section>
+      <h2>The Roadmap</h2>
+      <p>Our path to full accreditation follows a clear and proven sequence:</p>
+      <div class="roadmap">
+        <div class="step">
+          <div class="step-label">Step 1<span>2026</span></div>
+          <div class="step-body">
+            <h4>Florida State License</h4>
+            <p>We are preparing to apply this year to the Florida Commission for Independent Education. This license gives BIHS legal authority to operate as an official educational institution and issue certificates. We expect to have this in place by the end of 2026.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-label">Step 2<span>2027–2028</span></div>
+          <div class="step-body">
+            <h4>DEAC Accreditation</h4>
+            <p>The Distance Education Accrediting Commission is a US Department of Education recognized accreditor specializing in online institutions. DEAC accreditation gives BIHS national recognition and the authority to offer accredited online degrees.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-label">Step 3<span>2029–2032</span></div>
+          <div class="step-body">
+            <h4>SACSCOC Regional Accreditation</h4>
+            <p>The Southern Association of Colleges and Schools Commission on Colleges is the gold standard of academic accreditation in the American Southeast. SACSCOC accreditation opens the door to Bachelor's, Master's, and PhD programs fully recognized across the United States and internationally.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>What We Have Already Built</h2>
+      <p>We are not starting from scratch. BIHS already has:</p>
+      <ul class="built-list">
+        <li>Seven years of academic programming since 2019</li>
+        <li>181 active participants in our current pilot program</li>
+        <li>90% doctoral faculty — internationally recognized scholars</li>
+        <li>A full Canvas learning management system</li>
+        <li>A formal Academic Catalog designed to accreditation standards</li>
+        <li>A historic headquarters in Gainesville, Florida with a 6,000-volume research library</li>
+        <li>A clear institutional mission and governance structure</li>
+      </ul>
+      <p style="margin-top: 18px;">The foundation is already here. What we are doing now is formalizing it.</p>
+    </section>
+
+    <section>
+      <h2>How You Can Help</h2>
+      <p>This journey requires resources — faculty, technology, administration, and legal counsel. Every donation to BIHS is an investment in something that will outlast all of us — a permanent academic home for the study of consciousness, philosophy, and the Vedic tradition in the Western world.</p>
+    </section>
+
+    <div class="closing-quote">
+      <p>"We are very close to applying for our state license. I keep working toward it every day. What we are building together will serve this community and the world for generations."</p>
+      <cite>— Monica Dabos, PhD, Associate Director, BIHS</cite>
+    </div>
+
+  </main>
+
+  <footer>
+    <strong>Bhaktivedanta Institute for Higher Studies</strong>
+    <a href="https://bihs.org">bihs.org</a>
+  </footer>
+
+</body>
+</html>
