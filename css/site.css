@@ -880,7 +880,9 @@ h1, h2 {
   width: 48px; height: 1px; background: #c9a84c; margin-bottom: 1.4rem;
 }
 .cs-hero .btn-cs-primary {
-  background: #c9a84c; color: #001f3f; font-size: 0.78rem; font-weight: 700;
+   background: #ffffff;       /* change from #c9a84c */
+  color: #0d1b2e;    
+  font-size: 0.78rem; font-weight: 700;
   padding: 11px 24px; border-radius: 3px; text-transform: uppercase;
   letter-spacing: 0.1em; text-decoration: none; display: inline-block;
 }
@@ -898,7 +900,7 @@ h1, h2 {
   .hero-banner {
     /* Increases top space to 13rem on big screens */
     /* You can change 13rem to 15rem if you need it even lower */
-    padding-top: 13rem !important; 
+    padding-top: 10rem !important; 
     .cs-hero {
     padding-top: 5.5rem !important;  /* ← ADD THIS LINE */
   }
