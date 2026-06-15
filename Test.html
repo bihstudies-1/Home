@@ -7,9 +7,133 @@
   <meta name="description" content="Explore courses, workshops, and training from the Bhaktivedanta Institute for Higher Studies.">
   <link rel="stylesheet" href="css/site.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-<style>
- /* ─── QUOTE BAND ─────────────────────────────────────────────────── */
+ <style>
+/* ─── PAGE-SCOPED TOKENS ─────────────────────────────────────────── */
+    .cs-page {
+      --navy:      #001f3f;
+      --navy-mid:  #0a3460;
+      --gold:      #c8972b;
+      --gold-lt:   #f0d898;
+      --cream:     #faf8f3;
+      --sky:       #edf2f8;
+      --text:      #1a1a2e;
+      --muted:     #5a6070;
+      --radius:    10px;
+      --shadow:    0 2px 16px rgba(0,31,63,.10);
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+    }
+    .cs-page h1, .cs-page h2, .cs-page h3, .cs-page h4 {
+      font-family: 'EB Garamond', Georgia, serif;
+      line-height: 1.25;
+    }
+
+    /* ─── HERO ───────────────────────────────────────────────────────── */
+    .cs-hero {
+      position: relative;
+      background: var(--navy);
+      padding: 72px 24px 64px;
+      text-align: center;
+      overflow: hidden;
+    }
+    .cs-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 60% 40%, rgba(200,151,43,.18) 0%, transparent 65%),
+                  radial-gradient(ellipse at 20% 80%, rgba(10,52,96,.6) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .cs-hero-inner {
+      position: relative;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .cs-hero-eyebrow {
+      display: inline-block;
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(200,151,43,.4);
+      border-radius: 20px;
+      padding: 5px 14px;
+      margin-bottom: 20px;
+    }
+    .cs-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: #fff;
+      margin: 0 0 10px;
+    }
+    .cs-hero h2 {
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      color: var(--gold-lt);
+      font-weight: 400;
+      font-style: italic;
+      margin: 0 0 28px;
+    }
+    .cs-hero-rule {
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin: 0 auto 28px;
+    }
+    .cs-hero-tagline {
+      font-size: 1rem;
+      color: rgba(255,255,255,.82);
+      margin-bottom: 36px;
+      line-height: 1.6;
+    }
+    .cs-hero-tagline strong { color: #fff; }
+
+    /* Hero CTA buttons */
+    .cs-hero-btns {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .cs-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: 'Inter', sans-serif;
+      font-size: .95rem;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: background .2s, transform .15s;
+      border: none;
+    }
+    .cs-btn-primary:hover { background: #d9a83a; transform: translateY(-2px); }
+    .cs-btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: .95rem;
+      font-weight: 600;
+      padding: 13px 28px;
+      border-radius: var(--radius);
+      border: 2px solid rgba(255,255,255,.55);
+      text-decoration: none;
+      transition: border-color .2s, background .2s, transform .15s;
+    }
+    .cs-btn-outline:hover {
+      border-color: #fff;
+      background: rgba(255,255,255,.08);
+      transform: translateY(-2px);
+    }
+
+    /* ─── QUOTE BAND ─────────────────────────────────────────────────── */
     .cs-quote-band {
       background: var(--cream);
       padding: 48px 24px;
@@ -35,8 +159,89 @@
       letter-spacing: .04em;
     }
 
+    /* ─── SECTION WRAPPER ────────────────────────────────────────────── */
+    .cs-section {
+      padding: 64px 24px;
+    }
+    .cs-section--alt { background: var(--sky); }
+    .cs-section--dark { background: var(--navy); color: #fff; }
+    .cs-section--cream { background: var(--cream); }
+    .cs-container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .cs-section-label {
+      font-family: 'Inter', sans-serif;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .cs-section-title {
+      font-size: clamp(1.5rem, 3vw, 2.1rem);
+      margin: 0 0 14px;
+      color: var(--navy);
+    }
+    .cs-section--dark .cs-section-title { color: #fff; }
+    .cs-section-lead {
+      font-size: 1.1rem;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 660px;
+    }
+    .cs-section--dark .cs-section-lead { color: rgba(255,255,255,.72); }
 
-/* ─── GLANCE ROW ─────────────────────────────────────────────────── */
+    /* ─── NOTICE BOX ─────────────────────────────────────────────────── */
+    .cs-notice {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: #fff;
+      border: 1px solid #d9e6f0;
+      border-left: 4px solid var(--gold);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 14px 18px;
+      font-size: .9rem;
+      color: var(--muted);
+      max-width: 720px;
+      margin: 24px auto 0;
+    }
+    .cs-notice i { color: var(--gold); margin-top: 2px; flex-shrink: 0; }
+
+    /* ─── WHAT YOU'LL EXPLORE ────────────────────────────────────────── */
+    .cs-pillars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 36px;
+    }
+    .cs-pillar {
+      background: #fff;
+      border-radius: var(--radius);
+      border: 1px solid #e0e8f2;
+      padding: 30px 24px;
+      box-shadow: var(--shadow);
+    }
+    .cs-pillar-icon {
+      margin-bottom: 16px;
+    }
+    .cs-pillar-icon i { color: var(--gold); font-size: 1.7rem; }
+    .cs-pillar h4 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0 0 10px;
+      color: var(--navy);
+    }
+    .cs-pillar p {
+      font-size: .97rem;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* ─── GLANCE ROW ─────────────────────────────────────────────────── */
     .cs-glance-row {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -71,7 +276,8 @@
       line-height: 1.5;
     }
     .cs-glance-card ul li:last-child { border-bottom: none; }
-/* ─── ACTIVE UNIT SECTION ────────────────────────────────────────── */
+
+    /* ─── ACTIVE UNIT SECTION ────────────────────────────────────────── */
     .cs-active-badge {
       display: inline-flex;
       align-items: center;
@@ -219,7 +425,260 @@
       border-radius: 50%;
       margin-right: 4px;
     }
-</style>
+
+    /* ─── CTA BAND ───────────────────────────────────────────────────── */
+    .cs-cta-band {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      padding: 52px 24px;
+      text-align: center;
+    }
+    .cs-cta-band h3 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      color: #fff;
+      margin: 0 0 10px;
+    }
+    .cs-cta-band p {
+      color: rgba(255,255,255,.72);
+      font-size: .98rem;
+      margin: 0 0 32px;
+    }
+    .cs-donation-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 640px;
+      margin: 0 auto 28px;
+    }
+    @media (max-width: 560px) {
+      .cs-donation-cards { grid-template-columns: 1fr; }
+    }
+    .cs-donation-card {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      text-align: left;
+    }
+    .cs-donation-card h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin: 0 0 6px;
+    }
+    .cs-donation-card .price {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .cs-donation-card .price span {
+      font-size: 1rem;
+      font-weight: 400;
+      color: rgba(255,255,255,.6);
+    }
+    .cs-donation-card p {
+      font-size: .83rem;
+      color: rgba(255,255,255,.65);
+      line-height: 1.5;
+      margin: 0 0 16px;
+    }
+    .cs-btn-sm {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: .85rem;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: .2s;
+    }
+    .cs-btn-sm.gold {
+      background: var(--gold);
+      color: var(--navy);
+    }
+    .cs-btn-sm.gold:hover { background: #d9a83a; }
+    .cs-btn-sm.outline-white {
+      background: transparent;
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,.5);
+    }
+    .cs-btn-sm.outline-white:hover { border-color: #fff; background: rgba(255,255,255,.07); }
+
+    .cs-cta-also {
+      font-size: .85rem;
+      color: rgba(255,255,255,.5);
+    }
+    .cs-cta-also a {
+      color: var(--gold-lt);
+      text-decoration: underline;
+    }
+
+    /* ─── PAST UNITS ─────────────────────────────────────────────────── */
+    .cs-past-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .cs-past-card {
+      background: #fff;
+      border-radius: var(--radius);
+      border: 1px solid #dde6f0;
+      padding: 18px 18px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      box-shadow: 0 1px 6px rgba(0,31,63,.06);
+    }
+    .cs-past-unit-label {
+      font-family: 'Inter', sans-serif;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .cs-past-card h4 {
+      font-size: 1.05rem;
+      color: var(--navy);
+      margin: 0;
+    }
+    .cs-past-card .faculty {
+      font-size: .88rem;
+      color: var(--muted);
+    }
+    .cs-past-card .dates {
+      font-size: .83rem;
+      color: #8899aa;
+    }
+    .cs-past-card .on-demand {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-family: 'Inter', sans-serif;
+      font-size: .75rem;
+      font-weight: 600;
+      color: var(--navy-mid);
+      background: var(--sky);
+      border-radius: 6px;
+      padding: 4px 10px;
+      margin-top: 4px;
+      width: fit-content;
+    }
+    .cs-past-card .on-demand i { font-size: .7rem; color: var(--gold); }
+
+    /* Past unit card variants — muted steel header */
+    .cs-unit-card-header--past {
+      background: #3a4f63;
+    }
+    .cs-unit-card--past .cs-unit-number {
+      color: #a8c0d6;
+    }
+    .cs-unit-card--past .cs-unit-faculty {
+      color: rgba(255,255,255,.55);
+    }
+
+    /* On-demand badge */
+    .cs-on-demand-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #e8f4ec;
+      color: #2e6b42;
+      font-family: 'Inter', sans-serif;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .05em;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+    .cs-on-demand-badge i { font-size: .85rem; }
+
+    /* Topic bullet list inside past cards */
+    .cs-topic-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .cs-topic-list li {
+      font-size: .93rem;
+      color: var(--muted);
+      padding: 7px 0 7px 18px;
+      border-bottom: 1px solid #f0f4f8;
+      line-height: 1.5;
+      position: relative;
+    }
+    .cs-topic-list li:last-child { border-bottom: none; }
+    .cs-topic-list li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .cs-topic-list li strong {
+      color: var(--navy);
+      font-weight: 600;
+    }
+    .cs-outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .cs-outcome-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .cs-outcome-item i {
+      color: var(--gold);
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+    .cs-outcome-item p {
+      font-size: .98rem;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* ─── CERT BAND ──────────────────────────────────────────────────── */
+    .cs-cert-band {
+      background: var(--cream);
+      border-top: 1px solid #e2ddd4;
+      border-bottom: 1px solid #e2ddd4;
+      padding: 40px 24px;
+      text-align: center;
+    }
+    .cs-cert-inner {
+      max-width: 660px;
+      margin: 0 auto;
+    }
+    .cs-cert-band h3 {
+      font-size: 1.4rem;
+      color: var(--navy);
+      margin: 0 0 10px;
+    }
+    .cs-cert-band p {
+      font-size: .9rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin: 0;
+    }
+    .cs-cert-band em {
+      display: block;
+      margin-top: 12px;
+      font-size: .82rem;
+      color: #99a0ad;
+    }
+  </style>
 </head>
 <body class="cs-page">
 
