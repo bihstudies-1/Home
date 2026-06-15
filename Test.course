@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Courses | BIHS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore courses, workshops, and training from the Bhaktivedanta Institute for Higher Studies.">
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+<style>
+ /* ─── QUOTE BAND ─────────────────────────────────────────────────── */
+    .cs-quote-band {
+      background: var(--cream);
+      padding: 48px 24px;
+      text-align: center;
+      border-bottom: 1px solid #e8e2d6;
+    }
+    .cs-quote-band blockquote {
+      max-width: 720px;
+      margin: 0 auto;
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+      font-style: italic;
+      color: #2c3060;
+      line-height: 1.75;
+    }
+    .cs-quote-band cite {
+      display: block;
+      margin-top: 14px;
+      font-family: 'Inter', sans-serif;
+      font-size: .82rem;
+      font-style: normal;
+      color: var(--muted);
+      letter-spacing: .04em;
+    }
+
+
+/* ─── GLANCE ROW ─────────────────────────────────────────────────── */
+    .cs-glance-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 36px;
+    }
+    .cs-glance-card {
+      background: #fff;
+      border-radius: var(--radius);
+      border: 1px solid #dde6f0;
+      padding: 22px 20px;
+      box-shadow: var(--shadow);
+    }
+    .cs-glance-card h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 12px;
+    }
+    .cs-glance-card ul {
+      margin: 0; padding: 0;
+      list-style: none;
+    }
+    .cs-glance-card ul li {
+      font-size: .93rem;
+      color: var(--text);
+      padding: 6px 0;
+      border-bottom: 1px solid #f0f4f8;
+      line-height: 1.5;
+    }
+    .cs-glance-card ul li:last-child { border-bottom: none; }
+/* ─── ACTIVE UNIT SECTION ────────────────────────────────────────── */
+    .cs-active-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #e8f5e9;
+      color: #2e7d32;
+      font-family: 'Inter', sans-serif;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .cs-active-badge::before {
+      content: '';
+      width: 7px; height: 7px;
+      background: #43a047;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: .4; }
+    }
+
+    .cs-unit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 32px;
+    }
+    @media (max-width: 700px) {
+      .cs-unit-grid { grid-template-columns: 1fr; }
+    }
+
+    .cs-unit-card {
+      background: #fff;
+      border-radius: 14px;
+      border: 1px solid #d8e4f0;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .cs-unit-card-header {
+      background: var(--navy);
+      padding: 20px 24px 16px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .cs-unit-card-header img {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .cs-unit-card-header-text {}
+    .cs-unit-number {
+      font-family: 'Inter', sans-serif;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 3px;
+    }
+    .cs-unit-card-header h3 {
+      font-size: 1.25rem;
+      color: #fff;
+      margin: 0 0 2px;
+    }
+    .cs-unit-faculty {
+      font-family: 'Inter', sans-serif;
+      font-size: .82rem;
+      color: rgba(255,255,255,.65);
+      margin: 0;
+    }
+    .cs-unit-card-body {
+      padding: 20px 24px;
+    }
+    .cs-unit-dates {
+      font-family: 'Inter', sans-serif;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--navy-mid);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .cs-unit-dates i { color: var(--gold); }
+
+    /* Session table */
+    .cs-session-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .84rem;
+    }
+    .cs-session-table thead tr {
+      background: var(--sky);
+    }
+    .cs-session-table th {
+      padding: 7px 10px;
+      text-align: left;
+      font-family: 'Inter', sans-serif;
+      font-size: .73rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 2px solid #d0dce8;
+    }
+    .cs-session-table td {
+      padding: 7px 10px;
+      vertical-align: middle;
+      border-bottom: 1px solid #edf2f8;
+      line-height: 1.4;
+      color: var(--text);
+    }
+    .cs-session-table tr:last-child td { border-bottom: none; }
+    .cs-session-table .date-cell {
+      font-weight: 700;
+      color: var(--navy);
+      white-space: nowrap;
+      border-right: 3px solid var(--gold);
+      font-size: .82rem;
+    }
+    .cs-session-table .part-cell {
+      font-weight: 600;
+      color: var(--navy-mid);
+      font-size: .82rem;
+    }
+    .cs-session-label {
+      display: inline-block;
+      background: var(--navy);
+      color: var(--gold);
+      font-family: 'Inter', sans-serif;
+      font-size: .7rem;
+      font-weight: 700;
+      width: 20px; height: 20px;
+      line-height: 20px;
+      text-align: center;
+      border-radius: 50%;
+      margin-right: 4px;
+    }
+</style>
+</head>
+<body class="cs-page">
+
+  <div id="header"></div>
+<main>
+<section class="hero-banner">
+  <div class="hero-overlay"></div> 
+      <div class="container hero-content">
+
+
+    <h1>Consciousness Studies</h1>
+    <h2>Ancient and Modern Perspectives</h2>
+
+    <div class="hero-rule"></div>
+
+    <p class="course-subtitle">
+      Units 5 &amp; 6 are open to new participants — join us for the Summer term beginning May 23.
+    </p>
+
+    <div class="hero-actions">
+     <a class="btn primary" href="https://bihstudies.org/donations-education.html" style="background: #ffffff; color: #001f3f; border: none; padding: 15px 30px; font-weight: bold;"> Participate Now </a>
+      
+      <a class="btn primary" href="https://bihstudies.instructure.com/login/canvas" style="background: #ffffff; color: #001f3f; border: none; padding: 15px 30px; font-weight: bold;">Access CANVAS</a>
+   
+    </div>
+
+  </div>
+</section>
+
+<!-- ② QUOTE -->
+    <section class="cs-quote-band">
+      <blockquote>
+        "It will be a great contribution to human society if this authorized information from the
+        Vedic literature is presented to the modern world on the basis of modern scientific understanding.
+        The fact is already there. It simply has to be presented for modern understanding."
+        <cite>— Śrīla Prabhupāda, Letter to Dr. Bigelow, January 20, 1971</cite>
+      </blockquote>
+      <div class="cs-notice">
+        <i class="fa-solid fa-circle-info"></i>
+        <span><strong>Avocational Program:</strong> This program is offered solely for personal enrichment and the joy of inquiry. It is not designed to qualify participants for employment in any field.</span>
+      </div>
+    </section>
+
+<!-- ④ COURSE AT A GLANCE -->
+    <section class="cs-section cs-section--cream">
+      <div class="cs-container">
+        <div class="cs-section-label">Course at a Glance</div>
+        <h2 class="cs-section-title">Format &amp; Schedule</h2>
+        <div class="cs-glance-row">
+          <div class="cs-glance-card">
+            <h4><i class="fa-solid fa-chalkboard-user" style="margin-right:6px;"></i>Format</h4>
+            <ul>
+              <li>Scholar-led sessions</li>
+              <li><strong>Saturdays, 10:00 AM EST</strong></li>
+              <li>Live Zoom — join from anywhere</li>
+              <li>Asynchronous access via Canvas</li>
+              <li>Certificate upon completion of each unit</li>
+            </ul>
+          </div>
+          <div class="cs-glance-card">
+            <h4><i class="fa-regular fa-calendar" style="margin-right:6px;"></i>Full-Year Schedule</h4>
+            <ul>
+              <li><strong>Spring (16 wks):</strong> Jan 10 – May 16</li>
+              <li>Spring break: March 1 – March 23</li>
+              <li><strong>Summer (8 wks):</strong> May 23 – July 11</li>
+              <li>All sessions recorded &amp; on demand</li>
+              <li>Completion window: through Dec 6, 2026</li>
+            </ul>
+          </div>
+          <div class="cs-glance-card">
+            <h4><i class="fa-solid fa-users" style="margin-right:6px;"></i>Who It Is For</h4>
+            <ul>
+              <li>Bhakti practitioners deepening their understanding</li>
+              <li>Anyone curious about consciousness &amp; science</li>
+              <li>Open to newcomers — no prerequisites</li>
+              <li>Join mid-course via Canvas catch-up</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+ <!-- ⑤ ACTIVE UNITS 5 & 6 -->
+    <section class="cs-section">
+      <div class="cs-container">
+        <div class="cs-active-badge">Now Open — Summer Term</div>
+        <div class="cs-section-label">The Atma Paradigm</div>
+        <h2 class="cs-section-title">Units 5 &amp; 6 — with Akhandadhi Das</h2>
+        <p class="cs-section-lead">
+          Two units exploring consciousness, matter, life, and the cosmos through Vedic metaphysics in dialogue with contemporary science. Join live or catch up on Canvas.
+        </p>
+
+        <div class="cs-unit-grid">
+
+          <!-- UNIT 5 -->
+          <div class="cs-unit-card">
+            <div class="cs-unit-card-header">
+              <img src="img/Akhand1.jpg" alt="Akhandadhi Das">
+              <div class="cs-unit-card-header-text">
+                <div class="cs-unit-number">Unit 5 · May 23 – June 13</div>
+                <h3>Consciousness &amp; Matter</h3>
+                <p class="cs-unit-faculty">Akhandadhi Das</p>
+              </div>
+            </div>
+            <div class="cs-unit-card-body">
+              <div class="cs-unit-dates">
+                <i class="fa-regular fa-calendar-check"></i> Every Saturday, 10:00 AM EST
+              </div>
+              <table class="cs-session-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Session</th>
+                    <th colspan="2">Topics</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="date-cell" rowspan="2">May 23</td>
+                    <td class="part-cell" rowspan="2">Consciousness<br>Part One</td>
+                    <td><span class="cs-session-label">A</span></td>
+                    <td>Axioms of consciousness</td>
+                  </tr>
+                  <tr>
+                    <td><span class="cs-session-label">B</span></td>
+                    <td>Why consciousness is the Hard Problem of Science</td>
+                  </tr>
+                  <tr>
+                    <td class="date-cell" rowspan="2">May 30</td>
+                    <td class="part-cell" rowspan="2">Consciousness<br>Part Two</td>
+                    <td><span class="cs-session-label">A</span></td>
+                    <td>Three-aspect Holism: a model of conscious experience</td>
+                  </tr>
+                  <tr>
+                    <td><span class="cs-session-label">B</span></td>
+                    <td>Free will, intention and agency</td>
+                  </tr>
+                  <tr>
+                    <td class="date-cell" rowspan="2">June 6</td>
+                    <td class="part-cell" rowspan="2">Matter &amp; Reality<br>Part One</td>
+                    <td><span class="cs-session-label">A</span></td>
+                    <td>What's out there?</td>
+                  </tr>
+                  <tr>
+                    <td><span class="cs-session-label">B</span></td>
+                    <td>Qualitative modelling of external reality</td>
+                  </tr>
+                  <tr>
+                    <td class="date-cell" rowspan="2">June 13</td>
+                    <td class="part-cell" rowspan="2">Matter &amp; Reality<br>Part Two</td>
+                    <td><span class="cs-session-label">A</span></td>
+                    <td>Interaction of consciousness and matter</td>
+                  </tr>
+                  <tr>
+                    <td><span class="cs-session-label">B</span></td>
+                    <td>Matter: Energy &amp; Information manipulated by Time</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- UNIT 6 -->
+          <div class="cs-unit-card">
+            <div class="cs-unit-card-header">
+              <img src="img/Akhand1.jpg" alt="Akhandadhi Das">
+              <div class="cs-unit-card-header-text">
+                <div class="cs-unit-number">Unit 6 · June 20 – July 11</div>
+                <h3>Life, Cosmos &amp; Beyond</h3>
+                <p class="cs-unit-faculty">Akhandadhi Das</p>
+              </div>
+            </div>
+            <div class="cs-unit-card-body">
+              <div class="cs-unit-dates">
+                <i class="fa-regular fa-calendar-check"></i> Every Saturday, 10:00 AM EST
+              </div>
+              <table class="cs-session-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Session</th>
+                    <th colspan="2">Topics</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="date-cell" rowspan="2">June 20</td>
+                    <td class="part-cell" rowspan="2">Life<br>Part One</td>
+                    <td><span class="cs-session-label">A</span></td>
+                    <td>What is Life? Did it arise from inert chemistry?</td>
+                  </tr>
+                  <tr>
+                    <td><span class="cs-session-label">B</span></td>
+                    <td>Critique of the evidence for trans-species evolution</td>
+                  </tr>
+                  <tr>
+                    <td class="date-cell" rowspan="2">June 27</td>
+                    <td class="part-cell" rowspan="2">Life<br>Part Two</td>
+                    <td><span class="cs-session-label">A</span></td>
+                    <td>A Vedic perspective of nature, life &amp; species</td>
+                  </tr>
+                  <tr>
+                    <td><span class="cs-session-label">B</span></td>
+                    <td>Neither Myth nor Magic: How species appear on Earth</td>
+                  </tr>
+                  <tr>
+                    <td class="date-cell" rowspan="2">July 4</td>
+                    <td class="part-cell" rowspan="2">Cosmos &amp; Beyond<br>Part One</td>
+                    <td><span class="cs-session-label">A</span></td>
+                    <td>What's at time, t = 0. A universe of information.</td>
+                  </tr>
+                  <tr>
+                    <td><span class="cs-session-label">B</span></td>
+                    <td>Metaphysics of a consciousness-based universe</td>
+                  </tr>
+                  <tr>
+                    <td class="date-cell" rowspan="2">July 11</td>
+                    <td class="part-cell" rowspan="2">Cosmos &amp; Beyond<br>Part Two</td>
+                    <td><span class="cs-session-label">A</span></td>
+                    <td>Maya VR and the free state of consciousness</td>
+                  </tr>
+                  <tr>
+                    <td><span class="cs-session-label">B</span></td>
+                    <td>Nature of the source: inert or conscious?</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div><!-- /cs-unit-grid -->
+      </div>
+    </section>
+ </main>
+      <div id="footer"></div>
+
+  <script src="js/site.js"></script>
+</body>
+  
+</html>
+
