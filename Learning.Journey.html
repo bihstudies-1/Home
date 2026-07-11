@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Learning Journey | BIHS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Celebrating the inaugural BIHS Consciousness Studies cohort and the learning journey that continues.">
+
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    /* ============================================================
+       Learning Journey page — scoped additions only.
+       Everything below reuses BIHS tokens/patterns from site.css
+       (--bihs-navy, --bihs-gold family, shadows, radii). Nothing
+       here introduces a new palette or font stack.
+       ============================================================ */
+
+    /* Small gold eyebrow label, same visual language as .unit-badge */
+    .lj-eyebrow {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #eebb4d;
+      margin-bottom: 0.6rem;
+    }
+    .lj-eyebrow.on-light { color: var(--bihs-navy); opacity: 0.85; }
+
+    /* Certificate section */
+    .lj-cert-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2.5rem;
+      align-items: center;
+      margin-top: 1.5rem;
+    }
+    @media (max-width: 800px) {
+      .lj-cert-grid { grid-template-columns: 1fr; }
+    }
+    .lj-cert-card {
+      background: #fff;
+      border: 1px solid #e1eaf7;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+    .lj-cert-card .card-icon { color: #eebb4d; margin-bottom: 0.75rem; }
+    .lj-cert-card h4 {
+      color: var(--bihs-navy-900);
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      border-bottom: 2px solid #eebb4d;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    .lj-cert-card p { color: var(--muted); margin-bottom: 0; }
+
+    /* Course cards — reuse .hybrid-card visual language, no author photo */
+    .hybrid-card.no-photo .card-content { padding-top: 24px; }
+
+    /* Shared endeavor / thank-you band */
+    .lj-thanks {
+      background: var(--bihs-navy);
+      color: #fff;
+    }
+    .lj-thanks .container { max-width: 780px; text-align: center; }
+    .lj-thanks p { color: rgba(255,255,255,0.85); line-height: 1.85; }
+    .lj-thanks h2 { color: #fff; }
+    .lj-thanks .btn-outline-light {
+      background: transparent;
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 10px 24px;
+      border-radius: 3px;
+      border: 1px solid rgba(255,255,255,0.45);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .lj-thanks .btn-outline-light:hover { background: rgba(255,255,255,0.1); text-decoration: none; }
+
+    /* Closing quote */
+    .lj-closing { text-align: center; padding: 3.5rem 0; }
+    .lj-closing blockquote {
+      font-family: Georgia, "Times New Roman", serif;
+      font-style: italic;
+      font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+      color: var(--bihs-navy-900);
+      max-width: 760px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+    .lj-closing p { max-width: 640px; margin: 1.25rem auto 0; }
+  </style>
+</head>
+
+<body>
+  <div id="header"></div>
+
+  <main>
+
+    <!-- Hero: reuses the existing .hero-banner.cs-hero pattern already
+         built for the Consciousness Studies course page -->
+    <section class="hero-banner cs-hero">
+      <div class="container">
+        <div class="hero-content">
+          <p class="hero-institution">Inaugural Cohort · 2026</p>
+          <div class="hero-rule"></div>
+          <h1>The Learning Journey</h1>
+          <h2>Celebrating Six Months of Inquiry, Dialogue &amp; Discovery</h2>
+          <p class="course-subtitle">
+            Thank you for being part of the inaugural BIHS Consciousness Studies course —
+            a six-month journey exploring consciousness, philosophy, science, metaphysics,
+            cosmology, and the nature of reality.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Message to participants + stats -->
+    <section class="feature-block">
+      <div class="container">
+        <span class="lj-eyebrow on-light">A Message to Our Participants</span>
+        <h2>Congratulations — and thank you.</h2>
+        <p class="lead">
+          From January through July, you brought your curiosity, thoughtful questions,
+          reflections, and commitment to this shared educational journey. Whether you
+          participated live, continued through the recordings, completed every assignment,
+          or are still progressing at your own pace, your presence helped create a meaningful
+          community of inquiry.
+        </p>
+
+        <div class="course-details-grid">
+          <div class="detail-card">
+            <div class="price-tag">6</div>
+            <div class="price-sub">Learning Units</div>
+          </div>
+          <div class="detail-card">
+            <div class="price-tag">6</div>
+            <div class="price-sub">Months Together</div>
+          </div>
+          <div class="detail-card">
+            <div class="price-tag">5</div>
+            <div class="price-sub">Course Faculty</div>
+          </div>
+          <div class="detail-card">
+            <div class="price-tag">1</div>
+            <div class="price-sub">Shared Journey</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificate of completion -->
+    <section class="summary-block">
+      <div class="container">
+        <span class="lj-eyebrow on-light">Recognizing Your Work</span>
+        <h2>Your Certificate of Completion</h2>
+
+        <div class="lj-cert-grid">
+          <div>
+            <p class="lead">
+              Participants who complete the full course requirements will receive the
+              BIHS Consciousness Studies Certificate of Completion. Many of you are
+              already very close, and those who are still completing assignments may
+              continue working through the course until <strong>December 6, 2026</strong>.
+            </p>
+
+            <div class="course-unit">
+              <p style="margin:0; color:#374151;">
+                This is a non-credit enrichment course for personal and intellectual
+                development. Certificates recognize participation and completion and do
+                not constitute academic credit or a postsecondary credential.
+              </p>
+            </div>
+          </div>
+
+          <div class="lj-cert-card">
+            <div class="card-icon"><i class="fa-solid fa-award fa-2x"></i></div>
+            <h4>Consciousness Studies</h4>
+            <p>Presented in recognition of successful completion of the full six-month learning journey.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fall 2026 courses -->
+    <section class="feature-block">
+      <div class="container">
+        <span class="lj-eyebrow on-light">Fall 2026</span>
+        <h2>Where will your learning journey take you next?</h2>
+        <p class="lead">
+          Four new non-credit enrichment courses are being prepared for those who wish
+          to continue learning with BIHS. Additional information and registration details
+          will be shared soon.
+        </p>
+
+        <div class="faculty-hybrid-grid">
+          <article class="hybrid-card no-photo">
+            <div class="hybrid-header-pattern"></div>
+            <div class="card-content">
+              <span class="unit-badge">Course 01</span>
+              <h3>Biology and Consciousness</h3>
+              <p class="faculty-name-sub">Life, Mind, and the Living World</p>
+              <p>
+                Explore questions at the intersection of biology, consciousness,
+                philosophy of biology, and the nature of living systems.
+              </p>
+              <p class="faculty-name-sub" style="font-style:normal; margin-bottom:0;">
+                Dr. Nitika Parmar &middot; Fall 2026
+              </p>
+            </div>
+          </article>
+
+          <article class="hybrid-card no-photo">
+            <div class="hybrid-header-pattern"></div>
+            <div class="card-content">
+              <span class="unit-badge">Course 02</span>
+              <h3>Transformative Communications</h3>
+              <p class="faculty-name-sub">Dialogue, Leadership, and Meaningful Change</p>
+              <p>
+                Develop practical approaches to communication, dialogue, and leadership
+                that support understanding, collaboration, and constructive transformation.
+              </p>
+              <p class="faculty-name-sub" style="font-style:normal; margin-bottom:0;">
+                Dr. Halida Đonlagić Đapić &middot; Fall 2026
+              </p>
+            </div>
+          </article>
+
+          <article class="hybrid-card no-photo">
+            <div class="hybrid-header-pattern"></div>
+            <div class="card-content">
+              <span class="unit-badge">Course 03</span>
+              <h3>Philosophy in Dialogue</h3>
+              <p class="faculty-name-sub">Reasoning, Debate, and the Search for Truth</p>
+              <p>
+                Strengthen philosophical reasoning, learn to examine arguments carefully,
+                and engage disagreement through thoughtful, respectful dialogue.
+              </p>
+              <p class="faculty-name-sub" style="font-style:normal; margin-bottom:0;">
+                Shivanand Sharma &middot; Beginning in September
+              </p>
+            </div>
+          </article>
+
+          <article class="hybrid-card no-photo">
+            <div class="hybrid-header-pattern highlight-pattern"></div>
+            <div class="card-content">
+              <span class="unit-badge highlight-badge">Course 04</span>
+              <h3>Vaishnava Tradition in the West</h3>
+              <p class="faculty-name-sub">History, Culture, and Global Influence</p>
+              <p>
+                Examine the development, transmission, and cultural impact of the
+                Vaishnava tradition in modern Western contexts.
+              </p>
+              <p class="faculty-name-sub" style="font-style:normal; margin-bottom:0;">
+                Dr. Angela Burt &middot; Fall 2026
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shared endeavor / thank you -->
+    <section class="section lj-thanks">
+      <div class="container">
+        <span class="lj-eyebrow">A Shared Endeavor</span>
+        <h2>Made possible together.</h2>
+        <p>
+          This inaugural course was made possible through a joint endeavor of the
+          Bhaktivedanta Institute for Higher Studies and RBG North America, together
+          with the dedication of our faculty, organizers, volunteers, and the generous
+          donors who supported scholarships and educational access. We offer our sincere
+          gratitude to everyone who helped make this learning community possible.
+        </p>
+
+        <div class="button-row" style="margin-top:2rem;">
+          <a class="btn primary" href="https://bihstudies.instructure.com/login/canvas">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Continue in Canvas
+          </a>
+          <a class="btn-outline-light" href="mailto:monicad@bihs.org?subject=BIHS%20Volunteer%20Interest">
+            <i class="fa-solid fa-hands-helping"></i> Volunteer with BIHS
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing -->
+    <section class="lj-closing">
+      <div class="container">
+        <blockquote>
+          "The completion of one course is not the end of inquiry, but the opening of another door."
+        </blockquote>
+        <p class="lead">
+          Thank you for being part of the inaugural BIHS Consciousness Studies cohort.
+          We look forward to continuing the journey of learning, dialogue, and discovery together.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer"></div>
+  <script src="js/site.js"></script>
+</body>
+</html>
