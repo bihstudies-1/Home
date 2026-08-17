@@ -1,479 +1,427 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Quinta-feira | 2º Festival Krishna West Brasil 2026</title>
+<title>Quinta-feira | 2º Festival Krishna West Brasil 2026</title>
 
-  <style>
+<style>
+:root{
+  --navy:#0b2f5b;
+  --navy-dark:#071f3d;
+  --blue:#154a7d;
+  --gold:#c9972f;
+  --gold-light:#f8f0dc;
+  --lavender:#f2eef9;
+  --green-light:#edf6ec;
+  --green:#2f6d3a;
+  --cream:#fffdf8;
+  --text:#263746;
+  --muted:#687684;
+  --border:#dce3ea;
+}
 
-    :root {
-      --navy: #0b2f5b;
-      --navy-dark: #071f3d;
-      --blue: #154a7d;
-      --gold: #c9972f;
-      --gold-light: #f8f0dc;
-      --cream: #fffdf8;
-      --text: #263746;
-      --muted: #687684;
-      --border: #dce3ea;
-      --green-light: #edf6ec;
-      --green: #2f6d3a;
-    }
+*{box-sizing:border-box}
 
-    * {
-      box-sizing: border-box;
-    }
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--text);
+  background:#f5f7fa;
+  line-height:1.6;
+}
 
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background: #f5f7fa;
-      line-height: 1.6;
-    }
+/* HEADER */
 
-    /* HEADER */
+header{
+  background:
+    radial-gradient(circle at top,rgba(201,151,47,.18),transparent 34%),
+    linear-gradient(135deg,var(--navy-dark),var(--navy));
+  color:white;
+  text-align:center;
+  padding:60px 20px 50px;
+  border-bottom:5px solid var(--gold);
+}
 
-    header {
-      background:
-        radial-gradient(circle at top, rgba(201,151,47,.20), transparent 34%),
-        linear-gradient(135deg, var(--navy-dark), var(--navy));
+.hero-kicker{
+  color:#f7dd9f;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  font-size:.82rem;
+  font-weight:bold;
+  margin-bottom:12px;
+}
 
-      color: white;
-      text-align: center;
-      padding: 70px 20px 60px;
-      border-bottom: 5px solid var(--gold);
-    }
+header h1{
+  margin:0 auto;
+  max-width:1000px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(2.2rem,5vw,4rem);
+  line-height:1.08;
+}
 
-    .hero-kicker {
-      color: #f7dd9f;
-      text-transform: uppercase;
-      letter-spacing: .16em;
-      font-size: .85rem;
-      font-weight: bold;
-      margin-bottom: 14px;
-    }
+.subtitle{
+  margin:15px 0 0;
+  color:#f7dd9f;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(1.05rem,2.5vw,1.4rem);
+}
 
-    header h1 {
-      margin: 0 auto;
-      max-width: 1000px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.4rem, 5vw, 4.3rem);
-      line-height: 1.08;
-    }
+.event-meta{
+  margin-top:20px;
+  color:#eef4fb;
+  font-size:1.05rem;
+}
 
-    .subtitle {
-      margin: 18px auto 0;
-      max-width: 850px;
-      color: #f7dd9f;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.1rem, 2.5vw, 1.45rem);
-    }
+/* NAV */
 
-    .event-meta {
-      margin-top: 24px;
-      color: #eef4fb;
-      font-size: 1.08rem;
-    }
+nav{
+  background:var(--navy-dark);
+  text-align:center;
+  padding:12px 10px;
+}
 
+nav a{
+  display:inline-block;
+  margin:4px 10px;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:.94rem;
+}
 
-    /* BACK BUTTON */
+nav a:hover{color:#f7dd9f}
 
-    .navigation {
-      background: white;
-      padding: 22px 20px 0;
-      text-align: center;
-    }
+/* INTRO */
 
-    .back-button {
-      display: inline-block;
-      padding: 10px 18px;
-      color: var(--navy);
-      border: 1px solid var(--gold);
-      border-radius: 7px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+.intro{
+  background:white;
+  padding:42px 20px;
+  text-align:center;
+}
 
-    .back-button:hover {
-      background: var(--gold-light);
-    }
+.container{
+  max-width:1080px;
+  margin:0 auto;
+}
 
+.section-title{
+  margin:0 0 12px;
+  color:var(--navy);
+  text-align:center;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(1.9rem,4vw,2.7rem);
+}
 
-    /* INTRO */
+.section-subtitle{
+  max-width:800px;
+  margin:0 auto;
+  color:var(--muted);
+  font-size:1.04rem;
+}
 
-    .intro {
-      background: white;
-      padding: 45px 20px 35px;
-      text-align: center;
-    }
+/* SCHEDULE */
 
-    .intro-inner {
-      max-width: 850px;
-      margin: 0 auto;
-    }
+#programacao{
+  background:var(--navy);
+  color:white;
+  padding:52px 18px 65px;
+}
 
-    .intro h2 {
-      margin: 0 0 14px;
-      color: var(--navy);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2rem, 4vw, 3rem);
-    }
+#programacao .section-title{
+  color:#f7dd9f;
+}
 
-    .intro p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 1.08rem;
-    }
+#programacao .section-subtitle{
+  color:#dce8f5;
+  margin-bottom:30px;
+}
 
+.schedule-wrap{
+  max-width:1000px;
+  margin:0 auto;
+  overflow:hidden;
+  border-radius:12px;
+  box-shadow:0 8px 24px rgba(0,0,0,.18);
+}
 
-    /* SCHEDULE */
+.schedule-table{
+  width:100%;
+  border-collapse:collapse;
+  background:white;
+  color:var(--text);
+}
 
-    .schedule-section {
-      padding: 35px 20px 75px;
-      background: white;
-    }
+.schedule-table th{
+  padding:14px 14px;
+  background:var(--navy-dark);
+  color:white;
+  text-align:left;
+  font-size:.96rem;
+}
 
-    .schedule-container {
-      max-width: 930px;
-      margin: 0 auto;
-    }
+.schedule-table td{
+  padding:14px;
+  border-bottom:1px solid #e3e8ed;
+  vertical-align:top;
+  font-size:.96rem;
+}
 
-    .schedule-card {
-      overflow: hidden;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      box-shadow: 0 8px 25px rgba(12,44,83,.10);
-    }
+.schedule-table .time{
+  width:155px;
+  white-space:nowrap;
+  color:var(--navy);
+  font-weight:bold;
+}
 
-    .schedule-row {
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      border-bottom: 1px solid var(--border);
-    }
+.keynote{
+  background:var(--lavender);
+}
 
-    .schedule-row:last-child {
-      border-bottom: none;
-    }
+.break-row{
+  background:var(--green-light);
+}
 
-    .schedule-time {
-      padding: 24px 20px;
-      background: var(--gold-light);
-      color: var(--navy);
-      font-weight: bold;
-      font-size: 1.05rem;
-    }
+.break-row .time{
+  color:var(--green);
+}
 
-    .schedule-content {
-      padding: 24px 26px;
-      background: white;
-    }
+.cultural{
+  background:var(--gold-light);
+}
 
-    .schedule-content h3 {
-      margin: 0 0 7px;
-      color: var(--navy);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.28rem;
-    }
+/* FOOTER LINKS */
 
-    .schedule-content p {
-      margin: 4px 0;
-      color: var(--muted);
-    }
+.other-days{
+  background:#f1f4f7;
+  padding:42px 20px;
+  text-align:center;
+}
 
-    .featured .schedule-time {
-      background: #eee9f8;
-    }
+.other-days h2{
+  color:var(--navy);
+  font-family:Georgia,"Times New Roman",serif;
+  margin:0 0 20px;
+}
 
-    .featured .schedule-content {
-      background: #faf8fd;
-    }
+.button{
+  display:inline-block;
+  margin:6px;
+  padding:12px 18px;
+  background:var(--navy);
+  color:white;
+  text-decoration:none;
+  border-radius:7px;
+  font-weight:bold;
+}
 
-    .cultural .schedule-time {
-      background: var(--green-light);
-      color: var(--green);
-    }
+.button:hover{
+  background:var(--blue);
+}
 
-    .cultural .schedule-content {
-      background: #fbfefb;
-    }
+footer{
+  padding:28px 20px;
+  background:var(--navy-dark);
+  color:white;
+  text-align:center;
+}
 
+footer p{margin:5px 0}
 
-    /* NEXT DAYS */
+/* MOBILE */
 
-    .next-section {
-      padding: 55px 20px;
-      background: #f1f4f7;
-      text-align: center;
-    }
+@media(max-width:700px){
 
-    .next-section h2 {
-      margin: 0 0 20px;
-      color: var(--navy);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 2rem;
-    }
+  header{
+    padding:48px 16px 40px;
+  }
 
-    .next-button {
-      display: inline-block;
-      margin: 7px;
-      padding: 13px 22px;
-      background: var(--navy);
-      color: white;
-      text-decoration: none;
-      border-radius: 7px;
-      font-weight: bold;
-    }
+  #programacao{
+    padding:42px 12px 52px;
+  }
 
-    .next-button:hover {
-      background: var(--blue);
-    }
+  .schedule-wrap{
+    background:transparent;
+    box-shadow:none;
+    overflow:visible;
+  }
 
+  .schedule-table,
+  .schedule-table tbody,
+  .schedule-table tr,
+  .schedule-table td{
+    display:block;
+    width:100%;
+  }
 
-    /* FOOTER */
+  .schedule-table thead{
+    display:none;
+  }
 
-    footer {
-      padding: 32px 20px;
-      background: var(--navy-dark);
-      color: white;
-      text-align: center;
-    }
+  .schedule-table tr{
+    margin-bottom:12px;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 3px 10px rgba(0,0,0,.14);
+    background:white;
+  }
 
-    footer p {
-      margin: 6px 0;
-    }
+  .schedule-table td{
+    border-bottom:0;
+    padding:9px 14px;
+  }
 
+  .schedule-table .time{
+    width:100%;
+    padding:10px 14px;
+    background:#eef3f8;
+    border-bottom:1px solid #dce3ea;
+    font-size:1rem;
+  }
 
-    /* MOBILE */
+  .schedule-table td:nth-child(2){
+    padding-top:12px;
+    font-size:1rem;
+  }
 
-    @media (max-width: 700px) {
+  .schedule-table td:nth-child(3){
+    padding-top:2px;
+    padding-bottom:12px;
+    color:var(--muted);
+    font-size:.9rem;
+  }
 
-      header {
-        padding: 55px 18px 48px;
-      }
+  .keynote .time{
+    background:#e6ddf5;
+  }
 
-      .schedule-row {
-        grid-template-columns: 1fr;
-      }
+  .break-row .time{
+    background:#dfeedd;
+  }
 
-      .schedule-time {
-        padding: 14px 20px;
-        border-bottom: 1px solid #eadfbe;
-      }
+  .cultural .time{
+    background:#f5e8c8;
+  }
 
-      .schedule-content {
-        padding: 20px;
-      }
-
-    }
-
-  </style>
-
+}
+</style>
 </head>
-
 
 <body>
 
-
 <header>
-
-  <div class="hero-kicker">
-    2º Festival Krishna West Brasil
-  </div>
-
-  <h1>
-    Quinta-feira · 20 de agosto
-  </h1>
-
-  <p class="subtitle">
-    Solenidade de Abertura
-  </p>
-
-  <div class="event-meta">
-    Nova Gokula · Brasil · 2026
-  </div>
-
+  <div class="hero-kicker">2º Festival Krishna West Brasil</div>
+  <h1>Quinta-feira · 20 de agosto</h1>
+  <p class="subtitle">Solenidade de Abertura</p>
+  <div class="event-meta">Nova Gokula · Brasil · 2026</div>
 </header>
 
-
-<div class="navigation">
-
-  <a class="back-button"
-     href="Krishna_West_Festival_2026.html">
-    ← Voltar à página do Festival
-  </a>
-
-</div>
-
+<nav>
+  <a href="Krishna_West_Festival_2026.html">Festival</a>
+  <a href="BIHS_Brazil_2026.html">21–22 agosto · BIHS</a>
+  <a href="KW_Sunday_2026.html">23 agosto · Krishna West</a>
+</nav>
 
 <section class="intro">
-
-  <div class="intro-inner">
-
-    <h2>Abertura do Festival</h2>
-
-    <p>
-      O primeiro dia do 2º Festival Krishna West Brasil marca a abertura
-      oficial do encontro, com apresentações sobre o Bhaktivedanta Institute,
-      integração entre os participantes e programação cultural.
+  <div class="container">
+    <h2 class="section-title">Abertura do Festival</h2>
+    <p class="section-subtitle">
+      Programação de abertura do 2º Festival Krishna West Brasil.
     </p>
-
   </div>
-
 </section>
 
+<section id="programacao">
+<div class="container">
 
-<section class="schedule-section">
+  <h2 class="section-title">Programação</h2>
+  <p class="section-subtitle">Quinta-feira, 20 de agosto</p>
 
-  <div class="schedule-container">
+  <div class="schedule-wrap">
 
-    <div class="schedule-card">
+    <table class="schedule-table">
 
+      <thead>
+        <tr>
+          <th>Horário</th>
+          <th>Programa</th>
+          <th>Local</th>
+        </tr>
+      </thead>
 
-      <!-- 15:00 -->
+      <tbody>
 
-      <div class="schedule-row featured">
+        <tr class="keynote">
+          <td class="time">15:00</td>
+          <td><strong>Solenidade de Abertura</strong></td>
+          <td></td>
+        </tr>
 
-        <div class="schedule-time">
-          15:00
-        </div>
-
-        <div class="schedule-content">
-          <h3>Solenidade de Abertura</h3>
-        </div>
-
-      </div>
-
-
-      <!-- 15:30 -->
-
-      <div class="schedule-row featured">
-
-        <div class="schedule-time">
-          15:30–16:30
-        </div>
-
-        <div class="schedule-content">
-
-          <h3>Bhaktivedanta Institute: História e Perspectivas</h3>
-
-          <p>
-            <strong>Srila Acaryadeva</strong> — A história do BI
-          </p>
-
-          <p>
+        <tr class="keynote">
+          <td class="time">15:30–16:30</td>
+          <td>
+            <strong>Srila Acaryadeva</strong> — A história do BI<br>
             <strong>Gandini</strong> — Contexto atual do BI
-          </p>
+          </td>
+          <td></td>
+        </tr>
 
-        </div>
+        <tr>
+          <td class="time">16:30–17:30</td>
+          <td><strong>Conexão entre participantes</strong></td>
+          <td></td>
+        </tr>
 
-      </div>
+        <tr class="cultural">
+          <td class="time">17:30–18:00</td>
+          <td><strong>Apresentação cultural com música</strong></td>
+          <td></td>
+        </tr>
 
+        <tr class="cultural">
+          <td class="time">18:00</td>
+          <td><strong>Gaura Arati</strong></td>
+          <td>Templo</td>
+        </tr>
 
-      <!-- 16:30 -->
+        <tr class="break-row">
+          <td class="time">19:00–20:30</td>
+          <td><strong>Jantar e Noite Cultural</strong></td>
+          <td>Cozinha Comunitária</td>
+        </tr>
 
-      <div class="schedule-row">
+      </tbody>
 
-        <div class="schedule-time">
-          16:30–17:30
-        </div>
-
-        <div class="schedule-content">
-          <h3>Conexão entre participantes</h3>
-          <p>
-            Espaço para encontro, diálogo e integração entre os participantes.
-          </p>
-        </div>
-
-      </div>
-
-
-      <!-- 17:30 -->
-
-      <div class="schedule-row cultural">
-
-        <div class="schedule-time">
-          17:30–18:00
-        </div>
-
-        <div class="schedule-content">
-          <h3>Apresentação cultural com música</h3>
-        </div>
-
-      </div>
-
-
-      <!-- 18:00 -->
-
-      <div class="schedule-row cultural">
-
-        <div class="schedule-time">
-          18:00
-        </div>
-
-        <div class="schedule-content">
-          <h3>Gaura Arati</h3>
-        </div>
-
-      </div>
-
-
-      <!-- 19:00 -->
-
-      <div class="schedule-row cultural">
-
-        <div class="schedule-time">
-          19:00–20:30
-        </div>
-
-        <div class="schedule-content">
-          <h3>Jantar e Noite Cultural</h3>
-        </div>
-
-      </div>
-
-
-    </div>
+    </table>
 
   </div>
 
+</div>
 </section>
 
+<section class="other-days">
 
-<section class="next-section">
+  <h2>Outros dias do Festival</h2>
 
-  <h2>Continue explorando o Festival</h2>
-
-  <a class="next-button"
-     href="BIHS_Brazil_2026.html">
-    21–22 agosto · Bhaktivedanta Institute
+  <a class="button" href="Krishna_West_Festival_2026.html">
+    Página principal
   </a>
 
-  <a class="next-button"
-     href="KW_Sunday_2026.html">
+  <a class="button" href="BIHS_Brazil_2026.html">
+    21–22 agosto · BIHS
+  </a>
+
+  <a class="button" href="KW_Sunday_2026.html">
     23 agosto · Krishna West
   </a>
 
 </section>
 
-
 <footer>
-
-  <p>
-    <strong>2º Festival Krishna West Brasil</strong>
-  </p>
-
-  <p>
-    20–23 de agosto de 2026 · Nova Gokula, Brasil
-  </p>
-
+  <p><strong>2º Festival Krishna West Brasil</strong></p>
+  <p>20–23 de agosto de 2026 · Nova Gokula, Brasil</p>
 </footer>
 
-
 </body>
-
 </html>
