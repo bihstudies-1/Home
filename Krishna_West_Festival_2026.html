@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>2º Festival Krishna West Brasil | 2026</title>
+
+  <style>
+
+    :root {
+      --navy: #0b2f5b;
+      --navy-dark: #071f3d;
+      --blue: #154a7d;
+      --gold: #c9972f;
+      --gold-light: #f8f0dc;
+      --cream: #fffdf8;
+      --text: #263746;
+      --muted: #687684;
+      --border: #dce3ea;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: #f5f7fa;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+
+    header {
+      background:
+        radial-gradient(circle at top, rgba(201,151,47,.20), transparent 34%),
+        linear-gradient(135deg, var(--navy-dark), var(--navy));
+
+      color: white;
+      text-align: center;
+      padding: 80px 20px 70px;
+      border-bottom: 5px solid var(--gold);
+    }
+
+    .hero-kicker {
+      color: #f7dd9f;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-size: .85rem;
+      font-weight: bold;
+      margin-bottom: 14px;
+    }
+
+    header h1 {
+      margin: 0 auto;
+      max-width: 1000px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.5rem, 6vw, 4.8rem);
+      line-height: 1.08;
+    }
+
+    .subtitle {
+      margin: 18px auto 0;
+      max-width: 850px;
+      color: #f7dd9f;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    }
+
+    .event-meta {
+      margin-top: 26px;
+      color: #eef4fb;
+      font-size: 1.12rem;
+    }
+
+
+    /* INTRODUCTION */
+
+    .intro {
+      background: white;
+      padding: 60px 20px 35px;
+      text-align: center;
+    }
+
+    .intro-inner {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .intro h2 {
+      margin: 0 0 18px;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    .intro p {
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+
+    /* PROGRAM CARDS */
+
+    .program-section {
+      padding: 45px 20px 80px;
+      background: white;
+    }
+
+    .program-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .program-title {
+      text-align: center;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 2rem;
+      margin-bottom: 35px;
+    }
+
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .program-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--cream);
+      border: 1px solid #eadfbe;
+      border-top: 5px solid var(--gold);
+      border-radius: 14px;
+      padding: 30px 25px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(12,44,83,.09);
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .program-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 30px rgba(12,44,83,.16);
+    }
+
+    .day {
+      color: var(--gold);
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: .88rem;
+    }
+
+    .date {
+      margin-top: 8px;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.6rem;
+      font-weight: bold;
+    }
+
+    .program-card h3 {
+      margin: 18px 0 12px;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.45rem;
+    }
+
+    .program-card p {
+      margin: 0 0 25px;
+      color: var(--muted);
+      flex-grow: 1;
+    }
+
+    .program-button {
+      display: inline-block;
+      padding: 13px 22px;
+      background: var(--navy);
+      color: white;
+      text-decoration: none;
+      border-radius: 7px;
+      font-weight: bold;
+      transition: background .2s;
+    }
+
+    .program-button:hover {
+      background: var(--blue);
+    }
+
+    .bihs-card {
+      background: var(--gold-light);
+    }
+
+
+    /* LOCATION */
+
+    .location {
+      padding: 55px 20px;
+      background: #f1f4f7;
+      text-align: center;
+    }
+
+    .location h2 {
+      margin: 0 0 12px;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 2rem;
+    }
+
+    .location p {
+      margin: 5px 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+      padding: 32px 20px;
+      background: var(--navy-dark);
+      color: white;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 6px 0;
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      header {
+        padding: 60px 18px 52px;
+      }
+
+      .program-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .program-card {
+        max-width: 520px;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+  <div class="hero-kicker">
+    Nova Gokula · Brasil · Agosto 2026
+  </div>
+
+  <h1>
+    2º Festival Krishna West Brasil
+  </h1>
+
+  <p class="subtitle">
+    Quatro dias de encontros, apresentações, diálogo, cultura e filosofia
+  </p>
+
+  <div class="event-meta">
+    20–23 de agosto de 2026 · Nova Gokula, Brasil
+  </div>
+
+</header>
+
+
+<section class="intro">
+
+  <div class="intro-inner">
+
+    <h2>Bem-vindos ao Festival</h2>
+
+    <p>
+      O 2º Festival Krishna West Brasil reúne participantes de diferentes
+      lugares para quatro dias de convivência, apresentações, reflexão,
+      cultura e diálogo. Explore abaixo a programação de cada etapa do
+      festival.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section class="program-section">
+
+  <div class="program-container">
+
+    <h2 class="program-title">
+      Programação do Festival
+    </h2>
+
+
+    <div class="program-grid">
+
+
+      <!-- THURSDAY -->
+
+      <div class="program-card">
+
+        <div class="day">
+          Quinta-feira
+        </div>
+
+        <div class="date">
+          20 de agosto
+        </div>
+
+        <h3>
+          Abertura do Festival
+        </h3>
+
+        <p>
+          Início do 2º Festival Krishna West Brasil, recepção dos participantes
+          e programação de abertura.
+        </p>
+
+        <a class="program-button"
+           href="KW_Thursday_2026.html">
+          Ver programação
+        </a>
+
+      </div>
+
+
+      <!-- BIHS -->
+
+      <div class="program-card bihs-card">
+
+        <div class="day">
+          Sexta-feira e Sábado
+        </div>
+
+        <div class="date">
+          21–22 de agosto
+        </div>
+
+        <h3>
+          Encontro do Bhaktivedanta Institute
+        </h3>
+
+        <p>
+          Dois dias de apresentações acadêmicas, diálogo interdisciplinar,
+          mesas redondas e síntese do encontro.
+        </p>
+
+        <a class="program-button"
+           href="BIHS_Brazil_2026.html">
+          Ver palestrantes e programação
+        </a>
+
+      </div>
+
+
+      <!-- SUNDAY -->
+
+      <div class="program-card">
+
+        <div class="day">
+          Domingo
+        </div>
+
+        <div class="date">
+          23 de agosto
+        </div>
+
+        <h3>
+          Krishna West
+        </h3>
+
+        <p>
+          Palestras e programação especial de encerramento do
+          2º Festival Krishna West Brasil.
+        </p>
+
+        <a class="program-button"
+           href="KW_Sunday_2026.html">
+          Ver programação
+        </a>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="location">
+
+  <h2>Local</h2>
+
+  <p>
+    Nova Gokula · Brasil
+  </p>
+
+  <p>
+    20–23 de agosto de 2026
+  </p>
+
+</section>
+
+
+<footer>
+
+  <p>
+    <strong>2º Festival Krishna West Brasil</strong>
+  </p>
+
+  <p>
+    Nova Gokula · 2026
+  </p>
+
+</footer>
+
+
+</body>
+
+</html>
