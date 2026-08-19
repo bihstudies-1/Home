@@ -3,50 +3,229 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sérgio Mendes (Mukunda) | Biografia</title>
+  <title>Gustavo Moura, Ph.D. (Gurusevananda Das) | Biografia</title>
+
   <style>
     :root{--navy:#123f68;--navy-dark:#0b2c4c;--gold:#d6a23b;--text:#263746;--muted:#6a7782;--white:#fff;--border:#dce6ee}
-    *{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#eef5fb 0%,#f8fbfd 100%);color:var(--text);line-height:1.7}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#eef5fb 0%,#f8fbfd 100%);color:var(--text);line-height:1.7}
     .topbar{background:var(--navy);color:#fff;padding:18px 20px;border-bottom:4px solid var(--gold)}
     .topbar-inner{max-width:980px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-    .brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;font-weight:bold}.back-link{color:#fff;text-decoration:none;font-weight:bold;font-size:.95rem}.back-link:hover{color:#f7dc9e}
-    main{max-width:980px;margin:46px auto;padding:0 20px 50px}.profile-card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 12px 32px rgba(14,55,91,.12);border:1px solid var(--border)}
-    .profile-header{display:grid;grid-template-columns:240px 1fr;gap:34px;align-items:center;padding:34px;background:radial-gradient(circle at top right,rgba(214,162,59,.18),transparent 30%),linear-gradient(135deg,#f8fbfd,#edf5fb)}
-    .profile-photo{width:220px;height:220px;object-fit:cover;border-radius:12px;border:6px solid #fff;box-shadow:0 5px 18px rgba(0,0,0,.18)}
-    .profile-title h1{margin:0 0 8px;color:var(--navy);font-family:Georgia,"Times New Roman",serif;font-size:clamp(2rem,4vw,3.1rem);line-height:1.1}.credentials{color:var(--gold);font-weight:bold;font-size:1.05rem;margin-bottom:14px}.short-line{color:var(--muted);font-size:1.04rem;margin:0}
-    .language-switch{display:flex;gap:10px;flex-wrap:wrap;padding:20px 34px 0;background:#fff}.language-switch a{text-decoration:none;color:var(--navy);border:1px solid #cbd8e3;padding:8px 14px;border-radius:999px;font-weight:bold;background:#f7fafc}.language-switch a.active,.language-switch a:hover{background:var(--navy);color:#fff}
-    .bio-section{padding:32px 34px 8px}.bio-section h2{color:var(--navy);font-family:Georgia,"Times New Roman",serif;margin-top:0;font-size:1.65rem}.bio-section p{font-size:1.06rem;margin:0 0 18px}
-    .links-box{margin:28px 34px 36px;padding:22px;border-radius:12px;background:#f7f3e7;border-left:5px solid var(--gold)}.links-box h3{margin:0 0 12px;color:var(--navy)}.links-box a{color:var(--navy);font-weight:bold;text-decoration:none;margin-right:20px}.links-box a:hover{text-decoration:underline}
-    footer{text-align:center;padding:28px 20px;color:#fff;background:var(--navy-dark)}
-    @media(max-width:700px){.profile-header{grid-template-columns:1fr;text-align:center}.profile-photo{margin:auto}.language-switch{justify-content:center}.bio-section,.language-switch{padding-left:22px;padding-right:22px}.links-box{margin-left:22px;margin-right:22px}}
+    .brand{font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;font-weight:bold}
+    .back-link{color:#fff;text-decoration:none;font-weight:bold;font-size:.95rem}
+    .back-link:hover{color:#f7dc9e}
+
+    main{max-width:980px;margin:46px auto;padding:0 20px 50px}
+
+    .profile-card{
+      background:#fff;
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 12px 32px rgba(14,55,91,.12);
+      border:1px solid var(--border)
+    }
+
+    .profile-header{
+      display:grid;
+      grid-template-columns:240px 1fr;
+      gap:34px;
+      align-items:center;
+      padding:34px;
+      background:
+        radial-gradient(circle at top right,rgba(214,162,59,.18),transparent 30%),
+        linear-gradient(135deg,#f8fbfd,#edf5fb)
+    }
+
+    .profile-photo{
+      width:220px;
+      height:220px;
+      object-fit:cover;
+      border-radius:12px;
+      border:6px solid #fff;
+      box-shadow:0 5px 18px rgba(0,0,0,.18)
+    }
+
+    .profile-title h1{
+      margin:0 0 8px;
+      color:var(--navy);
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:clamp(2rem,4vw,3.1rem);
+      line-height:1.1
+    }
+
+    .credentials{
+      color:var(--gold);
+      font-weight:bold;
+      font-size:1.05rem;
+      margin-bottom:14px
+    }
+
+    .bio-section{padding:32px 34px 8px}
+
+    .bio-section h2{
+      color:var(--navy);
+      font-family:Georgia,"Times New Roman",serif;
+      margin-top:0;
+      font-size:1.65rem
+    }
+
+    .bio-section p{
+      font-size:1.06rem;
+      margin:0 0 18px
+    }
+
+    .links-box{
+      margin:28px 34px 36px;
+      padding:22px;
+      border-radius:12px;
+      background:#f7f3e7;
+      border-left:5px solid var(--gold)
+    }
+
+    .links-box h3{
+      margin:0 0 12px;
+      color:var(--navy)
+    }
+
+    .links-box a{
+      color:var(--navy);
+      font-weight:bold;
+      text-decoration:none;
+      margin-right:20px
+    }
+
+    .links-box a:hover{text-decoration:underline}
+
+    footer{
+      text-align:center;
+      padding:28px 20px;
+      color:#fff;
+      background:var(--navy-dark)
+    }
+
+    @media(max-width:700px){
+      .profile-header{
+        grid-template-columns:1fr;
+        text-align:center
+      }
+
+      .profile-photo{margin:auto}
+
+      .bio-section{
+        padding-left:22px;
+        padding-right:22px
+      }
+
+      .links-box{
+        margin-left:22px;
+        margin-right:22px
+      }
+    }
   </style>
 </head>
+
 <body>
-  <div class="topbar"><div class="topbar-inner"><div class="brand">Bhaktivedanta Institute for Higher Studies</div><a class="back-link" href="https://bihstudies.org/BIHS_Brazil_2026.html">← Voltar ao evento</a></div></div>
+
+  <div class="topbar">
+    <div class="topbar-inner">
+
+      <div class="brand">
+        Bhaktivedanta Institute for Higher Studies
+      </div>
+
+      <a class="back-link"
+         href="https://bihstudies.org/BIHS_Brazil_2026.html">
+        ← Voltar ao evento
+      </a>
+
+    </div>
+  </div>
+
+
   <main>
+
     <article class="profile-card">
+
       <div class="profile-header">
-        <img src="../img/mukunda.jpeg" alt="NOME DO PALESTRANTE" class="profile-photo">
+
+        <img src="../img/Gurusevananda.jpg"
+             alt="Gustavo Moura (Gurusevananda Das)"
+             class="profile-photo">
+
         <div class="profile-title">
-          <h1>Sérgio Mendes (Mukunda Das)</h1>
-          <div class="credentials">MA. / Universidade Federal de Minas Gerais/ Linguista</div>
-          <p class="short-line">Uma linha curta opcional sobre a área de atuação do palestrante.</p>
+
+          <h1>
+            Gustavo Moura, Ph.D.
+            <br>
+            (Gurusevananda Das)
+          </h1>
+
+          <div class="credentials">
+            Ciência da Religião · Kirtan · Bhakti · Vedānta · Yoga
+          </div>
+
         </div>
+
       </div>
-            <section class="bio-section">
+
+
+      <section class="bio-section">
+
         <h2>Biografia</h2>
-        <p>Sergio Mendes de Freitas é linguista, com formação em Letras Modernas (inglês) e mestrado em Estudos Clássicos Literários (Literatura de Expressão Sânscrita) pela Universidade Federal de Minas Gerais. Desde 1993 se dedica ao estudo e ensino das língua e literatura sânscritas.
-</p>
-        
+
+        <p>
+          Gustavo Moura, Ph.D. (Gurusevananda Das) é doutor em Ciência da
+          Religião pela Wilfrid Laurier University, no Canadá, e mestre pela
+          Universidade Federal da Paraíba.
+        </p>
+
+        <p>
+          Sua pesquisa concentra-se em mantras, kirtan, bhakti, vedānta e yoga,
+          investigando o papel do canto devocional na formação de comunidades,
+          na construção de identidades e na institucionalização suave da
+          espiritualidade.
+        </p>
+
+        <p>
+          É autor de <em>Sacred Sound and the Transcultural Practice of Kirtan</em>
+          (Bloomsbury, 2024) e do capítulo
+          <em>Bhakti-Yoga and the Global Dissemination of Kirtan</em>
+          (Brill, em publicação).
+        </p>
+
+        <p>
+          Combina experiência acadêmica e prática devocional, contribuindo
+          para o diálogo entre tradição e contemporaneidade no movimento
+          global de saṅkīrtana.
+        </p>
+
       </section>
+
+
       <div class="links-box">
+
         <h3>Mais informações</h3>
-        <a href="../abstracts_Brazil_2026/Mukunda.html">Ver resumo da apresentação</a>
-       <a href="https://bihstudies.org/BIHS_Brazil_2026.html">Voltar aos palestrantes</a>
+
+        <a href="../abstracts_Brazil_2026/gurusevananda.html">
+          Ver resumo da apresentação
+        </a>
+
+        |
+
+        <a href="https://bihstudies.org/BIHS_Brazil_2026.html">
+          Voltar ao Evento BIHS Brasil 2026
+        </a>
+
       </div>
+
     </article>
-	  <a href="www.bihs.org">BIHS</a>
+
   </main>
-  <footer>&copy; 2026 Bhaktivedanta Institute for Higher Studies</footer>
+
+
+  <footer>
+    &copy; 2026 Bhaktivedanta Institute for Higher Studies
+  </footer>
+
 </body>
 </html>
