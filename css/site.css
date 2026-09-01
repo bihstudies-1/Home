@@ -1471,3 +1471,163 @@ html { scroll-padding-top: var(--header-offset); }
   margin-top: 0.4rem;
   margin-left: 1.2rem;
 }
+/* ========================================= */
+/* ACADEMICS PAGE                            */
+/* ========================================= */
+
+.academics-page main {
+  padding-top: 0;
+}
+
+
+/* Intro */
+
+.academics-hero {
+  background: #ffffff;
+  text-align: center;
+  padding: 4rem var(--pad) 3rem;
+  border-bottom: 1px solid #e4ebf4;
+}
+
+.academics-hero .container {
+  max-width: 850px;
+}
+
+.academics-kicker {
+  color: var(--bihs-gold);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  margin-bottom: 0.8rem;
+}
+
+.academics-hero h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.2rem, 5vw, 3.25rem);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.academics-hero .lead {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 1.12rem;
+  line-height: 1.7;
+}
+
+
+/* Three Academic Areas */
+
+.academics-options {
+  background: var(--bihs-sky);
+  padding: 3.5rem var(--pad);
+}
+
+.academic-option-card {
+  position: relative;
+  background: #ffffff;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 2rem;
+  text-decoration: none;
+}
+
+.academic-option-card:hover,
+.academic-option-card:focus {
+  text-decoration: none;
+}
+
+.academic-option-card p {
+  color: #4b5563;
+}
+
+.academic-option-card .card-detail {
+  font-size: 0.9rem;
+  color: #6b7280;
+  border-top: 1px solid #e5eaf0;
+  padding-top: 1rem;
+  margin-top: 0.25rem;
+}
+
+.academic-option-card .btn {
+  margin-top: auto;
+  align-self: center;
+}
+
+.program-label {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #edf5ff;
+  color: var(--bihs-navy);
+  border: 1px solid #cbdff5;
+  border-radius: 30px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+
+/* Personal Enrichment Statement */
+
+.academics-enrichment {
+  background: #ffffff;
+  padding: 3rem var(--pad);
+}
+
+.academics-enrichment-inner {
+  max-width: 850px;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.enrichment-icon {
+  flex: 0 0 auto;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--bihs-sky);
+  color: var(--bihs-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.academics-enrichment h2 {
+  margin-bottom: 0.5rem;
+}
+
+.academics-enrichment p {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+  .academics-hero {
+    padding: 2.75rem var(--pad) 2.25rem;
+  }
+
+  .academics-options {
+    padding: 2.5rem var(--pad);
+  }
+
+  .academics-enrichment-inner {
+    flex-direction: column;
+  }
+
+  .program-label {
+    position: static;
+    align-self: center;
+    margin-bottom: 1rem;
+  }
+}
