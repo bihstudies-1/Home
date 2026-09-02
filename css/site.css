@@ -784,6 +784,9 @@ h1, h2 {
 
 .hero-banner {
   position: relative;
+	width: calc(100% - 2rem);
+  max-width: 1200px;
+  margin: 1rem auto 0;
   
   /* 1. This creates the Dark Blue Overlay (85% opacity) */
   /* Change 0.85 to 0.70 if you want the image brighter */
@@ -898,11 +901,11 @@ h1, h2 {
 
 @media (min-width: 1024px) {
   .hero-banner {
-    /* Increases top space to 13rem on big screens */
-    /* You can change 13rem to 15rem if you need it even lower */
-    padding-top: 10rem !important; 
-    .cs-hero {
-    padding-top: 5.5rem !important;  /* ← ADD THIS LINE */
+    padding-top: 3.5rem !important;
+  }
+
+  .cs-hero {
+    padding-top: 3.5rem !important;
   }
 }
 /* ========================================= */
