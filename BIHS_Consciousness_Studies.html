@@ -2,1092 +2,783 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Courses | BIHS</title>
+  <title>Consciousness Studies | BIHS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Explore courses, workshops, and training from the Bhaktivedanta Institute for Higher Studies.">
+  <meta name="description" content="Consciousness Studies: Ancient and Modern Perspectives is a six-unit, self-paced BIHS avocational online program for personal enrichment.">
   <link rel="stylesheet" href="css/site.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
- <style>
-/* ─── PAGE-SCOPED TOKENS ─────────────────────────────────────────── */
-    .cs-page {
-      --navy:      #001f3f;
-      --navy-mid:  #0a3460;
-      --gold:      #c8972b;
-      --gold-lt:   #f0d898;
-      --cream:     #faf8f3;
-      --sky:       #edf2f8;
-      --text:      #1a1a2e;
-      --muted:     #5a6070;
-      --radius:    10px;
-      --shadow:    0 2px 16px rgba(0,31,63,.10);
-      font-family: 'Inter', sans-serif;
-      color: var(--text);
-    }
-    .cs-page h1, .cs-page h2, .cs-page h3, .cs-page h4 {
-      font-family: 'EB Garamond', Georgia, serif;
-      line-height: 1.25;
+  <style>
+    /* ========================================= */
+    /* CONSCIOUSNESS STUDIES — SELF-PACED        */
+    /* Scoped to .consciousness-page             */
+    /* ========================================= */
+
+    .consciousness-page main { padding-top: 0; }
+
+    .consciousness-page .cs-new-hero {
+      background:
+        linear-gradient(135deg, rgba(2,38,73,.96), rgba(0,51,102,.90)),
+        url('img/BoldMinds.jpeg');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      padding: 5rem var(--pad) 4.5rem;
+      border-bottom: 3px solid var(--bihs-gold);
     }
 
-    /* ─── HERO ───────────────────────────────────────────────────────── */
-    .cs-hero {
-      position: relative;
-      background: var(--navy);
-      padding: 72px 24px 64px;
-      text-align: center;
-      overflow: hidden;
+    .consciousness-page .cs-new-hero .container {
+      max-width: 920px;
     }
-    .cs-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 60% 40%, rgba(200,151,43,.18) 0%, transparent 65%),
-                  radial-gradient(ellipse at 20% 80%, rgba(10,52,96,.6) 0%, transparent 60%);
-      pointer-events: none;
-    }
-    .cs-hero-inner {
-      position: relative;
-      max-width: 760px;
-      margin: 0 auto;
-    }
-    .cs-hero-eyebrow {
-      display: inline-block;
+
+    .consciousness-page .hero-kicker {
+      color: #e9c96f;
       font-size: .78rem;
-      font-weight: 600;
-      letter-spacing: .12em;
+      font-weight: 800;
+      letter-spacing: .16em;
       text-transform: uppercase;
-      color: var(--gold);
-      border: 1px solid rgba(200,151,43,.4);
-      border-radius: 20px;
-      padding: 5px 14px;
-      margin-bottom: 20px;
+      margin-bottom: .8rem;
     }
-    .cs-hero h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      color: #fff;
-      margin: 0 0 10px;
-    }
-    .cs-hero h2 {
-      font-size: clamp(1rem, 2.5vw, 1.4rem);
-      color: var(--gold-lt);
-      font-weight: 400;
-      font-style: italic;
-      margin: 0 0 28px;
-    }
-    .cs-hero-rule {
-      width: 60px;
-      height: 2px;
-      background: var(--gold);
-      margin: 0 auto 28px;
-    }
-    .cs-hero-tagline {
-      font-size: 1rem;
-      color: rgba(255,255,255,.82);
-      margin-bottom: 36px;
-      line-height: 1.6;
-    }
-    .cs-hero-tagline strong { color: #fff; }
 
-    /* Hero CTA buttons */
-    .cs-hero-btns {
+    .consciousness-page .status-pill {
+      display: inline-block;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.38);
+      color: #fff;
+      border-radius: 999px;
+      padding: .36rem .76rem;
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .consciousness-page .cs-new-hero h1 {
+      color: #fff;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.3rem, 5.6vw, 4rem);
+      font-weight: 500;
+      max-width: 850px;
+      margin-bottom: .65rem;
+    }
+
+    .consciousness-page .hero-subtitle {
+      color: #d9e7f7;
+      font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+      font-weight: 400;
+      margin-bottom: 1.35rem;
+    }
+
+    .consciousness-page .hero-description {
+      color: rgba(255,255,255,.90);
+      max-width: 760px;
+      font-size: 1.08rem;
+      line-height: 1.75;
+      margin-bottom: 1.6rem;
+    }
+
+    .consciousness-page .hero-meta {
       display: flex;
-      gap: 14px;
-      justify-content: center;
       flex-wrap: wrap;
-    }
-    .cs-btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--gold);
-      color: var(--navy);
-      font-family: 'Inter', sans-serif;
-      font-size: .95rem;
-      font-weight: 700;
-      padding: 14px 28px;
-      border-radius: var(--radius);
-      text-decoration: none;
-      transition: background .2s, transform .15s;
-      border: none;
-    }
-    .cs-btn-primary:hover { background: #d9a83a; transform: translateY(-2px); }
-    .cs-btn-outline {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: transparent;
-      color: #fff;
-      font-family: 'Inter', sans-serif;
-      font-size: .95rem;
-      font-weight: 600;
-      padding: 13px 28px;
-      border-radius: var(--radius);
-      border: 2px solid rgba(255,255,255,.55);
-      text-decoration: none;
-      transition: border-color .2s, background .2s, transform .15s;
-    }
-    .cs-btn-outline:hover {
-      border-color: #fff;
-      background: rgba(255,255,255,.08);
-      transform: translateY(-2px);
-    }
-
-    /* ─── QUOTE BAND ─────────────────────────────────────────────────── */
-    .cs-quote-band {
-      background: var(--cream);
-      padding: 48px 24px;
-      text-align: center;
-      border-bottom: 1px solid #e8e2d6;
-    }
-    .cs-quote-band blockquote {
-      max-width: 720px;
-      margin: 0 auto;
-      font-family: 'EB Garamond', Georgia, serif;
-      font-size: clamp(1.05rem, 2.2vw, 1.3rem);
-      font-style: italic;
-      color: #2c3060;
-      line-height: 1.75;
-    }
-    .cs-quote-band cite {
-      display: block;
-      margin-top: 14px;
-      font-family: 'Inter', sans-serif;
-      font-size: .82rem;
-      font-style: normal;
-      color: var(--muted);
-      letter-spacing: .04em;
-    }
-
-    /* ─── SECTION WRAPPER ────────────────────────────────────────────── */
-    .cs-section {
-      padding: 64px 24px;
-    }
-    .cs-section--alt { background: var(--sky); }
-    .cs-section--dark { background: var(--navy); color: #fff; }
-    .cs-section--cream { background: var(--cream); }
-    .cs-container {
-      max-width: 960px;
-      margin: 0 auto;
-    }
-    .cs-section-label {
-      font-family: 'Inter', sans-serif;
-      font-size: .75rem;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 10px;
-    }
-    .cs-section-title {
-      font-size: clamp(1.5rem, 3vw, 2.1rem);
-      margin: 0 0 14px;
-      color: var(--navy);
-    }
-    .cs-section--dark .cs-section-title { color: #fff; }
-    .cs-section-lead {
-      font-size: 1.1rem;
-      color: var(--muted);
-      line-height: 1.75;
-      max-width: 660px;
-    }
-    .cs-section--dark .cs-section-lead { color: rgba(255,255,255,.72); }
-
-    /* ─── NOTICE BOX ─────────────────────────────────────────────────── */
-    .cs-notice {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      background: #fff;
-      border: 1px solid #d9e6f0;
-      border-left: 4px solid var(--gold);
-      border-radius: 0 var(--radius) var(--radius) 0;
-      padding: 14px 18px;
+      gap: .55rem 1.15rem;
+      margin-bottom: 1.8rem;
+      color: #d8e4f3;
       font-size: .9rem;
-      color: var(--muted);
-      max-width: 720px;
-      margin: 24px auto 0;
-    }
-    .cs-notice i { color: var(--gold); margin-top: 2px; flex-shrink: 0; }
-
-    /* ─── WHAT YOU'LL EXPLORE ────────────────────────────────────────── */
-    .cs-pillars {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      margin-top: 36px;
-    }
-    .cs-pillar {
-      background: #fff;
-      border-radius: var(--radius);
-      border: 1px solid #e0e8f2;
-      padding: 30px 24px;
-      box-shadow: var(--shadow);
-    }
-    .cs-pillar-icon {
-      margin-bottom: 16px;
-    }
-    .cs-pillar-icon i { color: var(--gold); font-size: 1.7rem; }
-    .cs-pillar h4 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin: 0 0 10px;
-      color: var(--navy);
-    }
-    .cs-pillar p {
-      font-size: .97rem;
-      color: var(--muted);
-      margin: 0;
-      line-height: 1.6;
     }
 
-    /* ─── GLANCE ROW ─────────────────────────────────────────────────── */
-    .cs-glance-row {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      margin-top: 36px;
-    }
-    .cs-glance-card {
-      background: #fff;
-      border-radius: var(--radius);
-      border: 1px solid #dde6f0;
-      padding: 22px 20px;
-      box-shadow: var(--shadow);
-    }
-    .cs-glance-card h4 {
-      font-family: 'Inter', sans-serif;
-      font-size: .8rem;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin: 0 0 12px;
-    }
-    .cs-glance-card ul {
-      margin: 0; padding: 0;
-      list-style: none;
-    }
-    .cs-glance-card ul li {
-      font-size: .93rem;
-      color: var(--text);
-      padding: 6px 0;
-      border-bottom: 1px solid #f0f4f8;
-      line-height: 1.5;
-    }
-    .cs-glance-card ul li:last-child { border-bottom: none; }
-
-    /* ─── ACTIVE UNIT SECTION ────────────────────────────────────────── */
-    .cs-active-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: #e8f5e9;
-      color: #2e7d32;
-      font-family: 'Inter', sans-serif;
-      font-size: .75rem;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      padding: 5px 12px;
-      border-radius: 20px;
-      margin-bottom: 20px;
-    }
-    .cs-active-badge::before {
-      content: '';
-      width: 7px; height: 7px;
-      background: #43a047;
-      border-radius: 50%;
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: .4; }
+    .consciousness-page .hero-meta span::before {
+      content: "•";
+      color: var(--bihs-gold);
+      margin-right: .42rem;
     }
 
-    .cs-unit-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-      margin-top: 32px;
-    }
-    @media (max-width: 700px) {
-      .cs-unit-grid { grid-template-columns: 1fr; }
-    }
-
-    .cs-unit-card {
-      background: #fff;
-      border-radius: 14px;
-      border: 1px solid #d8e4f0;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-    .cs-unit-card-header {
-      background: var(--navy);
-      padding: 20px 24px 16px;
+    .consciousness-page .hero-actions {
       display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-    .cs-unit-card-header img {
-      width: 56px; height: 56px;
-      border-radius: 50%;
-      border: 2px solid var(--gold);
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-    .cs-unit-card-header-text {}
-    .cs-unit-number {
-      font-family: 'Inter', sans-serif;
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 3px;
-    }
-    .cs-unit-card-header h3 {
-      font-size: 1.25rem;
-      color: #fff;
-      margin: 0 0 2px;
-    }
-    .cs-unit-faculty {
-      font-family: 'Inter', sans-serif;
-      font-size: .82rem;
-      color: rgba(255,255,255,.65);
-      margin: 0;
-    }
-    .cs-unit-card-body {
-      padding: 20px 24px;
-    }
-    .cs-unit-dates {
-      font-family: 'Inter', sans-serif;
-      font-size: .82rem;
-      font-weight: 600;
-      color: var(--navy-mid);
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 7px;
-    }
-    .cs-unit-dates i { color: var(--gold); }
-
-    /* Session table */
-    .cs-session-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: .84rem;
-    }
-    .cs-session-table thead tr {
-      background: var(--sky);
-    }
-    .cs-session-table th {
-      padding: 7px 10px;
-      text-align: left;
-      font-family: 'Inter', sans-serif;
-      font-size: .73rem;
-      font-weight: 700;
-      letter-spacing: .07em;
-      text-transform: uppercase;
-      color: var(--muted);
-      border-bottom: 2px solid #d0dce8;
-    }
-    .cs-session-table td {
-      padding: 7px 10px;
-      vertical-align: middle;
-      border-bottom: 1px solid #edf2f8;
-      line-height: 1.4;
-      color: var(--text);
-    }
-    .cs-session-table tr:last-child td { border-bottom: none; }
-    .cs-session-table .date-cell {
-      font-weight: 700;
-      color: var(--navy);
-      white-space: nowrap;
-      border-right: 3px solid var(--gold);
-      font-size: .82rem;
-    }
-    .cs-session-table .part-cell {
-      font-weight: 600;
-      color: var(--navy-mid);
-      font-size: .82rem;
-    }
-    .cs-session-label {
-      display: inline-block;
-      background: var(--navy);
-      color: var(--gold);
-      font-family: 'Inter', sans-serif;
-      font-size: .7rem;
-      font-weight: 700;
-      width: 20px; height: 20px;
-      line-height: 20px;
-      text-align: center;
-      border-radius: 50%;
-      margin-right: 4px;
+      flex-wrap: wrap;
+      gap: .8rem;
     }
 
-    /* ─── CTA BAND ───────────────────────────────────────────────────── */
-    .cs-cta-band {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
-      padding: 52px 24px;
-      text-align: center;
-    }
-    .cs-cta-band h3 {
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      color: #fff;
-      margin: 0 0 10px;
-    }
-    .cs-cta-band p {
-      color: rgba(255,255,255,.72);
-      font-size: .98rem;
-      margin: 0 0 32px;
-    }
-    .cs-donation-cards {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      max-width: 640px;
-      margin: 0 auto 28px;
-    }
-    @media (max-width: 560px) {
-      .cs-donation-cards { grid-template-columns: 1fr; }
-    }
-    .cs-donation-card {
-      background: rgba(255,255,255,.07);
-      border: 1px solid rgba(255,255,255,.2);
-      border-radius: var(--radius);
-      padding: 24px 20px;
-      text-align: left;
-    }
-    .cs-donation-card h4 {
-      font-family: 'Inter', sans-serif;
-      font-size: .75rem;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--gold-lt);
-      margin: 0 0 6px;
-    }
-    .cs-donation-card .price {
-      font-family: 'EB Garamond', Georgia, serif;
-      font-size: 2rem;
-      font-weight: 600;
-      color: #fff;
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-    .cs-donation-card .price span {
-      font-size: 1rem;
-      font-weight: 400;
-      color: rgba(255,255,255,.6);
-    }
-    .cs-donation-card p {
-      font-size: .83rem;
-      color: rgba(255,255,255,.65);
-      line-height: 1.5;
-      margin: 0 0 16px;
-    }
-    .cs-btn-sm {
+    .consciousness-page .btn-cs-gold {
       display: inline-block;
-      font-family: 'Inter', sans-serif;
-      font-size: .85rem;
-      font-weight: 700;
-      padding: 10px 20px;
-      border-radius: 8px;
+      background: #e9bd54;
+      color: #10243a;
+      font-weight: 800;
+      padding: .78rem 1.25rem;
+      border-radius: 6px;
       text-decoration: none;
-      transition: .2s;
     }
-    .cs-btn-sm.gold {
-      background: var(--gold);
-      color: var(--navy);
-    }
-    .cs-btn-sm.gold:hover { background: #d9a83a; }
-    .cs-btn-sm.outline-white {
-      background: transparent;
+
+    .consciousness-page .btn-cs-light {
+      display: inline-block;
+      background: rgba(255,255,255,.08);
       color: #fff;
-      border: 1.5px solid rgba(255,255,255,.5);
-    }
-    .cs-btn-sm.outline-white:hover { border-color: #fff; background: rgba(255,255,255,.07); }
-
-    .cs-cta-also {
-      font-size: .85rem;
-      color: rgba(255,255,255,.5);
-    }
-    .cs-cta-also a {
-      color: var(--gold-lt);
-      text-decoration: underline;
+      border: 1px solid rgba(255,255,255,.5);
+      font-weight: 700;
+      padding: .74rem 1.2rem;
+      border-radius: 6px;
+      text-decoration: none;
     }
 
-    /* ─── PAST UNITS ─────────────────────────────────────────────────── */
-    .cs-past-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-      margin-top: 32px;
+    .consciousness-page .btn-cs-gold:hover,
+    .consciousness-page .btn-cs-light:hover {
+      text-decoration: none;
+      filter: brightness(.97);
     }
-    .cs-past-card {
+
+    .consciousness-page .cs-section {
+      padding: 4rem var(--pad);
+    }
+
+    .consciousness-page .cs-section.alt {
+      background: var(--bihs-sky);
+    }
+
+    .consciousness-page .cs-section.white {
       background: #fff;
-      border-radius: var(--radius);
-      border: 1px solid #dde6f0;
-      padding: 18px 18px 14px;
+    }
+
+    .consciousness-page .section-heading {
+      max-width: 780px;
+      margin: 0 auto 2.4rem;
+      text-align: center;
+    }
+
+    .consciousness-page .section-eyebrow {
+      color: var(--bihs-gold);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      margin-bottom: .55rem;
+    }
+
+    .consciousness-page .section-heading h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.8rem, 3vw, 2.45rem);
+      font-weight: 500;
+    }
+
+    .consciousness-page .section-heading .lead {
+      line-height: 1.7;
+    }
+
+    /* AT A GLANCE */
+    .consciousness-page .glance-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 1rem;
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+
+    .consciousness-page .glance-card {
+      background: #fff;
+      border: 1px solid #dfe8f2;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 5px 16px rgba(2,38,73,.05);
+    }
+
+    .consciousness-page .glance-card i {
+      font-size: 1.8rem;
+      color: var(--bihs-navy);
+      margin-bottom: .75rem;
+    }
+
+    .consciousness-page .glance-card strong {
+      display: block;
+      color: var(--bihs-navy-900);
+      margin-bottom: .25rem;
+    }
+
+    .consciousness-page .glance-card span {
+      color: #627385;
+      font-size: .9rem;
+    }
+
+    /* CURRICULUM */
+    .consciousness-page .curriculum-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 1.4rem;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .consciousness-page .unit-card {
+      background: #fff;
+      border: 1px solid #dbe5ef;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 7px 22px rgba(2,38,73,.06);
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      box-shadow: 0 1px 6px rgba(0,31,63,.06);
-    }
-    .cs-past-unit-label {
-      font-family: 'Inter', sans-serif;
-      font-size: .7rem;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    .cs-past-card h4 {
-      font-size: 1.05rem;
-      color: var(--navy);
-      margin: 0;
-    }
-    .cs-past-card .faculty {
-      font-size: .88rem;
-      color: var(--muted);
-    }
-    .cs-past-card .dates {
-      font-size: .83rem;
-      color: #8899aa;
-    }
-    .cs-past-card .on-demand {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-family: 'Inter', sans-serif;
-      font-size: .75rem;
-      font-weight: 600;
-      color: var(--navy-mid);
-      background: var(--sky);
-      border-radius: 6px;
-      padding: 4px 10px;
-      margin-top: 4px;
-      width: fit-content;
-    }
-    .cs-past-card .on-demand i { font-size: .7rem; color: var(--gold); }
-
-    /* Past unit card variants — muted steel header */
-    .cs-unit-card-header--past {
-      background: #3a4f63;
-    }
-    .cs-unit-card--past .cs-unit-number {
-      color: #a8c0d6;
-    }
-    .cs-unit-card--past .cs-unit-faculty {
-      color: rgba(255,255,255,.55);
     }
 
-    /* On-demand badge */
-    .cs-on-demand-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      background: #e8f4ec;
-      color: #2e6b42;
-      font-family: 'Inter', sans-serif;
-      font-size: .8rem;
-      font-weight: 700;
-      letter-spacing: .05em;
-      padding: 6px 14px;
-      border-radius: 20px;
-      margin-bottom: 16px;
-    }
-    .cs-on-demand-badge i { font-size: .85rem; }
-
-    /* Topic bullet list inside past cards */
-    .cs-topic-list {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-    .cs-topic-list li {
-      font-size: .93rem;
-      color: var(--muted);
-      padding: 7px 0 7px 18px;
-      border-bottom: 1px solid #f0f4f8;
-      line-height: 1.5;
+    .consciousness-page .unit-top {
+      min-height: 74px;
+      background: linear-gradient(135deg, #003366, #022649);
       position: relative;
-    }
-    .cs-topic-list li:last-child { border-bottom: none; }
-    .cs-topic-list li::before {
-      content: '–';
-      position: absolute;
-      left: 0;
-      color: var(--gold);
-      font-weight: 700;
-    }
-    .cs-topic-list li strong {
-      color: var(--navy);
-      font-weight: 600;
-    }
-    .cs-outcomes-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      margin-top: 28px;
-    }
-    .cs-outcome-item {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-    }
-    .cs-outcome-item i {
-      color: var(--gold);
-      margin-top: 3px;
-      flex-shrink: 0;
-    }
-    .cs-outcome-item p {
-      font-size: .98rem;
-      color: var(--muted);
-      margin: 0;
-      line-height: 1.6;
+      border-bottom: 3px solid var(--bihs-gold);
     }
 
-    /* ─── CERT BAND ──────────────────────────────────────────────────── */
-    .cs-cert-band {
-      background: var(--cream);
-      border-top: 1px solid #e2ddd4;
-      border-bottom: 1px solid #e2ddd4;
-      padding: 40px 24px;
-      text-align: center;
+    .consciousness-page .unit-photo {
+      position: absolute;
+      width: 82px;
+      height: 82px;
+      border-radius: 50%;
+      object-fit: cover;
+      left: 1.25rem;
+      top: 31px;
+      border: 4px solid #fff;
+      box-shadow: 0 0 0 3px #003366, 0 5px 12px rgba(0,0,0,.18);
     }
-    .cs-cert-inner {
-      max-width: 660px;
+
+    .consciousness-page .unit-body {
+      padding: 3.3rem 1.4rem 1.5rem;
+    }
+
+    .consciousness-page .unit-number {
+      color: var(--bihs-gold);
+      font-size: .75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: .25rem;
+    }
+
+    .consciousness-page .unit-card h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.42rem;
+      font-weight: 500;
+      margin-bottom: .25rem;
+    }
+
+    .consciousness-page .faculty-name {
+      color: #5f7081;
+      font-weight: 600;
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .consciousness-page .unit-card ul {
+      margin: 0;
+      padding-left: 1.15rem;
+      color: #425466;
+    }
+
+    .consciousness-page .unit-card li {
+      margin-bottom: .55rem;
+    }
+
+    .consciousness-page .unit-card li:last-child { margin-bottom: 0; }
+
+    /* HOW IT WORKS */
+    .consciousness-page .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 1rem;
+      max-width: 1050px;
       margin: 0 auto;
     }
-    .cs-cert-band h3 {
-      font-size: 1.4rem;
-      color: var(--navy);
-      margin: 0 0 10px;
+
+    .consciousness-page .step-card {
+      background: #fff;
+      border: 1px solid #dfe8f2;
+      border-radius: 12px;
+      padding: 1.5rem;
     }
-    .cs-cert-band p {
+
+    .consciousness-page .step-number {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bihs-navy);
+      color: #fff;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .consciousness-page .step-card h3 {
+      font-size: 1.08rem;
+      margin-bottom: .45rem;
+    }
+
+    .consciousness-page .step-card p {
+      font-size: .93rem;
+      color: #5a6a7a;
+      margin-bottom: 0;
+    }
+
+    /* FEE + SCHOLARSHIP */
+    .consciousness-page .enrollment-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .consciousness-page .enrollment-card {
+      background: #fff;
+      border: 1px solid #dbe5ef;
+      border-radius: 14px;
+      padding: 2rem;
+      box-shadow: 0 7px 22px rgba(2,38,73,.06);
+    }
+
+    .consciousness-page .enrollment-card.scholarship {
+      border-top: 4px solid var(--bihs-gold);
+    }
+
+    .consciousness-page .fee-label {
+      color: #617386;
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-weight: 800;
+      margin-bottom: .35rem;
+    }
+
+    .consciousness-page .fee-price {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--bihs-navy-900);
+      font-size: 2.5rem;
+      line-height: 1.1;
+      margin-bottom: .8rem;
+    }
+
+    .consciousness-page .included-list {
+      padding-left: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .consciousness-page .included-list li {
+      margin-bottom: .45rem;
+      color: #425466;
+    }
+
+    .consciousness-page .scholarship h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.55rem;
+      font-weight: 500;
+    }
+
+    .consciousness-page .small-note {
+      color: #69798a;
+      font-size: .88rem;
+    }
+
+    /* ASSESSMENT */
+    .consciousness-page .assessment-box {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid #dbe5ef;
+      border-left: 5px solid var(--bihs-gold);
+      border-radius: 10px;
+      padding: 2rem;
+    }
+
+    .consciousness-page .assessment-box h3 {
+      margin-bottom: .7rem;
+    }
+
+    /* DISCLOSURE */
+    .consciousness-page .disclosure {
+      background: #f5f7fa;
+      border-top: 1px solid #e1e7ee;
+      padding: 2.4rem var(--pad);
+    }
+
+    .consciousness-page .disclosure-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .consciousness-page .disclosure h3 {
+      font-size: 1rem;
+      margin-bottom: .45rem;
+    }
+
+    .consciousness-page .disclosure p {
+      color: #617183;
       font-size: .9rem;
-      color: var(--muted);
-      line-height: 1.65;
-      margin: 0;
+      margin-bottom: 0;
     }
-    .cs-cert-band em {
-      display: block;
-      margin-top: 12px;
-      font-size: .82rem;
-      color: #99a0ad;
+
+    .consciousness-page .final-cta {
+      background: linear-gradient(135deg, #022649 0%, #003366 100%);
+      color: #fff;
+      text-align: center;
+      padding: 3.5rem var(--pad);
+    }
+
+    .consciousness-page .final-cta h2 {
+      color: #fff;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      margin-bottom: .7rem;
+    }
+
+    .consciousness-page .final-cta p {
+      color: #d8e4f3;
+      max-width: 680px;
+      margin: 0 auto 1.4rem;
+    }
+
+    .consciousness-page .final-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      justify-content: center;
+    }
+
+    @media (max-width: 900px) {
+      .consciousness-page .glance-grid,
+      .consciousness-page .steps-grid {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+      }
+
+      .consciousness-page .curriculum-grid,
+      .consciousness-page .enrollment-wrap {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .consciousness-page .cs-new-hero {
+        padding: 3.2rem var(--pad) 3rem;
+      }
+
+      .consciousness-page .hero-actions,
+      .consciousness-page .final-actions {
+        flex-direction: column;
+      }
+
+      .consciousness-page .hero-actions a,
+      .consciousness-page .final-actions a {
+        width: 100%;
+        text-align: center;
+      }
+
+      .consciousness-page .glance-grid,
+      .consciousness-page .steps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .consciousness-page .cs-section {
+        padding: 3rem var(--pad);
+      }
     }
   </style>
 </head>
-<body class="cs-page">
 
+<body class="consciousness-page">
   <div id="header"></div>
-<main>
-<section class="hero-banner">
-  <div class="hero-overlay"></div> 
-      <div class="container hero-content">
 
+  <main>
 
-    <h1>Consciousness Studies</h1>
-    <h2>Ancient and Modern Perspectives</h2>
+    <!-- HERO -->
+    <section class="cs-new-hero">
+      <div class="container">
+        <p class="hero-kicker">Bhaktivedanta Institute for Higher Studies</p>
+        <span class="status-pill">Available Now · Self-Paced</span>
+        <h1>Consciousness Studies:<br>Ancient and Modern Perspectives</h1>
+        <p class="hero-subtitle">A six-unit online program exploring consciousness, philosophy, metaphysics, cosmology, physics, and life.</p>
+        <p class="hero-description">
+          Study with BIHS scholars through recorded lectures, guided learning materials, and assessments in the BIHS Canvas learning environment. The complete program is now available online for self-paced personal enrichment.
+        </p>
 
-    <div class="hero-rule"></div>
+        <div class="hero-meta">
+          <span>Six Units</span>
+          <span>Online &amp; Self-Paced</span>
+          <span>Assessments</span>
+          <span>Certificate of Completion</span>
+          <span>Scholarship Assistance</span>
+        </div>
 
-    <p class="course-subtitle">
-      Units 5 &amp; 6 are open to new participants — join us for the Summer term beginning May 23.
-    </p>
-
-    <div class="hero-actions">
-     <a class="btn primary" href="https://bihstudies.org/donations-education.html" style="background: #ffffff; color: #001f3f; border: none; padding: 15px 30px; font-weight: bold;"> Participate Now </a>
-      
-      <a class="btn primary" href="https://bihstudies.instructure.com/login/canvas" style="background: #ffffff; color: #001f3f; border: none; padding: 15px 30px; font-weight: bold;">Access CANVAS</a>
-   
-    </div>
-
-  </div>
-</section>
-
-<!-- ② QUOTE -->
-    <section class="cs-quote-band">
-      <blockquote>
-        "It will be a great contribution to human society if this authorized information from the
-        Vedic literature is presented to the modern world on the basis of modern scientific understanding.
-        The fact is already there. It simply has to be presented for modern understanding."
-        <cite>— Śrīla Prabhupāda, Letter to Dr. Bigelow, January 20, 1971</cite>
-      </blockquote>
-      <div class="cs-notice">
-        <i class="fa-solid fa-circle-info"></i>
-        <span><strong>Avocational Program:</strong> This program is offered solely for personal enrichment and the joy of inquiry. It is not designed to qualify participants for employment in any field.</span>
+        <div class="hero-actions">
+          <a class="btn-cs-gold" href="#enrollment">Enroll in the Program</a>
+          <a class="btn-cs-light" href="#curriculum">Explore the Six Units</a>
+        </div>
       </div>
     </section>
 
-<!-- ④ COURSE AT A GLANCE -->
-    <section class="cs-section cs-section--cream">
-      <div class="cs-container">
-        <div class="cs-section-label">Course at a Glance</div>
-        <h2 class="cs-section-title">Format &amp; Schedule</h2>
-        <div class="cs-glance-row">
-          <div class="cs-glance-card">
-            <h4><i class="fa-solid fa-chalkboard-user" style="margin-right:6px;"></i>Format</h4>
-            <ul>
-              <li>Scholar-led sessions</li>
-              <li><strong>Saturdays, 10:00 AM EST</strong></li>
-              <li>Live Zoom — join from anywhere</li>
-              <li>Asynchronous access via Canvas</li>
-              <li>Certificate upon completion of each unit</li>
-            </ul>
+
+    <!-- AT A GLANCE -->
+    <section class="cs-section white">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-eyebrow">Program at a Glance</p>
+          <h2>A structured journey through consciousness and reality</h2>
+          <p class="lead">
+            Originally presented as a scholar-led live series, the complete program is now organized for flexible online study through Canvas.
+          </p>
+        </div>
+
+        <div class="glance-grid">
+          <div class="glance-card">
+            <i class="fa-solid fa-laptop"></i>
+            <strong>Format</strong>
+            <span>Online and self-paced</span>
           </div>
-          <div class="cs-glance-card">
-            <h4><i class="fa-regular fa-calendar" style="margin-right:6px;"></i>Full-Year Schedule</h4>
-            <ul>
-              <li><strong>Spring (16 wks):</strong> Jan 10 – May 16</li>
-              <li>Spring break: March 1 – March 23</li>
-              <li><strong>Summer (8 wks):</strong> May 23 – July 11</li>
-              <li>All sessions recorded &amp; on demand</li>
-              <li>Completion window: through Dec 6, 2026</li>
-            </ul>
+          <div class="glance-card">
+            <i class="fa-solid fa-book-open-reader"></i>
+            <strong>Curriculum</strong>
+            <span>Six scholar-led units</span>
           </div>
-          <div class="cs-glance-card">
-            <h4><i class="fa-solid fa-users" style="margin-right:6px;"></i>Who It Is For</h4>
-            <ul>
-              <li>Bhakti practitioners deepening their understanding</li>
-              <li>Anyone curious about consciousness &amp; science</li>
-              <li>Open to newcomers — no prerequisites</li>
-              <li>Join mid-course via Canvas catch-up</li>
-            </ul>
+          <div class="glance-card">
+            <i class="fa-solid fa-list-check"></i>
+            <strong>Assessment</strong>
+            <span>Learning activities and assessments</span>
+          </div>
+          <div class="glance-card">
+            <i class="fa-solid fa-certificate"></i>
+            <strong>Recognition</strong>
+            <span>BIHS Certificate of Completion</span>
           </div>
         </div>
       </div>
     </section>
 
- <!-- ⑤ ACTIVE UNITS 5 & 6 -->
-    <section class="cs-section">
-      <div class="cs-container">
-        <div class="cs-active-badge">Now Open — Summer Term</div>
-        <div class="cs-section-label">The Atma Paradigm</div>
-        <h2 class="cs-section-title">Units 5 &amp; 6 — with Akhandadhi Das</h2>
-        <p class="cs-section-lead">
-          Two units exploring consciousness, matter, life, and the cosmos through Vedic metaphysics in dialogue with contemporary science. Join live or catch up on Canvas.
-        </p>
 
-        <div class="cs-unit-grid">
-
-          <!-- UNIT 5 -->
-          <div class="cs-unit-card">
-            <div class="cs-unit-card-header">
-              <img src="img/Akhand1.jpg" alt="Akhandadhi Das">
-              <div class="cs-unit-card-header-text">
-                <div class="cs-unit-number">Unit 5 · May 23 – June 13</div>
-                <h3>Consciousness &amp; Matter</h3>
-                <p class="cs-unit-faculty">Akhandadhi Das</p>
-              </div>
-            </div>
-            <div class="cs-unit-card-body">
-              <div class="cs-unit-dates">
-                <i class="fa-regular fa-calendar-check"></i> Every Saturday, 10:00 AM EST
-              </div>
-              <table class="cs-session-table">
-                <thead>
-                  <tr>
-                    <th>Date</th>
-                    <th>Session</th>
-                    <th colspan="2">Topics</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="date-cell" rowspan="2">May 23</td>
-                    <td class="part-cell" rowspan="2">Consciousness<br>Part One</td>
-                    <td><span class="cs-session-label">A</span></td>
-                    <td>Axioms of consciousness</td>
-                  </tr>
-                  <tr>
-                    <td><span class="cs-session-label">B</span></td>
-                    <td>Why consciousness is the Hard Problem of Science</td>
-                  </tr>
-                  <tr>
-                    <td class="date-cell" rowspan="2">May 30</td>
-                    <td class="part-cell" rowspan="2">Consciousness<br>Part Two</td>
-                    <td><span class="cs-session-label">A</span></td>
-                    <td>Three-aspect Holism: a model of conscious experience</td>
-                  </tr>
-                  <tr>
-                    <td><span class="cs-session-label">B</span></td>
-                    <td>Free will, intention and agency</td>
-                  </tr>
-                  <tr>
-                    <td class="date-cell" rowspan="2">June 6</td>
-                    <td class="part-cell" rowspan="2">Matter &amp; Reality<br>Part One</td>
-                    <td><span class="cs-session-label">A</span></td>
-                    <td>What's out there?</td>
-                  </tr>
-                  <tr>
-                    <td><span class="cs-session-label">B</span></td>
-                    <td>Qualitative modelling of external reality</td>
-                  </tr>
-                  <tr>
-                    <td class="date-cell" rowspan="2">June 13</td>
-                    <td class="part-cell" rowspan="2">Matter &amp; Reality<br>Part Two</td>
-                    <td><span class="cs-session-label">A</span></td>
-                    <td>Interaction of consciousness and matter</td>
-                  </tr>
-                  <tr>
-                    <td><span class="cs-session-label">B</span></td>
-                    <td>Matter: Energy &amp; Information manipulated by Time</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <!-- UNIT 6 -->
-          <div class="cs-unit-card">
-            <div class="cs-unit-card-header">
-              <img src="img/Akhand1.jpg" alt="Akhandadhi Das">
-              <div class="cs-unit-card-header-text">
-                <div class="cs-unit-number">Unit 6 · June 20 – July 11</div>
-                <h3>Life, Cosmos &amp; Beyond</h3>
-                <p class="cs-unit-faculty">Akhandadhi Das</p>
-              </div>
-            </div>
-            <div class="cs-unit-card-body">
-              <div class="cs-unit-dates">
-                <i class="fa-regular fa-calendar-check"></i> Every Saturday, 10:00 AM EST
-              </div>
-              <table class="cs-session-table">
-                <thead>
-                  <tr>
-                    <th>Date</th>
-                    <th>Session</th>
-                    <th colspan="2">Topics</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="date-cell" rowspan="2">June 20</td>
-                    <td class="part-cell" rowspan="2">Life<br>Part One</td>
-                    <td><span class="cs-session-label">A</span></td>
-                    <td>What is Life? Did it arise from inert chemistry?</td>
-                  </tr>
-                  <tr>
-                    <td><span class="cs-session-label">B</span></td>
-                    <td>Critique of the evidence for trans-species evolution</td>
-                  </tr>
-                  <tr>
-                    <td class="date-cell" rowspan="2">June 27</td>
-                    <td class="part-cell" rowspan="2">Life<br>Part Two</td>
-                    <td><span class="cs-session-label">A</span></td>
-                    <td>A Vedic perspective of nature, life &amp; species</td>
-                  </tr>
-                  <tr>
-                    <td><span class="cs-session-label">B</span></td>
-                    <td>Neither Myth nor Magic: How species appear on Earth</td>
-                  </tr>
-                  <tr>
-                    <td class="date-cell" rowspan="2">July 4</td>
-                    <td class="part-cell" rowspan="2">Cosmos &amp; Beyond<br>Part One</td>
-                    <td><span class="cs-session-label">A</span></td>
-                    <td>What's at time, t = 0. A universe of information.</td>
-                  </tr>
-                  <tr>
-                    <td><span class="cs-session-label">B</span></td>
-                    <td>Metaphysics of a consciousness-based universe</td>
-                  </tr>
-                  <tr>
-                    <td class="date-cell" rowspan="2">July 11</td>
-                    <td class="part-cell" rowspan="2">Cosmos &amp; Beyond<br>Part Two</td>
-                    <td><span class="cs-session-label">A</span></td>
-                    <td>Maya VR and the free state of consciousness</td>
-                  </tr>
-                  <tr>
-                    <td><span class="cs-session-label">B</span></td>
-                    <td>Nature of the source: inert or conscious?</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-        </div><!-- /cs-unit-grid -->
-      </div>
-    </section>
-
-  <!-- ⑥ PARTICIPATION / DONATION CTA -->
-    <section class="cs-cta-band">
-      <div class="cs-container" style="text-align:center;">
-        <h3>Join the Program</h3>
-        <p>All participants receive the same full access — recordings, live sessions, Canvas modules, and certificates.</p>
-        <div class="cs-donation-cards">
-          <div class="cs-donation-card">
-            <h4>Full Program</h4>
-            <div class="price">$108 <span>suggested</span></div>
-            <p>Complete access to all six units, all recordings, live Saturdays, and the Final Certificate of Participation.</p>
-            <a href="https://square.link/u/e7OtuBOj" class="cs-btn-sm gold">Participate — Full Program</a>
-          </div>
-          <div class="cs-donation-card">
-            <h4>Flexible Participation</h4>
-            <div class="price">Your <span>choice</span></div>
-            <p>Contribute what feels meaningful. Full access included. Transition to full participation anytime.</p>
-            <a href="https://square.link/u/wYPRTdBM" class="cs-btn-sm outline-white">Choose Your Contribution</a>
-          </div>
+    <!-- CURRICULUM -->
+    <section class="cs-section alt" id="curriculum">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-eyebrow">Faculty &amp; Curriculum</p>
+          <h2>Six Units · Five Scholars · One Integrated Program</h2>
+          <p class="lead">
+            Each unit approaches questions of consciousness and reality from a different philosophical or scientific perspective.
+          </p>
         </div>
-        <p class="cs-cta-also">
-          Want to support BIHS's educational mission without enrolling?
-          <a href="https://square.link/u/UyswlD7F">Support Education</a>
-        </p>
+
+        <div class="curriculum-grid">
+
+          <article class="unit-card">
+            <div class="unit-top">
+              <img src="img/Tiziano.2.jpg" alt="Dr. Tiziano Valentinuzzi" class="unit-photo">
+            </div>
+            <div class="unit-body">
+              <div class="unit-number">Unit 1</div>
+              <h3>Vedic Cosmology</h3>
+              <p class="faculty-name">Dr. Tiziano Valentinuzzi</p>
+              <ul>
+                <li><strong>Crisis of meaning:</strong> physicalism and questions of human purpose</li>
+                <li><strong>Consciousness-based universe:</strong> ātmā-centered worldview, neuroscience, and panpsychism</li>
+                <li><strong>Simulation hypothesis:</strong> Vedic metaphysics, quantum physics, and information theory</li>
+                <li><strong>Bhakti and reason:</strong> examining divine love as a rational principle</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="unit-card">
+            <div class="unit-top">
+              <img src="img/Sankar.jpg" alt="Dr. Shivanand Sharma" class="unit-photo">
+            </div>
+            <div class="unit-body">
+              <div class="unit-number">Unit 2</div>
+              <h3>Philosophy Foundations</h3>
+              <p class="faculty-name">Dr. Shivanand Sharma</p>
+              <ul>
+                <li><strong>Argumentation:</strong> logical reasoning and debate methodology</li>
+                <li><strong>Philosophy of Mind:</strong> consciousness and the architecture of thought</li>
+                <li><strong>Philosophy of Science:</strong> scientific methodology and its limitations</li>
+                <li><strong>Philosophy of Religion:</strong> theological and spiritual epistemology</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="unit-card">
+            <div class="unit-top">
+              <img src="img/HDG.1.jpg" alt="Dr. Howard Resnick" class="unit-photo">
+            </div>
+            <div class="unit-body">
+              <div class="unit-number">Unit 3</div>
+              <h3>Foundations of Metaphysics</h3>
+              <p class="faculty-name">Dr. Howard Resnick</p>
+              <ul>
+                <li><strong>Central inquiry:</strong> Can there be a true spiritual science?</li>
+                <li>Examining metaphysical questions at the intersection of philosophy, science, and spiritual knowledge</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="unit-card">
+            <div class="unit-top">
+              <img src="img/DharmaV.jpg" alt="Dr. Doug Watson" class="unit-photo">
+            </div>
+            <div class="unit-body">
+              <div class="unit-number">Unit 4</div>
+              <h3>Physics and Cosmology</h3>
+              <p class="faculty-name">Dr. Doug Watson</p>
+              <ul>
+                <li><strong>Crisis in Physics:</strong> conceptual limitations in modern physics</li>
+                <li><strong>Space, Time, and Matter:</strong> quantum mechanics and foundational assumptions</li>
+                <li><strong>Quantum Gravity:</strong> emerging relational approaches to reality</li>
+                <li><strong>Science and Philosophy:</strong> relational cosmology and consciousness</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="unit-card">
+            <div class="unit-top">
+              <img src="img/Akhand1.jpg" alt="Akhandadhi Das" class="unit-photo">
+            </div>
+            <div class="unit-body">
+              <div class="unit-number">Unit 5</div>
+              <h3>Consciousness &amp; Matter</h3>
+              <p class="faculty-name">Akhandadhi Das</p>
+              <ul>
+                <li><strong>Consciousness:</strong> the “hard problem of consciousness”</li>
+                <li><strong>Reality:</strong> metaphysical foundations and consciousness–world interaction</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="unit-card">
+            <div class="unit-top">
+              <img src="img/Akhand1.jpg" alt="Akhandadhi Das" class="unit-photo">
+            </div>
+            <div class="unit-body">
+              <div class="unit-number">Unit 6</div>
+              <h3>Life, Cosmos &amp; Beyond</h3>
+              <p class="faculty-name">Akhandadhi Das</p>
+              <ul>
+                <li><strong>Life:</strong> biological mysteries and scientific perspectives related to Purāṇic accounts</li>
+                <li><strong>Cosmos:</strong> consciousness-based universal structure and realms of free consciousness</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
       </div>
     </section>
 
-    <!-- ⑦ PAST UNITS — ON DEMAND -->
-    <section class="cs-section cs-section--alt">
-      <div class="cs-container">
-        <div class="cs-section-label">Available On Demand via Canvas</div>
-        <h2 class="cs-section-title">Spring Term — Units 1–4</h2>
-        <p class="cs-section-lead">
-          These four units were offered during the Spring term and are now available in full to enrolled participants via Canvas. Watch at your own pace, complete the reflective practice, and earn your Unit Certificate.
-        </p>
 
-        <div class="cs-unit-grid">
+    <!-- HOW IT WORKS -->
+    <section class="cs-section white">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-eyebrow">How It Works</p>
+          <h2>Study at your own pace</h2>
+          <p class="lead">The program is designed to support serious study without requiring attendance at a fixed weekly meeting time.</p>
+        </div>
 
-          <!-- UNIT 1 -->
-          <div class="cs-unit-card cs-unit-card--past">
-            <div class="cs-unit-card-header cs-unit-card-header--past">
-              <img src="img/Tiziano.2.jpg" alt="Dr. Tiziano Valentinuzzi">
-              <div class="cs-unit-card-header-text">
-                <div class="cs-unit-number">Unit 1 · Jan 10 – Jan 31</div>
-                <h3>Vedic Cosmology</h3>
-                <p class="cs-unit-faculty">Dr. Tiziano Valentinuzzi</p>
-              </div>
-            </div>
-            <div class="cs-unit-card-body">
-              <div class="cs-on-demand-badge">
-                <i class="fa-solid fa-circle-play"></i> Available on Canvas
-              </div>
-              <ul class="cs-topic-list">
-                <li><strong>Crisis of meaning:</strong> How physicalism fails to satisfy human purpose</li>
-                <li><strong>Consciousness-based universe:</strong> Ātmā-centered worldview vs. neuroscience and panpsychism</li>
-                <li><strong>Simulation hypothesis:</strong> Is the Universe a Virtual Reality? Vedic metaphysics through quantum physics and information theory</li>
-                <li><strong>Divine love scientifically:</strong> Bhakti as rational principle rather than sentiment</li>
-              </ul>
-            </div>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Enroll</h3>
+            <p>Register for the complete six-unit Consciousness Studies program.</p>
           </div>
-
-          <!-- UNIT 2 -->
-          <div class="cs-unit-card cs-unit-card--past">
-            <div class="cs-unit-card-header cs-unit-card-header--past">
-              <img src="img/Sankar.jpg" alt="Shivanand Sharma">
-              <div class="cs-unit-card-header-text">
-                <div class="cs-unit-number">Unit 2 · Feb 7 – Feb 28</div>
-                <h3>Philosophy Foundations</h3>
-                <p class="cs-unit-faculty">Shivanand Sharma, PhD Candidate</p>
-              </div>
-            </div>
-            <div class="cs-unit-card-body">
-              <div class="cs-on-demand-badge">
-                <i class="fa-solid fa-circle-play"></i> Available on Canvas
-              </div>
-              <ul class="cs-topic-list">
-                <li><strong>Intro to Critical Thinking:</strong> Constructing and critiquing arguments</li>
-                <li><strong>Philosophy of Science:</strong> The nature and scope of science</li>
-                <li><strong>Philosophy of Religion:</strong> The relationship between faith and reason</li>
-                <li><strong>Philosophy of Consciousness:</strong> Theories of consciousness and personal identity</li>
-              </ul>
-            </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Access Canvas</h3>
+            <p>Receive access to recorded lectures, course materials, and learning activities.</p>
           </div>
-
-          <!-- UNIT 3 -->
-          <div class="cs-unit-card cs-unit-card--past">
-            <div class="cs-unit-card-header cs-unit-card-header--past">
-              <img src="img/HDG.1.jpg" alt="Dr. Howard Resnick">
-              <div class="cs-unit-card-header-text">
-                <div class="cs-unit-number">Unit 3 · March 28 – April 18</div>
-                <h3>Foundations of Metaphysics</h3>
-                <p class="cs-unit-faculty">Dr. Howard Resnick</p>
-              </div>
-            </div>
-            <div class="cs-unit-card-body">
-              <div class="cs-on-demand-badge">
-                <i class="fa-solid fa-circle-play"></i> Available on Canvas
-              </div>
-              <ul class="cs-topic-list">
-                <li><strong>Week 1:</strong> Can There Be a True Spiritual Science?</li>
-                <li><strong>Week 2:</strong> Transcending Philosophy's Dark Age</li>
-                <li><strong>Week 3:</strong> Natural Law, Natural Rights, and Objective Morality</li>
-                <li><strong>Week 4:</strong> The Fatal Contradiction of Physicalism</li>
-              </ul>
-            </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Complete the Study</h3>
+            <p>Work through each unit and complete the required assessments at your own pace.</p>
           </div>
-
-          <!-- UNIT 4 -->
-          <div class="cs-unit-card cs-unit-card--past">
-            <div class="cs-unit-card-header cs-unit-card-header--past">
-              <img src="img/DharmaV.jpg" alt="Dr. Doug Watson">
-              <div class="cs-unit-card-header-text">
-                <div class="cs-unit-number">Unit 4 · April 25 – May 16</div>
-                <h3>Physics and Cosmology</h3>
-                <p class="cs-unit-faculty">Dr. Doug Watson</p>
-              </div>
-            </div>
-            <div class="cs-unit-card-body">
-              <div class="cs-on-demand-badge">
-                <i class="fa-solid fa-circle-play"></i> Available on Canvas
-              </div>
-              <ul class="cs-topic-list">
-                <li><strong>Crisis in Physics:</strong> Modern physics' conceptual limitations</li>
-                <li><strong>Rethinking Space, Time, and Matter:</strong> Quantum mechanics challenging fixed assumptions</li>
-                <li><strong>Quantum Gravity:</strong> Emerging understandings of reality as a universe of relationships</li>
-                <li><strong>Science and Philosophy:</strong> Relational cosmology integrating consciousness</li>
-              </ul>
-            </div>
-          </div>
-
-        </div><!-- /cs-unit-grid -->
-      </div>
-    </section>
-
-    <!-- ⑧ LEARNING OUTCOMES -->
-    <section class="cs-section">
-      <div class="cs-container">
-        <div class="cs-section-label">What You Will Gain</div>
-        <h2 class="cs-section-title">Learning Outcomes</h2>
-        <div class="cs-outcomes-grid">
-          <div class="cs-outcome-item">
-            <i class="fa-solid fa-check-circle"></i>
-            <p>Clearer understanding of metaphysics, cosmology, consciousness, and ethics</p>
-          </div>
-          <div class="cs-outcome-item">
-            <i class="fa-solid fa-check-circle"></i>
-            <p>Improved reasoning, articulation, and communication skills</p>
-          </div>
-          <div class="cs-outcome-item">
-            <i class="fa-solid fa-check-circle"></i>
-            <p>Increased confidence engaging in scientific, philosophical, or interfaith conversations</p>
-          </div>
-          <div class="cs-outcome-item">
-            <i class="fa-solid fa-check-circle"></i>
-            <p>Deeper appreciation of the Bhāgavata worldview and its contemporary relevance</p>
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <h3>Receive Recognition</h3>
+            <p>Participants who successfully complete the program receive a BIHS Certificate of Completion.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ⑨ CERTIFICATION -->
-    <section class="cs-cert-band">
-      <div class="cs-cert-inner">
-        <h3>Certification &amp; Assessment</h3>
+
+    <!-- ENROLLMENT -->
+    <section class="cs-section alt" id="enrollment">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-eyebrow">Enrollment</p>
+          <h2>Complete Six-Unit Program</h2>
+          <p class="lead">Enrollment provides access to the full Consciousness Studies program. Individual units are not currently offered separately.</p>
+        </div>
+
+        <div class="enrollment-wrap">
+          <div class="enrollment-card">
+            <p class="fee-label">Program Fee</p>
+            <div class="fee-price">$108</div>
+            <p>The complete program fee includes:</p>
+            <ul class="included-list">
+              <li>Access to all six units</li>
+              <li>Recorded scholar-led lectures</li>
+              <li>Canvas course materials and learning activities</li>
+              <li>Assessments</li>
+              <li>BIHS Certificate of Completion upon successful completion</li>
+            </ul>
+            <a class="btn secondary" href="https://square.link/u/e7OtuBOj">Enroll in the Program</a>
+          </div>
+
+          <div class="enrollment-card scholarship">
+            <p class="fee-label">Financial Assistance</p>
+            <h3>Scholarship Assistance Available</h3>
+            <p>
+              BIHS seeks to make serious study accessible to participants who are unable to pay the full program fee. Those experiencing financial need are invited to request scholarship assistance before enrolling.
+            </p>
+            <p class="small-note">
+              Scholarship awards may provide partial or full assistance based on individual circumstances and available scholarship support.
+            </p>
+            <a class="btn secondary" href="https://forms.gle/C4kRXACgfTfXqCER8">Request Scholarship Information</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ASSESSMENT & CERTIFICATE -->
+    <section class="cs-section white">
+      <div class="container">
+        <div class="assessment-box">
+          <p class="section-eyebrow">Assessment &amp; Completion</p>
+          <h3>Meaningful study, not passive viewing</h3>
+          <p>
+            Each unit includes learning activities or assessments designed to support reflection, understanding, and engagement with the material. Participants who successfully complete all program requirements receive the BIHS Certificate of Completion. Unit-level recognition may also be issued as individual unit requirements are completed.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- DISCLOSURE -->
+    <section class="disclosure">
+      <div class="disclosure-inner">
+        <h3>Avocational Program Disclosure</h3>
         <p>
-          Each unit concludes with a short reflective or contemplative practice. A <strong>Unit Certificate of Participation</strong> is awarded upon completion of each unit. Participants who complete all six units receive the <strong>Final Certificate of Participation</strong>, recognizing engagement with the full journey.
-          The completion window extends through <strong>December 6, 2026</strong>.
+          <em>Consciousness Studies: Ancient and Modern Perspectives</em> is an avocational, non-credit educational program offered solely for personal enrichment. It is not designed or intended to qualify participants for employment and does not confer academic credit, a degree, or a postsecondary credential.
         </p>
-        <em>All certificates are issued as recognition of participation and completion. They do not constitute academic credit or postsecondary credentials.</em>
       </div>
     </section>
 
- </main>
-      <div id="footer"></div>
 
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+      <div class="container">
+        <h2>Begin Your Study of Consciousness</h2>
+        <p>Enroll in the complete program or contact BIHS if financial assistance is needed.</p>
+        <div class="final-actions">
+          <a class="btn-cs-gold" href="https://square.link/u/e7OtuBOj">Enroll in the Program</a>
+          <a class="btn-cs-light" href="https://forms.gle/C4kRXACgfTfXqCER8">Request Scholarship Information</a>
+          <a class="btn-cs-light" href="courses.html">View All BIHS Courses</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer"></div>
   <script src="js/site.js"></script>
 </body>
-  
 </html>
