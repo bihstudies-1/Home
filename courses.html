@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Online Courses | BIHS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore BIHS avocational online courses for personal enrichment, including Consciousness Studies and upcoming Fall 2026 offerings.">
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    /* ========================================= */
+    /* COURSES LANDING PAGE                      */
+    /* Scoped to .courses-page                   */
+    /* ========================================= */
+
+    .courses-page main { padding-top: 0; }
+
+    .courses-page .courses-hero {
+      background: linear-gradient(135deg, #022649 0%, #003366 100%);
+      color: #fff;
+      text-align: center;
+      padding: 4.5rem var(--pad) 4rem;
+      border-bottom: 3px solid var(--bihs-gold);
+    }
+
+    .courses-page .courses-hero .container { max-width: 880px; }
+
+    .courses-page .courses-kicker {
+      color: #e9c96f;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+
+    .courses-page .courses-hero h1 {
+      color: #fff;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.35rem, 5vw, 3.7rem);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .courses-page .courses-hero .lead {
+      color: rgba(255,255,255,0.88);
+      max-width: 760px;
+      margin: 0 auto 1.3rem;
+      font-size: 1.12rem;
+      line-height: 1.75;
+    }
+
+    .courses-page .hero-note {
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: .55rem 1.1rem;
+      color: #d8e4f3;
+      font-size: 0.9rem;
+    }
+
+    .courses-page .hero-note span::before {
+      content: "•";
+      color: var(--bihs-gold);
+      margin-right: .45rem;
+    }
+
+    .courses-page .section-heading {
+      max-width: 760px;
+      margin-bottom: 2rem;
+    }
+
+    .courses-page .section-heading.centered {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .courses-page .section-eyebrow {
+      color: var(--bihs-gold);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: .55rem;
+    }
+
+    /* AVAILABLE NOW */
+    .courses-page .current-course-section {
+      padding: 4rem var(--pad);
+      background: #fff;
+    }
+
+    .courses-page .featured-course {
+      border: 1px solid #dbe5f1;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(2,38,73,.08);
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .courses-page .featured-course-top {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 0;
+    }
+
+    .courses-page .featured-course-copy {
+      padding: 2.6rem;
+    }
+
+    .courses-page .status-badge {
+      display: inline-block;
+      padding: .35rem .75rem;
+      border-radius: 999px;
+      background: #e8f3ff;
+      color: var(--bihs-navy);
+      border: 1px solid #c8dcf4;
+      font-size: .75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: 1rem;
+    }
+
+    .courses-page .status-badge.upcoming {
+      background: #fff7df;
+      color: #7d5c0a;
+      border-color: #ead39a;
+    }
+
+    .courses-page .featured-course h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.8rem, 3vw, 2.45rem);
+      font-weight: 500;
+      margin-bottom: .45rem;
+    }
+
+    .courses-page .course-subhead {
+      color: #5d6e80;
+      font-size: 1.06rem;
+      font-style: italic;
+      margin-bottom: 1.25rem;
+    }
+
+    .courses-page .course-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem;
+      margin: 1.25rem 0 1.6rem;
+    }
+
+    .courses-page .course-meta span {
+      background: #f4f8fc;
+      color: #34495e;
+      border: 1px solid #e1e9f1;
+      border-radius: 6px;
+      padding: .4rem .65rem;
+      font-size: .87rem;
+      font-weight: 600;
+    }
+
+    .courses-page .featured-side {
+      background: #f4f8fc;
+      padding: 2.4rem;
+      border-left: 1px solid #dbe5f1;
+    }
+
+    .courses-page .featured-side h3 {
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: 1rem;
+    }
+
+    .courses-page .unit-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .courses-page .unit-list li {
+      padding: .7rem 0;
+      border-bottom: 1px solid #dfe7ef;
+      color: #34495e;
+      line-height: 1.35;
+    }
+
+    .courses-page .unit-list li:last-child { border-bottom: none; }
+
+    .courses-page .unit-list strong {
+      color: var(--bihs-navy-900);
+      display: block;
+      font-size: .94rem;
+    }
+
+    .courses-page .unit-list span {
+      font-size: .83rem;
+      color: #6b7886;
+    }
+
+    .courses-page .featured-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+    }
+
+    .courses-page .featured-actions .btn {
+      padding: .72rem 1.1rem;
+    }
+
+    .courses-page .scholarship-note {
+      margin-top: 1.2rem;
+      color: #5a6a7a;
+      font-size: .9rem;
+    }
+
+    /* UPCOMING COURSES */
+    .courses-page .upcoming-section {
+      background: var(--bihs-sky);
+      padding: 4rem var(--pad);
+    }
+
+    .courses-page .upcoming-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .courses-page .upcoming-card {
+      background: #fff;
+      border: 1px solid #dce6f0;
+      border-radius: 14px;
+      padding: 1.7rem;
+      box-shadow: 0 6px 18px rgba(2,38,73,.06);
+      display: flex;
+      flex-direction: column;
+      min-height: 300px;
+    }
+
+    .courses-page .upcoming-card.featured-upcoming {
+      border-top: 4px solid var(--bihs-gold);
+    }
+
+    .courses-page .upcoming-card h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.45rem;
+      font-weight: 500;
+      margin-bottom: .3rem;
+    }
+
+    .courses-page .upcoming-subtitle {
+      color: #647487;
+      font-style: italic;
+      min-height: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .courses-page .faculty-line {
+      color: var(--bihs-navy);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      font-size: .94rem;
+    }
+
+    .courses-page .upcoming-card .course-description {
+      color: #4f6070;
+      font-size: .94rem;
+      flex-grow: 1;
+    }
+
+    .courses-page .opening-soon {
+      margin-top: 1rem;
+      display: inline-block;
+      align-self: flex-start;
+      border: 1px solid #c8d4df;
+      color: #536474;
+      background: #f7f9fb;
+      border-radius: .45rem;
+      padding: .55rem .8rem;
+      font-size: .83rem;
+      font-weight: 700;
+    }
+
+    .courses-page .more-card {
+      background: transparent;
+      border: 1.5px dashed #aabdd0;
+      box-shadow: none;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .courses-page .more-card .card-icon {
+      margin-bottom: .6rem;
+    }
+
+    /* FOOTNOTE */
+    .courses-page .course-policy {
+      background: #fff;
+      padding: 3rem var(--pad);
+    }
+
+    .courses-page .policy-inner {
+      max-width: 850px;
+      margin: 0 auto;
+      border-left: 3px solid var(--bihs-gold);
+      padding-left: 1.4rem;
+    }
+
+    .courses-page .policy-inner h2 {
+      font-size: 1.25rem;
+      margin-bottom: .4rem;
+    }
+
+    .courses-page .policy-inner p {
+      color: #647487;
+      margin-bottom: 0;
+      font-size: .94rem;
+    }
+
+    @media (max-width: 800px) {
+      .courses-page .courses-hero { padding: 3.2rem var(--pad) 3rem; }
+      .courses-page .featured-course-top { grid-template-columns: 1fr; }
+      .courses-page .featured-side { border-left: none; border-top: 1px solid #dbe5f1; }
+      .courses-page .upcoming-grid { grid-template-columns: 1fr; }
+      .courses-page .upcoming-subtitle { min-height: 0; }
+    }
+
+    @media (max-width: 520px) {
+      .courses-page .featured-course-copy,
+      .courses-page .featured-side { padding: 1.5rem; }
+      .courses-page .featured-actions { flex-direction: column; }
+      .courses-page .featured-actions .btn { text-align: center; width: 100%; }
+    }
+  </style>
+</head>
+
+<body class="courses-page">
+  <div id="header"></div>
+
+  <main>
+    <!-- HERO -->
+    <section class="courses-hero">
+      <div class="container">
+        <p class="courses-kicker">BIHS Online Learning</p>
+        <h1>Online Courses</h1>
+        <p class="lead">
+          Serious study for thoughtful inquiry and personal enrichment —
+          bringing together science, philosophy, consciousness studies,
+          and the wisdom traditions of India.
+        </p>
+        <div class="hero-note" aria-label="Program characteristics">
+          <span>Avocational</span>
+          <span>Non-credit</span>
+          <span>Personal enrichment</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- AVAILABLE NOW -->
+    <section class="current-course-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-eyebrow">Available Now</p>
+          <h2>Continue learning at your own pace</h2>
+          <p class="lead">
+            Our current online program is available through the BIHS learning platform
+            with recorded instruction, course materials, assessments, and a pathway
+            toward a BIHS Certificate of Completion.
+          </p>
+        </div>
+
+        <article class="featured-course">
+          <div class="featured-course-top">
+            <div class="featured-course-copy">
+              <span class="status-badge">Self-Paced Enrollment Open</span>
+
+              <h2>Consciousness Studies</h2>
+              <p class="course-subhead">Ancient and Modern Perspectives</p>
+
+              <p>
+                A six-unit interdisciplinary exploration of consciousness, metaphysics,
+                philosophy, physics, cosmology, life, and the nature of reality.
+                Originally presented by an international group of BIHS scholars,
+                the complete program is now available for self-paced online study.
+              </p>
+
+              <div class="course-meta">
+                <span><i class="fa-solid fa-laptop"></i> Online</span>
+                <span><i class="fa-solid fa-clock"></i> Self-paced</span>
+                <span><i class="fa-solid fa-list-check"></i> Assessments</span>
+                <span><i class="fa-solid fa-award"></i> Certificate of Completion</span>
+              </div>
+
+              <div class="featured-actions">
+                <a href="BIHS_Consciousness_Studies.html" class="btn secondary">
+                  Explore Course &amp; Enrollment
+                </a>
+              </div>
+
+              <p class="scholarship-note">
+                Scholarship assistance is available for students who are unable
+                to meet the full tuition.
+              </p>
+            </div>
+
+            <aside class="featured-side" aria-label="Consciousness Studies units">
+              <h3>Six Units of Study</h3>
+              <ol class="unit-list">
+                <li><strong>Vedic Cosmology</strong><span>Dr. Tiziano Valentinuzzi</span></li>
+                <li><strong>Philosophy Foundations</strong><span>Shivanand Sharma</span></li>
+                <li><strong>Foundations of Metaphysics</strong><span>Dr. Howard Resnick</span></li>
+                <li><strong>Physics and Cosmology</strong><span>Dr. Doug Watson</span></li>
+                <li><strong>Consciousness &amp; Matter</strong><span>Akhandadhi Das</span></li>
+                <li><strong>Life, Cosmos &amp; Beyond</strong><span>Akhandadhi Das</span></li>
+              </ol>
+            </aside>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- UPCOMING -->
+    <section class="upcoming-section">
+      <div class="container">
+        <div class="section-heading centered">
+          <p class="section-eyebrow">Coming Fall 2026</p>
+          <h2>Upcoming BIHS Courses</h2>
+          <p class="lead">
+            New online enrichment courses are currently being prepared.
+            Final dates, formats, and enrollment information will be announced
+            as faculty arrangements are completed.
+          </p>
+        </div>
+
+        <div class="upcoming-grid">
+
+          <article class="upcoming-card featured-upcoming">
+            <span class="status-badge upcoming">Enrollment Opening Soon</span>
+            <h3>Transformative Communications</h3>
+            <p class="upcoming-subtitle">Dialogue, Leadership, and Meaningful Change</p>
+            <p class="faculty-line">Dr. Halida Đonlagić Đapić</p>
+            <p class="course-description">
+              An exploration of communication as a transformative practice —
+              examining dialogue, leadership, listening, conflict, and the ways
+              meaningful communication can shape individuals, relationships,
+              organizations, and communities.
+            </p>
+            <span class="opening-soon">Full details coming soon</span>
+          </article>
+
+          <article class="upcoming-card">
+            <span class="status-badge upcoming">Coming Fall 2026</span>
+            <h3>Philosophy in Dialogue</h3>
+            <p class="upcoming-subtitle">Reasoning, Debate, and the Search for Truth</p>
+            <p class="faculty-line">Shivanand Sharma</p>
+            <p class="course-description">
+              A practical introduction to philosophical reasoning through dialogue,
+              argument, debate, and careful inquiry — developing the ability to
+              examine ideas, recognize assumptions, and engage opposing views thoughtfully.
+            </p>
+            <span class="opening-soon">Full details coming soon</span>
+          </article>
+
+          <article class="upcoming-card">
+            <span class="status-badge upcoming">Coming Fall 2026</span>
+            <h3>Biology and Consciousness</h3>
+            <p class="upcoming-subtitle">Life, Mind, and the Living World</p>
+            <p class="faculty-line">Dr. Nitika Parmar</p>
+            <p class="course-description">
+              An interdisciplinary inquiry into life and consciousness, considering
+              biological perspectives alongside deeper philosophical questions about
+              mind, agency, living systems, and the nature of the organism.
+            </p>
+            <span class="opening-soon">Full details coming soon</span>
+          </article>
+
+          <article class="upcoming-card">
+            <span class="status-badge upcoming">Coming Fall 2026</span>
+            <h3>Vaishnava Tradition in the West</h3>
+            <p class="upcoming-subtitle">History, Culture, and Global Influence</p>
+            <p class="faculty-line">Dr. Angela Burt</p>
+            <p class="course-description">
+              A historical and cultural exploration of the transmission of the
+              Vaishnava tradition to the West, its development in new social settings,
+              and its continuing global intellectual and cultural influence.
+            </p>
+            <span class="opening-soon">Full details coming soon</span>
+          </article>
+
+          <article class="upcoming-card more-card">
+            <div class="card-icon"><i class="fa-solid fa-plus"></i></div>
+            <h3>More Courses in Development</h3>
+            <p class="course-description">
+              Additional BIHS courses and specialized learning opportunities
+              are being developed for future terms.
+            </p>
+            <span class="opening-soon">More coming soon</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- AVOCATIONAL NOTE -->
+    <section class="course-policy">
+      <div class="container policy-inner">
+        <h2>For Personal Enrichment</h2>
+        <p>
+          BIHS educational programs are avocational and non-credit. They are offered
+          for personal enrichment and do not confer college credit, academic degrees,
+          or postsecondary credentials. A BIHS Certificate of Completion recognizes
+          successful completion of stated course requirements and is not an academic credential.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+  <script src="js/site.js"></script>
+</body>
+</html>
