@@ -2,294 +2,783 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Courses | BIHS</title>
+  <title>Consciousness Studies | BIHS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Explore courses, workshops, and training from the Bhaktivedanta Institute for Higher Studies.">
+  <meta name="description" content="Consciousness Studies: Ancient and Modern Perspectives is a six-unit, self-paced BIHS avocational online program for personal enrichment.">
   <link rel="stylesheet" href="css/site.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    /* ========================================= */
+    /* CONSCIOUSNESS STUDIES — SELF-PACED        */
+    /* Scoped to .consciousness-page             */
+    /* ========================================= */
+
+    .consciousness-page main { padding-top: 0; }
+
+    .consciousness-page .cs-new-hero {
+      background:
+        linear-gradient(135deg, rgba(2,38,73,.96), rgba(0,51,102,.90)),
+        url('img/BoldMinds.jpeg');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      padding: 5rem var(--pad) 4.5rem;
+      border-bottom: 3px solid var(--bihs-gold);
+    }
+
+    .consciousness-page .cs-new-hero .container {
+      max-width: 920px;
+    }
+
+    .consciousness-page .hero-kicker {
+      color: #e9c96f;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-bottom: .8rem;
+    }
+
+    .consciousness-page .status-pill {
+      display: inline-block;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.38);
+      color: #fff;
+      border-radius: 999px;
+      padding: .36rem .76rem;
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .consciousness-page .cs-new-hero h1 {
+      color: #fff;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.3rem, 5.6vw, 4rem);
+      font-weight: 500;
+      max-width: 850px;
+      margin-bottom: .65rem;
+    }
+
+    .consciousness-page .hero-subtitle {
+      color: #d9e7f7;
+      font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+      font-weight: 400;
+      margin-bottom: 1.35rem;
+    }
+
+    .consciousness-page .hero-description {
+      color: rgba(255,255,255,.90);
+      max-width: 760px;
+      font-size: 1.08rem;
+      line-height: 1.75;
+      margin-bottom: 1.6rem;
+    }
+
+    .consciousness-page .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem 1.15rem;
+      margin-bottom: 1.8rem;
+      color: #d8e4f3;
+      font-size: .9rem;
+    }
+
+    .consciousness-page .hero-meta span::before {
+      content: "•";
+      color: var(--bihs-gold);
+      margin-right: .42rem;
+    }
+
+    .consciousness-page .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+    }
+
+    .consciousness-page .btn-cs-gold {
+      display: inline-block;
+      background: #e9bd54;
+      color: #10243a;
+      font-weight: 800;
+      padding: .78rem 1.25rem;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    .consciousness-page .btn-cs-light {
+      display: inline-block;
+      background: rgba(255,255,255,.08);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.5);
+      font-weight: 700;
+      padding: .74rem 1.2rem;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    .consciousness-page .btn-cs-gold:hover,
+    .consciousness-page .btn-cs-light:hover {
+      text-decoration: none;
+      filter: brightness(.97);
+    }
+
+    .consciousness-page .cs-section {
+      padding: 4rem var(--pad);
+    }
+
+    .consciousness-page .cs-section.alt {
+      background: var(--bihs-sky);
+    }
+
+    .consciousness-page .cs-section.white {
+      background: #fff;
+    }
+
+    .consciousness-page .section-heading {
+      max-width: 780px;
+      margin: 0 auto 2.4rem;
+      text-align: center;
+    }
+
+    .consciousness-page .section-eyebrow {
+      color: var(--bihs-gold);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      margin-bottom: .55rem;
+    }
+
+    .consciousness-page .section-heading h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.8rem, 3vw, 2.45rem);
+      font-weight: 500;
+    }
+
+    .consciousness-page .section-heading .lead {
+      line-height: 1.7;
+    }
+
+    /* AT A GLANCE */
+    .consciousness-page .glance-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 1rem;
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+
+    .consciousness-page .glance-card {
+      background: #fff;
+      border: 1px solid #dfe8f2;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 5px 16px rgba(2,38,73,.05);
+    }
+
+    .consciousness-page .glance-card i {
+      font-size: 1.8rem;
+      color: var(--bihs-navy);
+      margin-bottom: .75rem;
+    }
+
+    .consciousness-page .glance-card strong {
+      display: block;
+      color: var(--bihs-navy-900);
+      margin-bottom: .25rem;
+    }
+
+    .consciousness-page .glance-card span {
+      color: #627385;
+      font-size: .9rem;
+    }
+
+    /* CURRICULUM */
+    .consciousness-page .curriculum-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 1.4rem;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .consciousness-page .unit-card {
+      background: #fff;
+      border: 1px solid #dbe5ef;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 7px 22px rgba(2,38,73,.06);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .consciousness-page .unit-top {
+      min-height: 74px;
+      background: linear-gradient(135deg, #003366, #022649);
+      position: relative;
+      border-bottom: 3px solid var(--bihs-gold);
+    }
+
+    .consciousness-page .unit-photo {
+      position: absolute;
+      width: 82px;
+      height: 82px;
+      border-radius: 50%;
+      object-fit: cover;
+      left: 1.25rem;
+      top: 31px;
+      border: 4px solid #fff;
+      box-shadow: 0 0 0 3px #003366, 0 5px 12px rgba(0,0,0,.18);
+    }
+
+    .consciousness-page .unit-body {
+      padding: 3.3rem 1.4rem 1.5rem;
+    }
+
+    .consciousness-page .unit-number {
+      color: var(--bihs-gold);
+      font-size: .75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: .25rem;
+    }
+
+    .consciousness-page .unit-card h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.42rem;
+      font-weight: 500;
+      margin-bottom: .25rem;
+    }
+
+    .consciousness-page .faculty-name {
+      color: #5f7081;
+      font-weight: 600;
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .consciousness-page .unit-card ul {
+      margin: 0;
+      padding-left: 1.15rem;
+      color: #425466;
+    }
+
+    .consciousness-page .unit-card li {
+      margin-bottom: .55rem;
+    }
+
+    .consciousness-page .unit-card li:last-child { margin-bottom: 0; }
+
+    /* HOW IT WORKS */
+    .consciousness-page .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 1rem;
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+
+    .consciousness-page .step-card {
+      background: #fff;
+      border: 1px solid #dfe8f2;
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .consciousness-page .step-number {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bihs-navy);
+      color: #fff;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .consciousness-page .step-card h3 {
+      font-size: 1.08rem;
+      margin-bottom: .45rem;
+    }
+
+    .consciousness-page .step-card p {
+      font-size: .93rem;
+      color: #5a6a7a;
+      margin-bottom: 0;
+    }
+
+    /* FEE + SCHOLARSHIP */
+    .consciousness-page .enrollment-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .consciousness-page .enrollment-card {
+      background: #fff;
+      border: 1px solid #dbe5ef;
+      border-radius: 14px;
+      padding: 2rem;
+      box-shadow: 0 7px 22px rgba(2,38,73,.06);
+    }
+
+    .consciousness-page .enrollment-card.scholarship {
+      border-top: 4px solid var(--bihs-gold);
+    }
+
+    .consciousness-page .fee-label {
+      color: #617386;
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-weight: 800;
+      margin-bottom: .35rem;
+    }
+
+    .consciousness-page .fee-price {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--bihs-navy-900);
+      font-size: 2.5rem;
+      line-height: 1.1;
+      margin-bottom: .8rem;
+    }
+
+    .consciousness-page .included-list {
+      padding-left: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .consciousness-page .included-list li {
+      margin-bottom: .45rem;
+      color: #425466;
+    }
+
+    .consciousness-page .scholarship h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.55rem;
+      font-weight: 500;
+    }
+
+    .consciousness-page .small-note {
+      color: #69798a;
+      font-size: .88rem;
+    }
+
+    /* ASSESSMENT */
+    .consciousness-page .assessment-box {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid #dbe5ef;
+      border-left: 5px solid var(--bihs-gold);
+      border-radius: 10px;
+      padding: 2rem;
+    }
+
+    .consciousness-page .assessment-box h3 {
+      margin-bottom: .7rem;
+    }
+
+    /* DISCLOSURE */
+    .consciousness-page .disclosure {
+      background: #f5f7fa;
+      border-top: 1px solid #e1e7ee;
+      padding: 2.4rem var(--pad);
+    }
+
+    .consciousness-page .disclosure-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .consciousness-page .disclosure h3 {
+      font-size: 1rem;
+      margin-bottom: .45rem;
+    }
+
+    .consciousness-page .disclosure p {
+      color: #617183;
+      font-size: .9rem;
+      margin-bottom: 0;
+    }
+
+    .consciousness-page .final-cta {
+      background: linear-gradient(135deg, #022649 0%, #003366 100%);
+      color: #fff;
+      text-align: center;
+      padding: 3.5rem var(--pad);
+    }
+
+    .consciousness-page .final-cta h2 {
+      color: #fff;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      margin-bottom: .7rem;
+    }
+
+    .consciousness-page .final-cta p {
+      color: #d8e4f3;
+      max-width: 680px;
+      margin: 0 auto 1.4rem;
+    }
+
+    .consciousness-page .final-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      justify-content: center;
+    }
+
+    @media (max-width: 900px) {
+      .consciousness-page .glance-grid,
+      .consciousness-page .steps-grid {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+      }
+
+      .consciousness-page .curriculum-grid,
+      .consciousness-page .enrollment-wrap {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .consciousness-page .cs-new-hero {
+        padding: 3.2rem var(--pad) 3rem;
+      }
+
+      .consciousness-page .hero-actions,
+      .consciousness-page .final-actions {
+        flex-direction: column;
+      }
+
+      .consciousness-page .hero-actions a,
+      .consciousness-page .final-actions a {
+        width: 100%;
+        text-align: center;
+      }
+
+      .consciousness-page .glance-grid,
+      .consciousness-page .steps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .consciousness-page .cs-section {
+        padding: 3rem var(--pad);
+      }
+    }
+  </style>
 </head>
-<body>
-  
+
+<body class="consciousness-page">
   <div id="header"></div>
 
   <main>
-    
-<!-- 1. PAGE TITLE -->
-<section class="hero-banner">
-  <div class="hero-overlay"></div> 
-  
-  <div class="container hero-content">
-    <h1>Consciousness Studies:<br> Ancient and Modern Perspectives</h1>
-    <h2>Communicating Timeless Wisdom in a Scientific Age</h2>
-    <p class="course-subtitle">
-      A 6-Month Training Series by the Bhaktivedanta Institute for Higher Studies
-    </p>
-    
-    <div class="hero-actions">
-       <a class="btn primary" href="https://square.link/u/e7OtuBOj" style="background: #eebb4d; color: #001f3f; border: none; padding: 15px 30px; font-weight: bold;">Participate Now</a>
-    </div>
-    <div> <a class="btn primary" href="https://bihstudies.github.io/Home/CS.Q&A.html" style="bacground: #ffffff; border: none; padding: 15px 30px; font-weight: bold;"> Q & A </div>
 
-  </div>
-</section>
-    <section class="section" style="background: #fff;">
+    <!-- HERO -->
+    <section class="cs-new-hero">
+      <div class="container">
+        <p class="hero-kicker">Bhaktivedanta Institute for Higher Studies</p>
+        <span class="status-pill">Available Now · Self-Paced</span>
+        <h1>Consciousness Studies:<br>Ancient and Modern Perspectives</h1>
+        <p class="hero-subtitle">A six-unit online program exploring consciousness, philosophy, metaphysics, cosmology, physics, and life.</p>
+        <p class="hero-description">
+          Study with BIHS scholars through recorded lectures, guided learning materials, and assessments in the BIHS Canvas learning environment. The complete program is now available online for self-paced personal enrichment.
+        </p>
 
-  <div class="container center" style="max-width: 900px;">
+        <div class="hero-meta">
+          <span>Six Units</span>
+          <span>Online &amp; Self-Paced</span>
+          <span>Assessments</span>
+          <span>Certificate of Completion</span>
+          <span>Scholarship Assistance</span>
+        </div>
 
-    <p style="font-size: 1.2rem; font-style: italic; color: #5a6a7a; margin-bottom: 2rem;">
-      "It will be a great contribution to human society if this authorized information from the Vedic literature is presented to the modern world on the basis of modern scientific understanding. 
-      The fact is already there. It simply has to be presented for modern understanding."
-     <br><span style="font-size: 0.9rem; margin-top: 10px; display: block;"> — Srila Prabhupada Letter to: Dr. Bigelow January 20th 1971</span>
-    </p>
-
-    <h3>Empowering You With the Tools of Wisdom</h3>
-
-    <p class="lead">This course moves beyond sentiment to provide the intellectual machinery needed to fulfill this vision. You will gain:</p>
-
-
-
-    <div style="text-align: left; background: #f8fbff; padding: 2rem; border-radius: 12px; border: 1px solid #e1eaf7; margin-top: 2rem;">
-
-      <ul class="checklist-style">
-
-        <li style="margin-bottom: 1rem;"><strong>The Language of Science:</strong> Learn to articulate Bhāgavata philosophy using the vocabulary of modern physics, cosmology, and biology.</li>
-
-        <li style="margin-bottom: 1rem;"><strong>Logical Rigor:</strong> Master the philosophical arguments to dismantle materialism and the "blind evolution" narrative.</li>
-
-        <li style="margin-bottom: 1rem;"><strong>Cosmic Context:</strong> Move from a vague idea of the universe to a detailed understanding of Vedic Cosmology and its relation to modern theories.</li>
-
-     <li><strong>Mastery of Discourse: </strong>  Engage in high-level dialogue without hesitation, knowing you stand on a foundation of perfect logic and science.</li>
-      </ul>
-
-    </div>
-
-
-
-  </div>
-
-</section>
-
-    <!-- Purpose & Description -->
-  <section class="course-at-a-glance section">
-  <div class="container">
-    
-    <div class="center" style="max-width: 800px; margin: 0 auto 3rem;">
-      <h3>Course At a Glance</h3>
-      <p class="lead" style="font-size: 1.25rem; color: var(--bihs-navy-900);">
-        <strong>Purpose:</strong> To equip thoughtful Bhakti practitioners with the philosophical grounding and communication skills needed to speak clearly, confidently, and responsibly in modern scientific and intellectual settings.
-      </p>
-      <p>
-        <em>Consciousness Studies: Ancient and Modern Perspectives</em> is a rigorous scholar-led training series offered across two academic terms. Together we will explore core topics in consciousness, metaphysics, cosmology, and ethics, and learn how to express these ideas with clarity and integrity.
-      </p>
-    </div>
-
-    <div class="course-details-grid">
-      
-      <div class="detail-card">
-        <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-        <h4>Format</h4>
-        <ul>
-          <li>Scholar-led intensive training</li>
-          <li><strong>Saturdays 10:00 AM EST</strong></li>
-          <li>Live Zoom Sessions</li>
-          <li>Optional asynchronous study via Canvas</li>
-        </ul>
+        <div class="hero-actions">
+          <a class="btn-cs-gold" href="#enrollment">Enroll in the Program</a>
+          <a class="btn-cs-light" href="#curriculum">Explore the Six Units</a>
+        </div>
       </div>
-
-      <div class="detail-card">
-        <div class="card-icon"><i class="fa-regular fa-calendar-check"></i></div>
-        <h4>Schedule</h4>
-        <ul>
-          <li><strong>Spring (16 wks):</strong> Jan 10 – May 2</li>
-          <li><strong>Summer (8 wks):</strong> May 9 – June 27</li>
-          <li>Mid-semester break March 1 to 14</li>
-        </ul>
-      </div>
-
-      <div class="detail-card">
-        <div class="card-icon"><i class="fa-solid fa-tag"></i></div>
-        <h4>Suggested Donation</h4>
-        <div style="background: var(--bihs-sky); 
-border-left: 4px solid var(--bihs-gold); 
-padding: 1rem 1.5rem; margin: 1.5rem 0; 
-border-radius: 0 8px 8px 0;">
-  <p style="margin: 0; font-size: 1rem;">
-    <strong>BIHS Community Scholarship</strong> — 
-    awarded to support participation in BIHS 
-    educational programming. All participants 
-    receive identical access regardless of 
-    contribution level.
-  </p>
-</div>
-        <div class="price-tag">$108 <span class="price-sub">Full Program</span></div>
-        <div class="price-tag-small">$30 <span class="price-sub">Per Unit</span></div>
-        <p style="font-size: 0.9rem; margin-top: 1rem;">Scholarships Available</p>
-      </div>
-      
-    </div>
-
-  </div>
-</section>
-
-   <section class="faculty-section section">
-  <div class="container">
-    
-    <div class="center" style="margin-bottom: 3rem;">
-      <h3>Faculty & Curriculum Overview</h3>
-      <p class="lead">Guided by scholars with deep expertise in metaphysics, cosmology, and consciousness studies.</p>
-    </div>
-
-    <div class="faculty-hybrid-grid">
-
-      <article class="hybrid-card">
-        <div class="hybrid-header-pattern"></div>
-        <img src="img/Tiziano.2.jpg" alt="Dr. Tiziano Valentinuzzi" class="card-author-img">
-        
-        <div class="card-content">
-          <span class="unit-badge">Unit 1: Jan 10 – Jan 31</span>
-          <h3>Vedic Cosmology</h3>
-          <p class="faculty-name-sub">Dr. Tiziano Valentinuzzi</p>
-          <ul>
-            <li><Strong>Crisis of meaning:</Strong> How physicalism fails to satisfy human purpose</li>
-            <li><strong>Consciousness-based universe:</strong> Ātmā-centered worldview vs. neuroscience and panpsychism</li>
-            <li><strong>Simulation hypothesis:Is the Universe a Virtual Reality? </strong> Vedic metaphysics through quantum physics and information theory</li>
-            <li><strong>Divine love scientifically:</strong> Bhakti as rational principle rather than sentiment</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="hybrid-card">
-        <div class="hybrid-header-pattern"></div>
-        <img src="img/Sankar.jpg" alt="Dr. Shivanand Sharma" class="card-author-img">
-        
-        <div class="card-content">
-          <span class="unit-badge">Unit 2: Feb 7 – Feb 28</span>
-          <h3>Philosophy Foundations</h3>
-          <p class="faculty-name-sub">Dr. Shivanand Sharma</p>
-          <ul>
-            <li><strong>Argumentation:</strong> Logical reasoning and debate methodology</li>
-            <li><strong>Philosophy of Mind:</strong> Consciousness and The Architecture of Thought</li>
-            <li><strong>Philosophy of Science: </strong> Scientific methodology and its limitations</li>
-            <li><strong>Philosophy of Religion: </strong> Theological and spiritual epistemology</li>
-          </ul>
-        </div>
-      </article>
- <article class="hybrid-card">
-        <div class="hybrid-header-pattern"></div>
-        <img src="img/HDG.1.jpg" alt="Dr. Howard Resnick" class="card-author-img">
-        
-        <div class="card-content">
-          <span class="unit-badge">Unit 3:  March 14 – April 4</span>
-          <h3>Foundations of Metaphysics</h3>
-          <p class="faculty-name-sub">Dr. Howard Resnick</p>
-          <ul>
-            <li><strong>Can There Be a True Spiritual Science?</strong></li>
-            <li><strong>Can There Be a True Spiritual Science? </strong></li>
-            <li><strong>Can There Be a True Spiritual Science? </strong></li>
-            <li><strong>Can There Be a True Spiritual Science?</strong></li>
-          </ul>
-        </div>
-      </article>
-      <article class="hybrid-card">
-        <div class="hybrid-header-pattern"></div>
-        <img src="img/DharmaV.jpg" alt="Dr. Doug Watson" class="card-author-img">
-        
-        <div class="card-content">
-          <span class="unit-badge">Unit 3:April 11 - May 2</span>
-          <h3>Physics and Cosmology</h3>
-          <p class="faculty-name-sub">Dr. Doug Watson</p>
-          <ul>
-            <li><strong>Crisis in Physics:</strong> Modern physics’ conceptual limitations</li>
-            <li><strong>Rethinking Space, Time, and Matter: </strong> Quantum mechanics challenging fixed assumptions</li>
-            <li><strong>Quantum Gravity:</strong> Emerging understandings of reality as a universe of relationships</li>
-            <li><strong>Science and Philosophy:</strong> Relational cosmology integrating consciousness</li>
-          </ul>
-        </div>
-      </article>
-      <article class="hybrid-card">
-        <div class="hybrid-header-pattern highlight-pattern"></div>
-        <img src="img/Akhand1.jpg" alt="Akhandadhi Das" class="card-author-img">
-        
-        <div class="card-content">
-          <span class="unit-badge highlight-badge">Unit 5: May 9 – June 27</span>
-          <p> Total 8 Weeks, 2 weeks per Topic</p>
-          <h3>Consciousness Studies</h3>
-          <p class="faculty-name-sub">Akhandadhi Das</p>
-          <ul>
-            <li><strong>Consciousness:</strong>"The Hard Problem of Consciousness"</li>
-            <li><strong>Reality:</strong> Metaphysical foundations and consciousness–world interaction</li>
-            <li><strong>Life: </strong> Earth’s biological mysteries; scientific support for Purāṇic perspectives</li>
-            <li><strong>Cosmos:</strong> consciousness-based universal structure and realms of free consciousness</li>
-          </ul>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-   
-    <!-- Implementation & Contribution -->
-    <section class="course-section">
-    
-
-      <h4>Certification &amp; Assessment</h4>
-      <p>
-        To support meaningful learning, each Unit concludes with a short reflective or practical assessment.
-        A Unit Certificate is awarded upon completion of each Unit. Students who complete all five Units receive
-        the Final Program Certificate, recognizing successful completion of the full six-month training. 
-      <p><em>All certificates are issued as recognition 
-of participation and completion. They do not 
-constitute academic credit or postsecondary 
-credentials.</em></p>
-
-      </p>
-
-      <h4>Learning Outcomes & Enrollment Options</h4>
-         <p>The learning outcomes include:</p>
-      <ul>
-        <li>Clearer understanding of metaphysics, cosmology, consciousness, and ethics</li>
-        <li>Improved reasoning, articulation, and communication skills</li>
-        <li>Increased confidence engaging in scientific, philosophical, or interfaith conversations</li>
-        <li>Deeper appreciation of the Bhagavata worldview and its contemporary relevance</li>
-      </ul>
-     
-      <h4> A) Full Program Participation Donation — $108 </h4>
-     <p> This single program fee provides access to the entire six-month training, including all live Saturday sessions, Canvas modules, assignments, and assessments. Students also receive a Unit Certificate for each completed Unit and a Final Program Certificate upon successful completion of all requirements.
-This option offers the greatest value, supporting a coherent journey that builds progressively from foundational metaphysics to applied consciousness studies. Students may participate synchronously or complete the material asynchronously through Canvas, depending on their schedule and learning needs.
-
-</p>
-      <h4>B) Per-Unit Participation Donation — $30 per Unit</h4>
-     <p>For those unable to commit to the full program at this time, individual Units may be taken separately for $30 each. Per-unit participation includes access to the Canvas environment, recordings for the selected Unit, and a Unit Certificate upon completion of its assessment.</p>
-
-   
     </section>
 
-    <!-- Contact / Footer info -->
- 
-<div class="button-row">
 
- 
-      <a class="btn secondary" href="https://square.link/u/e7OtuBOj" class="btn primary" style="background: 
-              var(--bihs-navy); color: #fff;" margin-right:14px;> Participate in Full Program</a>
-  
-      <a class="btn secondary" href="https://square.link/u/HcOVFxxG" class="btn primary" style="background: 
-              var(--bihs-navy); color: #fff;" margin-right:14px;> Participate in Individual Unit(s)</a>
-  
-      <a class="btn secondary" href="https://square.link/u/wYPRTdBM" class="btn primary" style="background: 
-              var(--bihs-navy); color: #fff;" margin-right:14px;> Support Student Scholarships</a>
-  
-  <a class="btn secondary" href="https://forms.gle/C4kRXACgfTfXqCER8" class="btn primary" style="background: 
-              var(--bihs-navy); color: #fff;">Request More Info</a>
-  </div>
-</div>
-</section>
+    <!-- AT A GLANCE -->
+    <section class="cs-section white">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-eyebrow">Program at a Glance</p>
+          <h2>A structured journey through consciousness and reality</h2>
+          <p class="lead">
+            Originally presented as a scholar-led live series, the complete program is now organized for flexible online study through Canvas.
+          </p>
+        </div>
 
+        <div class="glance-grid">
+          <div class="glance-card">
+            <i class="fa-solid fa-laptop"></i>
+            <strong>Format</strong>
+            <span>Online and self-paced</span>
+          </div>
+          <div class="glance-card">
+            <i class="fa-solid fa-book-open-reader"></i>
+            <strong>Curriculum</strong>
+            <span>Six scholar-led units</span>
+          </div>
+          <div class="glance-card">
+            <i class="fa-solid fa-list-check"></i>
+            <strong>Assessment</strong>
+            <span>Learning activities and assessments</span>
+          </div>
+          <div class="glance-card">
+            <i class="fa-solid fa-certificate"></i>
+            <strong>Recognition</strong>
+            <span>BIHS Certificate of Completion</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- CURRICULUM -->
+    <section class="cs-section alt" id="curriculum">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-eyebrow">Faculty &amp; Curriculum</p>
+          <h2>Six Units · Five Scholars · One Integrated Program</h2>
+          <p class="lead">
+            Each unit approaches questions of consciousness and reality from a different philosophical or scientific perspective.
+          </p>
+        </div>
+
+        <div class="curriculum-grid">
+
+          <article class="unit-card">
+            <div class="unit-top">
+              <img src="img/Tiziano.2.jpg" alt="Dr. Tiziano Valentinuzzi" class="unit-photo">
+            </div>
+            <div class="unit-body">
+              <div class="unit-number">Unit 1</div>
+              <h3>Vedic Cosmology</h3>
+              <p class="faculty-name">Dr. Tiziano Valentinuzzi</p>
+              <ul>
+                <li><strong>Crisis of meaning:</strong> physicalism and questions of human purpose</li>
+                <li><strong>Consciousness-based universe:</strong> ātmā-centered worldview, neuroscience, and panpsychism</li>
+                <li><strong>Simulation hypothesis:</strong> Vedic metaphysics, quantum physics, and information theory</li>
+                <li><strong>Bhakti and reason:</strong> examining divine love as a rational principle</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="unit-card">
+            <div class="unit-top">
+              <img src="img/Sankar.jpg" alt="Dr. Shivanand Sharma" class="unit-photo">
+            </div>
+            <div class="unit-body">
+              <div class="unit-number">Unit 2</div>
+              <h3>Philosophy Foundations</h3>
+              <p class="faculty-name">Dr. Shivanand Sharma</p>
+              <ul>
+                <li><strong>Argumentation:</strong> logical reasoning and debate methodology</li>
+                <li><strong>Philosophy of Mind:</strong> consciousness and the architecture of thought</li>
+                <li><strong>Philosophy of Science:</strong> scientific methodology and its limitations</li>
+                <li><strong>Philosophy of Religion:</strong> theological and spiritual epistemology</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="unit-card">
+            <div class="unit-top">
+              <img src="img/HDG.1.jpg" alt="Dr. Howard Resnick" class="unit-photo">
+            </div>
+            <div class="unit-body">
+              <div class="unit-number">Unit 3</div>
+              <h3>Foundations of Metaphysics</h3>
+              <p class="faculty-name">Dr. Howard Resnick</p>
+              <ul>
+                <li><strong>Central inquiry:</strong> Can there be a true spiritual science?</li>
+                <li>Examining metaphysical questions at the intersection of philosophy, science, and spiritual knowledge</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="unit-card">
+            <div class="unit-top">
+              <img src="img/DharmaV.jpg" alt="Dr. Doug Watson" class="unit-photo">
+            </div>
+            <div class="unit-body">
+              <div class="unit-number">Unit 4</div>
+              <h3>Physics and Cosmology</h3>
+              <p class="faculty-name">Dr. Doug Watson</p>
+              <ul>
+                <li><strong>Crisis in Physics:</strong> conceptual limitations in modern physics</li>
+                <li><strong>Space, Time, and Matter:</strong> quantum mechanics and foundational assumptions</li>
+                <li><strong>Quantum Gravity:</strong> emerging relational approaches to reality</li>
+                <li><strong>Science and Philosophy:</strong> relational cosmology and consciousness</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="unit-card">
+            <div class="unit-top">
+              <img src="img/Akhand1.jpg" alt="Akhandadhi Das" class="unit-photo">
+            </div>
+            <div class="unit-body">
+              <div class="unit-number">Unit 5</div>
+              <h3>Consciousness &amp; Matter</h3>
+              <p class="faculty-name">Akhandadhi Das</p>
+              <ul>
+                <li><strong>Consciousness:</strong> the “hard problem of consciousness”</li>
+                <li><strong>Reality:</strong> metaphysical foundations and consciousness–world interaction</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="unit-card">
+            <div class="unit-top">
+              <img src="img/Akhand1.jpg" alt="Akhandadhi Das" class="unit-photo">
+            </div>
+            <div class="unit-body">
+              <div class="unit-number">Unit 6</div>
+              <h3>Life, Cosmos &amp; Beyond</h3>
+              <p class="faculty-name">Akhandadhi Das</p>
+              <ul>
+                <li><strong>Life:</strong> biological mysteries and scientific perspectives related to Purāṇic accounts</li>
+                <li><strong>Cosmos:</strong> consciousness-based universal structure and realms of free consciousness</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+    <section class="cs-section white">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-eyebrow">How It Works</p>
+          <h2>Study at your own pace</h2>
+          <p class="lead">The program is designed to support serious study without requiring attendance at a fixed weekly meeting time.</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Enroll</h3>
+            <p>Register for the complete six-unit Consciousness Studies program.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Access Canvas</h3>
+            <p>Receive access to recorded lectures, course materials, and learning activities.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Complete the Study</h3>
+            <p>Work through each unit and complete the required assessments at your own pace.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <h3>Receive Recognition</h3>
+            <p>Participants who successfully complete the program receive a BIHS Certificate of Completion.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ENROLLMENT -->
+    <section class="cs-section alt" id="enrollment">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-eyebrow">Enrollment</p>
+          <h2>Complete Six-Unit Program</h2>
+          <p class="lead">Enrollment provides access to the full Consciousness Studies program. Individual units are not currently offered separately.</p>
+        </div>
+
+        <div class="enrollment-wrap">
+          <div class="enrollment-card">
+            <p class="fee-label">Program Fee</p>
+            <div class="fee-price">$108</div>
+            <p>The complete program fee includes:</p>
+            <ul class="included-list">
+              <li>Access to all six units</li>
+              <li>Recorded scholar-led lectures</li>
+              <li>Canvas course materials and learning activities</li>
+              <li>Assessments</li>
+              <li>BIHS Certificate of Completion upon successful completion</li>
+            </ul>
+            <a class="btn secondary" href="https://square.link/u/e7OtuBOj">Enroll in the Program</a>
+          </div>
+
+          <div class="enrollment-card scholarship">
+            <p class="fee-label">Financial Assistance</p>
+            <h3>Scholarship Assistance Available</h3>
+            <p>
+              BIHS seeks to make serious study accessible to participants who are unable to pay the full program fee. Those experiencing financial need are invited to request scholarship assistance before enrolling.
+            </p>
+            <p class="small-note">
+              Scholarship awards may provide partial or full assistance based on individual circumstances and available scholarship support.
+            </p>
+            <a class="btn secondary" href="https://forms.gle/C4kRXACgfTfXqCER8">Request Scholarship Information</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ASSESSMENT & CERTIFICATE -->
+    <section class="cs-section white">
+      <div class="container">
+        <div class="assessment-box">
+          <p class="section-eyebrow">Assessment &amp; Completion</p>
+          <h3>Meaningful study, not passive viewing</h3>
+          <p>
+            Each unit includes learning activities or assessments designed to support reflection, understanding, and engagement with the material. Participants who successfully complete all program requirements receive the BIHS Certificate of Completion. Unit-level recognition may also be issued as individual unit requirements are completed.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- DISCLOSURE -->
+    <section class="disclosure">
+      <div class="disclosure-inner">
+        <h3>Avocational Program Disclosure</h3>
+        <p>
+          <em>Consciousness Studies: Ancient and Modern Perspectives</em> is an avocational, non-credit educational program offered solely for personal enrichment. It is not designed or intended to qualify participants for employment and does not confer academic credit, a degree, or a postsecondary credential.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+      <div class="container">
+        <h2>Begin Your Study of Consciousness</h2>
+        <p>Enroll in the complete program or contact BIHS if financial assistance is needed.</p>
+        <div class="final-actions">
+          <a class="btn-cs-gold" href="https://square.link/u/e7OtuBOj">Enroll in the Program</a>
+          <a class="btn-cs-light" href="https://forms.gle/C4kRXACgfTfXqCER8">Request Scholarship Information</a>
+          <a class="btn-cs-light" href="courses.html">View All BIHS Courses</a>
+        </div>
+      </div>
+    </section>
 
   </main>
-      <div id="footer"></div>
 
+  <div id="footer"></div>
   <script src="js/site.js"></script>
 </body>
-  
 </html>
