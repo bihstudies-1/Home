@@ -1,0 +1,380 @@
+<!doctype html>
+    <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>More from BIHS 2026 | BIHS</title>
+      <meta name="description" content="Books, gatherings, visiting scholars, training programs, and creative work: a few more moments from a remarkably active year at BIHS.">
+      <style>
+:root{
+  --bihs-blue:#2457b8;
+  --bihs-navy:#17365f;
+  --bihs-gold:#c8a447;
+  --ink:#263238;
+  --muted:#65717d;
+  --paper:#ffffff;
+  --wash:#f6f8fc;
+  --line:#dce4f2;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--ink);
+  background:#f2f5fa;
+  line-height:1.65;
+}
+a{color:var(--bihs-blue)}
+img{max-width:100%;height:auto;display:block}
+.page{
+  width:min(1120px,calc(100% - 28px));
+  margin:28px auto;
+  background:var(--paper);
+  border:1px solid #d8e0ee;
+  box-shadow:0 10px 30px rgba(24,54,95,.08);
+}
+.top-stripes{
+  height:14px;
+  background:
+    linear-gradient(to bottom,
+      var(--bihs-navy) 0 4px,
+      #fff 4px 6px,
+      #e3902a 6px 10px,
+      #fff 10px 12px,
+      #55a9cf 12px 14px);
+}
+.brand{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:24px 42px 14px;
+}
+.brand-name{
+  font-weight:800;
+  letter-spacing:.03em;
+  color:#17263b;
+  line-height:1.05;
+}
+.brand-name span{
+  display:block;
+  font-size:.82rem;
+  font-weight:500;
+  letter-spacing:.04em;
+  margin-top:3px;
+}
+.back{
+  display:inline-block;
+  color:var(--bihs-blue);
+  text-decoration:none;
+  font-weight:700;
+  font-size:.94rem;
+}
+.hero{
+  padding:52px 42px 42px;
+  background:linear-gradient(135deg,#f8fbff,#fff 55%);
+  border-top:1px solid var(--line);
+}
+.kicker{
+  color:var(--bihs-gold);
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-size:.78rem;
+}
+h1{
+  color:var(--bihs-navy);
+  font-size:clamp(2.25rem,5vw,4.2rem);
+  line-height:1.02;
+  margin:.32em 0 .28em;
+  letter-spacing:-.025em;
+}
+.hero p{
+  font-size:1.18rem;
+  max-width:780px;
+  margin:0;
+  color:#44515d;
+}
+.hero-media{
+  margin:34px 0 0;
+  min-height:320px;
+  border:1px dashed #aebed6;
+  background:#eef3fa;
+  display:grid;
+  place-items:center;
+  color:#708099;
+  text-align:center;
+  padding:24px;
+  font-weight:700;
+}
+main{padding:0 42px 52px}
+section{
+  padding:44px 0;
+  border-top:1px solid var(--line);
+}
+h2{
+  color:var(--bihs-blue);
+  font-size:clamp(1.55rem,3vw,2.15rem);
+  line-height:1.2;
+  margin:0 0 16px;
+}
+h3{
+  color:var(--bihs-navy);
+  margin:0 0 8px;
+  font-size:1.15rem;
+}
+.lead{
+  font-size:1.1rem;
+  color:#43505c;
+}
+.grid-2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:28px;
+  align-items:start;
+}
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+.card{
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:22px;
+  background:#fff;
+}
+.card.soft{background:var(--wash)}
+.quote{
+  border-left:5px solid var(--bihs-gold);
+  margin:22px 0;
+  padding:8px 0 8px 22px;
+  color:#314050;
+  font-size:1.12rem;
+}
+.stat{
+  text-align:center;
+  padding:30px 18px;
+  color:#fff;
+  min-height:210px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.stat.blue{background:#2865ae}
+.stat.navy{background:#1d3b63}
+.stat.gold{background:#caa746}
+.stat .num{font-size:3rem;font-weight:800;line-height:1}
+.stat .label{font-weight:800;margin-top:14px;text-transform:uppercase;font-size:.82rem}
+.stat p{font-size:.9rem;margin:18px auto 0;max-width:230px}
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+.photo{
+  min-height:210px;
+  border:1px dashed #aebed6;
+  background:#eef3fa;
+  display:grid;
+  place-items:center;
+  color:#708099;
+  text-align:center;
+  padding:18px;
+  font-weight:700;
+}
+.feature-photo{
+  min-height:280px;
+  border:1px dashed #aebed6;
+  background:#eef3fa;
+  display:grid;
+  place-items:center;
+  color:#708099;
+  text-align:center;
+  padding:24px;
+  font-weight:700;
+}
+.button{
+  display:inline-block;
+  padding:12px 18px;
+  background:var(--bihs-blue);
+  color:#fff;
+  text-decoration:none;
+  border-radius:4px;
+  font-weight:800;
+  margin-top:10px;
+}
+.button.secondary{
+  background:#fff;
+  color:var(--bihs-blue);
+  border:2px solid var(--bihs-blue);
+}
+.tag{
+  display:inline-block;
+  margin:4px 6px 4px 0;
+  padding:5px 9px;
+  background:#edf3ff;
+  color:#2c55a0;
+  border-radius:999px;
+  font-size:.82rem;
+  font-weight:700;
+}
+.timeline{
+  display:grid;
+  gap:14px;
+}
+.timeline .item{
+  display:grid;
+  grid-template-columns:120px 1fr;
+  gap:20px;
+  border-left:4px solid var(--bihs-blue);
+  padding:5px 0 5px 18px;
+}
+.pub-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+.pub{
+  border:1px solid var(--line);
+  background:#fff;
+  padding:14px;
+}
+.cover{
+  aspect-ratio:3/4;
+  background:#eef3fa;
+  border:1px dashed #aebed6;
+  display:grid;
+  place-items:center;
+  color:#708099;
+  text-align:center;
+  padding:12px;
+  font-size:.86rem;
+  font-weight:700;
+}
+.pub h3{font-size:1rem;margin-top:12px}
+.footer{
+  padding:28px 42px 38px;
+  border-top:4px solid var(--bihs-blue);
+  background:#fafbfd;
+  color:#66717c;
+  font-size:.9rem;
+}
+.note{
+  background:#fff9e9;
+  border-left:4px solid var(--bihs-gold);
+  padding:14px 16px;
+  margin:18px 0;
+}
+@media(max-width:760px){
+  .page{width:100%;margin:0;border:0}
+  .brand,.hero,main,.footer{padding-left:22px;padding-right:22px}
+  .brand{align-items:flex-start;flex-direction:column}
+  .grid-2,.grid-3,.gallery,.pub-grid{grid-template-columns:1fr}
+  .timeline .item{grid-template-columns:1fr}
+  h1{font-size:2.45rem}
+  .hero-media{min-height:220px}
+}
+</style>
+    </head>
+    <body>
+      <div class="page">
+        <div class="top-stripes"></div>
+        <header class="brand">
+          <div class="brand-name">
+            BHAKTIVEDANTA INSTITUTE
+            <span>FOR HIGHER STUDIES</span>
+          </div>
+          <a class="back" href="NEWSLETTER_URL_HERE">← September 2026 Newsletter</a>
+        </header>
+
+        <div class="hero">
+          <div class="kicker">More from BIHS · 2026</div>
+          <h1>A Year in Motion</h1>
+          <p>Books, gatherings, visiting scholars, training programs, and creative work: a few more moments from a remarkably active year at BIHS.</p>
+          <div class="hero-media">OPTIONAL HERO COLLAGE — Ratha Yatra · Sadhu Sanga · BIHS Gainesville · Art</div>
+        </div>
+
+        <main>
+
+<section>
+  <p class="lead">Not every meaningful moment needs a full newsletter story. This page gathers a few glimpses of the programs, gatherings, visitors, and community connections that have also filled the year.</p>
+</section>
+
+<section>
+  <div class="grid-2">
+    <div class="feature-photo">ADD LOS ANGELES RATHA YATRA PHOTO</div>
+    <div>
+      <h2>Los Angeles Ratha Yatra</h2>
+      <p>BIHS joined the Los Angeles Ratha Yatra with a book table and a selection of publications, giving festival visitors an opportunity to discover work in science, philosophy, consciousness, cosmology, and Bhāgavata thought.</p>
+      <p>The event was also a reminder that publishing becomes meaningful when books leave the shelf and meet actual readers.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="grid-2">
+    <div>
+      <h2>Sadhu Sanga</h2>
+      <p>BIHS was also present at Sadhu Sanga, creating another opportunity to meet readers, reconnect with friends and supporters, and share the Institute’s educational and publication work in person.</p>
+      <p><em>Add one or two specific details here if you want—the photos can do most of the storytelling.</em></p>
+    </div>
+    <div class="feature-photo">ADD SADHU SANGA PHOTO</div>
+  </div>
+</section>
+
+<section>
+  <div class="grid-2">
+    <div class="feature-photo">ADD GURU TRAINING PHOTO</div>
+    <div>
+      <h2>Guru Training at BIHS</h2>
+      <p>BIHS also opened its Gainesville facility to host a guru training program—one example of the Institute serving not only through its own courses and research, but also as a place where serious educational and community programs can gather.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="grid-2">
+    <div>
+      <h2>Art &amp; Painting with Dhriti</h2>
+      <p>Dhriti’s painting course brought a different kind of learning into the BIHS space: one centered on seeing, practice, creativity, and artistic expression. Add a few strong images from the course and let the visual story carry this section.</p>
+    </div>
+    <div class="feature-photo">ADD DHRITI / PAINTING COURSE PHOTO</div>
+  </div>
+</section>
+
+<section>
+  <div class="grid-2">
+    <div class="feature-photo">ADD PROF. KRISHNASWAMI ALLADI / RAMANUJAN EVENT PHOTO</div>
+    <div>
+      <h2>The Remarkable Life, Work, and Influence of Ramanujan</h2>
+      <p>On April 17, BIHS welcomed Prof. Krishnaswami Alladi of the University of Florida for a special presentation on Srinivasa Ramanujan, one of the most extraordinary mathematical minds in modern history.</p>
+      <p>The evening brought the life of a great mathematician into the wider BIHS conversation about knowledge, creativity, intuition, and intellectual history.</p>
+      <a class="button secondary" href="https://bihstudies.org/events.html">See BIHS Events</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>2026 in Pictures</h2>
+  <div class="gallery">
+    <div class="photo">PHOTO 1</div>
+    <div class="photo">PHOTO 2</div>
+    <div class="photo">PHOTO 3</div>
+    <div class="photo">PHOTO 4</div>
+    <div class="photo">PHOTO 5</div>
+    <div class="photo">PHOTO 6</div>
+  </div>
+</section>
+
+        </main>
+
+        <footer class="footer">
+          <strong>Bhaktivedanta Institute for Higher Studies</strong><br>
+          Where Science &amp; Philosophy Meet<br>
+          <a href="https://bihstudies.org/">bihstudies.org</a>
+        </footer>
+      </div>
+    </body>
+    </html>
