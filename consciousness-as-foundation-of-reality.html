@@ -9,132 +9,252 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link rel="stylesheet" href="/article-cards.css">
     <link rel="stylesheet" href="/modern-cards.css">
+  
   <style>
-           /* Specific styles for this article to match Constant Contact's original look where appropriate */
-        .article-content {
-            max-width: 800px; /* Adjust as needed */
-          
-            margin: 0 auto;
-            padding: 20px 0;
-            line-height: 1.6;
-        }
-        .article-content p {
-            margin-bottom: 1em;
-            font-size: 1.1em; /* Slightly larger text for readability */
-            color: var(--text-color-dark); /* Using your primary text color */
-        }
-        .article-content h1, .article-content h2, .article-content h3 {
-            color: var(--bihs-navy); /* Using your main accent color for headings */
-            margin-top: 1.5em;
-            margin-bottom: 0.8em;
-            line-height: 1.3;
-        }
-        .article-content h1 {
-            font-size: 2.2em;
-            text-align: center;
-        }
-        .article-content h2 {
-            font-size: 1.8em;
-        }
-        .article-content h3 {
-            font-size: 1.4em;
-            color: var(--bihs-blue); /* A slightly lighter blue for subheadings */
-        }
-        .article-author-info {
-            display: flex;
-            align-items: center;
-            margin-bottom: 2em;
-        }
-        .article-author-info img {
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            margin-right: 20px;
-            border: 2px solid var(--bihs-blue); /* Add a border to the author image */
-        }
-        .article-author-text p {
-            margin: 0;
-            font-size: 1.1em;
-        }
-        .article-author-text span {
-            font-weight: bold;
-            color: var(--bihs-navy);
-        }
-        .article-main-image {
-            display: block;
-            max-width: 100%;
-            height: auto;
-            margin: 2em auto;
-            border-radius: 8px; /* Soften image corners */
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Subtle shadow */
-        }
-        .article-centered-image {
-            display: block;
-            margin: 2em auto;
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        .article-buttons {
-            text-align: center;
-            margin-top: 3em;
-            margin-bottom: 2em;
-        }
-        .article-buttons .btn {
-            margin: 0 10px;
-            padding: 12px 30px;
-            font-size: 1.1em;
-            border-radius: 5px;
-            font-weight: bold;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .article-buttons .btn.primary {
-            background: var(--bihs-blue); /* Use your primary button color */
-            color: #fff;
-        }
-        .article-buttons .btn.secondary {
-            background: var(--bihs-sky); /* Use your lighter blue */
-            color: var(--bihs-navy);
-            border: 1px solid var(--bihs-blue);
-        }
-        .article-social-icons {
-            text-align: center;
-            margin-top: 3em;
-            padding-top: 1.5em;
-            border-top: 1px solid var(--border-color); /* Light border above social icons */
-        }
-        .article-social-icons a {
-            display: inline-block;
-            margin: 0 8px;
-        }
-        .article-social-icons img {
-            width: 38px; /* Slightly larger social icons */
-            height: 38px;
-            border-radius: 50%;
-            transition: transform 0.2s ease-in-out;
-        }
-        .article-social-icons img:hover {
-            transform: scale(1.1);
-        }
-        .article-footer-address {
-            text-align: center;
-            font-size: 0.9em;
-            color: var(--text-color-light);
-            margin-top: 2em;
-            padding-top: 1.5em;
-            border-top: 1px solid var(--border-color);
-        }
-        .article-footer-address a {
-            color: inherit;
-            text-decoration: none;
-        }
-     </style>
+    :root{
+      --news-navy:#17365f;
+      --news-blue:#3562c8;
+      --news-gold:#c8a447;
+      --news-ink:#263238;
+      --news-muted:#65717d;
+      --news-paper:#ffffff;
+      --news-wash:#f6f8fc;
+      --news-line:#dce4f2;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background:#f2f5fa;
+      color:var(--news-ink);
+    }
+
+    /* Newsletter identity strip */
+    .newsletter-strip{
+      background:#fff;
+      border-top:4px solid var(--news-navy);
+      border-bottom:1px solid var(--news-line);
+      font-family:Arial,Helvetica,sans-serif;
+    }
+
+    .newsletter-strip::before{
+      content:"";
+      display:block;
+      height:7px;
+      background:linear-gradient(
+        to right,
+        var(--news-navy) 0 34%,
+        var(--news-gold) 34% 67%,
+        #55a9cf 67% 100%
+      );
+    }
+
+    .newsletter-strip-inner{
+      max-width:1100px;
+      margin:0 auto;
+      padding:16px 30px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+    }
+
+    .newsletter-label{
+      font-family:Arial,Helvetica,sans-serif;
+      font-size:.82rem;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--news-navy);
+    }
+
+    .newsletter-label span{
+      display:block;
+      margin-top:2px;
+      font-size:.68rem;
+      font-weight:400;
+      letter-spacing:.1em;
+    }
+
+    .newsletter-back{
+      font-family:Arial,Helvetica,sans-serif;
+      color:var(--news-blue);
+      text-decoration:none;
+      font-size:.86rem;
+      font-weight:700;
+      white-space:nowrap;
+    }
+
+    .newsletter-back:hover{ text-decoration:underline; }
+
+    /* Article hero */
+    .article-hero{
+      background:linear-gradient(135deg,#f8fbff,#ffffff 58%);
+      border-bottom:1px solid var(--news-line);
+      padding:54px 28px 46px;
+      text-align:center;
+    }
+
+    .article-hero-inner{
+      max-width:900px;
+      margin:0 auto;
+    }
+
+    .article-kicker{
+      margin:0 0 14px;
+      font-family:Arial,Helvetica,sans-serif;
+      color:var(--news-gold);
+      font-size:.76rem;
+      font-weight:800;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+    }
+
+    .article-hero h1{
+      margin:0 0 16px;
+      color:var(--news-navy);
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:clamp(2.25rem,5vw,4rem);
+      line-height:1.05;
+      letter-spacing:-.025em;
+    }
+
+    .article-hero h2{
+      max-width:760px;
+      margin:0 auto;
+      color:#44515d;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:clamp(1.15rem,2.3vw,1.55rem);
+      line-height:1.45;
+      font-weight:500;
+    }
+
+    /* Main article */
+    main{
+      max-width:1120px;
+      margin:0 auto;
+      background:#fff;
+      box-shadow:0 10px 30px rgba(24,54,95,.06);
+    }
+
+    .article-content {
+      max-width:800px;
+      margin:0 auto;
+      padding:54px 30px 80px;
+      line-height:1.72;
+    }
+
+    .article-content p {
+      margin-bottom:1.25em;
+      font-size:1.08rem;
+      color:#3c4650;
+    }
+
+    .article-content h3 {
+      color:var(--news-blue);
+      margin-top:2.25em;
+      margin-bottom:.75em;
+      line-height:1.3;
+      font-size:1.45rem;
+      font-family:Georgia,"Times New Roman",serif;
+    }
+
+    .article-content blockquote{
+      border-left:4px solid var(--news-gold) !important;
+      background:var(--news-wash);
+      padding:20px 24px !important;
+      margin:32px 0 !important;
+      color:#314050;
+      font-size:1.08rem;
+      line-height:1.6;
+    }
+
+    .article-content blockquote::before{
+      content:"“";
+      color:var(--news-gold);
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:2rem;
+      line-height:0;
+      vertical-align:-.25em;
+      margin-right:4px;
+    }
+
+    .article-content > p:first-of-type{
+      font-family:Arial,Helvetica,sans-serif;
+      color:var(--news-blue);
+      font-size:.86rem;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      margin-bottom:30px;
+    }
+
+    .article-content > p:first-of-type strong{
+      font-weight:800;
+    }
+
+    .article-content > p:last-of-type a{
+      display:inline-block;
+      margin-top:18px;
+      padding:11px 16px;
+      border:2px solid var(--news-blue);
+      border-radius:4px;
+      color:var(--news-blue) !important;
+      font-family:Arial,Helvetica,sans-serif;
+      font-size:.9rem;
+      font-weight:800;
+      text-decoration:none !important;
+    }
+
+    .article-content > p:last-of-type a:hover{
+      background:var(--news-blue);
+      color:#fff !important;
+    }
+
+    @media (max-width:680px){
+      .newsletter-strip-inner{
+        padding:14px 20px;
+        align-items:flex-start;
+        flex-direction:column;
+        gap:6px;
+      }
+
+      .article-hero{
+        padding:40px 22px 34px;
+      }
+
+      .article-content{
+        padding:38px 22px 60px;
+      }
+
+      .article-content p{
+        font-size:1.02rem;
+      }
+    }
+  </style>
+
 </head>
 <body>
 <div id="header"></div>
+
+  <div class="newsletter-strip">
+    <div class="newsletter-strip-inner">
+      <div class="newsletter-label">
+        BIHS September 2026
+        <span>Illuminating Essays</span>
+      </div>
+      <a class="newsletter-back" href="/newsletter.html">
+        ← Back to Newsletter
+      </a>
+    </div>
+  </div>
+
+  <section class="article-hero">
+    <div class="article-hero-inner">
+      <p class="article-kicker">From the BIHS Consciousness Studies Course</p>
+      <h1>Consciousness as the Foundation of Reality</h1>
+      <h2>Highlights of Dr. Tiziano Valentinuzzi’s Final Session on Vedic Cosmology</h2>
+    </div>
+  </section>
   <main>
     <section class="article-content">
 
