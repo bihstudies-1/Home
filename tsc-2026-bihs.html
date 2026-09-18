@@ -184,16 +184,21 @@ h3{
   padding:18px;
   font-weight:700;
 }
-.feature-photo{
-  min-height:280px;
-  border:1px dashed #aebed6;
-  background:#eef3fa;
-  display:grid;
-  place-items:center;
-  color:#708099;
-  text-align:center;
-  padding:24px;
-  font-weight:700;
+.feature-photo {
+  height: 320px;
+  border: 1px solid #aebed6;
+  background: #eef3fa;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .button{
   display:inline-block;
@@ -326,9 +331,9 @@ h3{
         </a>
       </div>
 
-      <div class="feature-photo">
+      <div class="feature-photo" style="aspect-ratio: 7.13 / 2.21;">
        <img
-    src="img/news.sep.2026/tsc.2026.speakers.jpg"
+    src="img/news.sep.2026/tsc.2026.speakers.jpg "
     alt="The Science of Consciousness 2026 conference"
   >
       </div>
