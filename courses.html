@@ -294,6 +294,85 @@
     .courses-page .more-card .card-icon {
       margin-bottom: .6rem;
     }
+	  
+	  /* LEARNING OPTIONS */
+
+.consciousness-page .learning-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.consciousness-page .learning-card {
+  background: #fff;
+  border: 1px solid #dbe5ef;
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.consciousness-page .primary-option {
+  border-top: 4px solid var(--bihs-gold);
+}
+
+.consciousness-page .expanded-option {
+  border-top: 4px solid var(--bihs-navy);
+}
+
+.consciousness-page .option-label {
+  color: var(--bihs-navy);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  margin-bottom: .6rem;
+}
+
+.consciousness-page .option-price {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--bihs-navy-900);
+  font-size: 2.6rem;
+  line-height: 1;
+  margin-bottom: .4rem;
+}
+
+.consciousness-page .option-type {
+  color: #617386;
+  font-weight: 600;
+  margin-bottom: 1.4rem;
+}
+
+.consciousness-page .option-list {
+  padding-left: 1.2rem;
+  margin-bottom: 1.8rem;
+  flex-grow: 1;
+}
+
+.consciousness-page .option-list li {
+  margin-bottom: .65rem;
+  color: #425466;
+}
+
+.consciousness-page .btn-cs-outline {
+  display: inline-block;
+  border: 1px solid var(--bihs-navy);
+  color: var(--bihs-navy);
+  padding: .78rem 1.25rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  text-align: center;
+}
+
+	 
+@media (max-width: 760px) {
+  .consciousness-page .learning-options {
+    grid-template-columns: 1fr;
+  }
+}
 
     /* FOOTNOTE */
     .courses-page .course-policy {

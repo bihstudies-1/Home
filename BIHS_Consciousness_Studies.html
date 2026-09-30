@@ -64,56 +64,7 @@
   margin-bottom: 1rem;
 }
 
-    .consciousness-page .cs-new-hero .container {
-      max-width: 920px;
-    }
-
-    .consciousness-page .hero-kicker {
-      color: #e9c96f;
-      font-size: .78rem;
-      font-weight: 800;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      margin-bottom: .8rem;
-    }
-
-    .consciousness-page .status-pill {
-      display: inline-block;
-      background: rgba(255,255,255,.10);
-      border: 1px solid rgba(255,255,255,.38);
-      color: #fff;
-      border-radius: 999px;
-      padding: .36rem .76rem;
-      font-size: .76rem;
-      font-weight: 800;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      margin-bottom: 1.25rem;
-    }
-
-    .consciousness-page .cs-new-hero h1 {
-      color: #fff;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.3rem, 5.6vw, 4rem);
-      font-weight: 500;
-      max-width: 850px;
-      margin-bottom: .65rem;
-    }
-
-    .consciousness-page .hero-subtitle {
-      color: #d9e7f7;
-      font-size: clamp(1.15rem, 2.4vw, 1.45rem);
-      font-weight: 400;
-      margin-bottom: 1.35rem;
-    }
-
-    .consciousness-page .hero-description {
-      color: rgba(255,255,255,.90);
-      max-width: 760px;
-      font-size: 1.08rem;
-      line-height: 1.75;
-      margin-bottom: 1.6rem;
-    }
+    
 
     .consciousness-page .hero-meta {
       display: flex;
@@ -352,64 +303,106 @@
       margin-bottom: 0;
     }
 
-    /* FEE + SCHOLARSHIP */
-    .consciousness-page .enrollment-wrap {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      max-width: 980px;
-      margin: 0 auto;
-    }
+    /* ========================================= */
+/* ENROLLMENT OPTIONS                        */
+/* ========================================= */
 
-    .consciousness-page .enrollment-card {
-      background: #fff;
-      border: 1px solid #dbe5ef;
-      border-radius: 14px;
-      padding: 2rem;
-      box-shadow: 0 7px 22px rgba(2,38,73,.06);
-    }
+.consciousness-page .learning-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  max-width: 980px;
+  margin: 0 auto;
+}
 
-    .consciousness-page .enrollment-card.scholarship {
-      border-top: 4px solid var(--bihs-gold);
-    }
+.consciousness-page .learning-card {
+  background: #fff;
+  border: 1px solid #dbe5ef;
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 7px 22px rgba(2,38,73,.06);
+}
 
-    .consciousness-page .fee-label {
-      color: #617386;
-      font-size: .78rem;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      font-weight: 800;
-      margin-bottom: .35rem;
-    }
+.consciousness-page .primary-option {
+  border-top: 4px solid var(--bihs-gold);
+}
 
-    .consciousness-page .fee-price {
-      font-family: Georgia, "Times New Roman", serif;
-      color: var(--bihs-navy-900);
-      font-size: 2.5rem;
-      line-height: 1.1;
-      margin-bottom: .8rem;
-    }
+.consciousness-page .expanded-option {
+  border-top: 4px solid var(--bihs-navy);
+}
 
-    .consciousness-page .included-list {
-      padding-left: 1.1rem;
-      margin-bottom: 1.5rem;
-    }
+.consciousness-page .option-label {
+  color: var(--bihs-navy);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  margin-bottom: .6rem;
+}
 
-    .consciousness-page .included-list li {
-      margin-bottom: .45rem;
-      color: #425466;
-    }
+.consciousness-page .option-price {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--bihs-navy-900);
+  font-size: 2.6rem;
+  line-height: 1;
+  margin-bottom: .4rem;
+}
 
-    .consciousness-page .scholarship h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.55rem;
-      font-weight: 500;
-    }
+.consciousness-page .option-type {
+  color: #617386;
+  font-weight: 600;
+  margin-bottom: 1.4rem;
+}
 
-    .consciousness-page .small-note {
-      color: #69798a;
-      font-size: .88rem;
-    }
+.consciousness-page .option-list {
+  padding-left: 1.2rem;
+  margin-bottom: 1.8rem;
+  flex-grow: 1;
+}
+
+.consciousness-page .option-list li {
+  color: #425466;
+  margin-bottom: .65rem;
+}
+
+.consciousness-page .learning-card .btn-cs-gold {
+  text-align: center;
+  margin-top: auto;
+}
+
+
+/* SCHOLARSHIP */
+
+.consciousness-page .scholarship-strip {
+  max-width: 980px;
+  margin: 1.5rem auto 0;
+  padding: 1.2rem 1.4rem;
+  background: #fff;
+  border: 1px solid #dbe5ef;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.consciousness-page .scholarship-strip strong {
+  display: block;
+  color: var(--bihs-navy-900);
+  margin-bottom: .2rem;
+}
+
+.consciousness-page .scholarship-strip span {
+  color: #617386;
+  font-size: .9rem;
+}
+
+.consciousness-page .scholarship-strip a {
+  white-space: nowrap;
+  font-weight: 700;
+}
 
     /* ASSESSMENT */
     .consciousness-page .assessment-box {
@@ -514,6 +507,8 @@
         padding: 3rem var(--pad);
       }
     }
+	  
+	  
   </style>
 </head>
 
@@ -840,7 +835,7 @@
           <li>Additional selected BIHS recorded programs</li>
         </ul>
 
-        <a class="btn-cs-outline" href="https://square.link/u/iS2su9uj">
+        <a class="btn-cs-gold" href="https://square.link/u/iS2su9uj">
           Choose Expanded Access
         </a>
 
