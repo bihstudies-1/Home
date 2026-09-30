@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Thank You for Enrolling | BIHS</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description"
+        content="Thank you for enrolling in a BIHS learning program. Learn what happens next and how you will receive access to your BIHS courses through Canvas.">
+
+  <!-- BIHS SITE CSS -->
+  <link rel="stylesheet" href="css/site.css">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+  <style>
+
+    /* ========================================= */
+    /* BIHS ENROLLMENT THANK-YOU PAGE            */
+    /* ========================================= */
+
+    .thankyou-page {
+      background: #fff;
+      color: #33475b;
+    }
+
+
+    /* ========================================= */
+    /* HERO                                      */
+    /* ========================================= */
+
+    .thankyou-hero {
+      background: linear-gradient(135deg, #022649 0%, #003366 100%);
+      color: #fff;
+      text-align: center;
+      padding: 3.5rem var(--pad) 3.2rem;
+      border-bottom: 3px solid var(--bihs-gold);
+    }
+
+    .thankyou-hero .container {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .thankyou-check {
+      width: 58px;
+      height: 58px;
+      margin: 0 auto 1.2rem;
+      border: 2px solid #e9bd54;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #e9bd54;
+      font-size: 1.7rem;
+    }
+
+    .thankyou-hero h1 {
+      color: #fff;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 500;
+      margin-bottom: .8rem;
+    }
+
+    .thankyou-hero .welcome {
+      color: #e9c96f;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: .7rem;
+    }
+
+    .thankyou-hero p {
+      color: rgba(255,255,255,.9);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+
+    /* ========================================= */
+    /* GENERAL SECTIONS                          */
+    /* ========================================= */
+
+    .thankyou-section {
+      padding: 3.5rem var(--pad);
+    }
+
+    .thankyou-section.alt {
+      background: var(--bihs-sky);
+    }
+
+    .thankyou-container {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .thankyou-heading {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 2rem;
+    }
+
+    .thankyou-heading h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.7rem, 3vw, 2.25rem);
+      font-weight: 500;
+      color: var(--bihs-navy-900);
+      margin-bottom: .6rem;
+    }
+
+    .thankyou-heading p {
+      color: #617386;
+      line-height: 1.7;
+    }
+
+
+    /* ========================================= */
+    /* WHAT HAPPENS NEXT                         */
+    /* ========================================= */
+
+    .next-steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 1.2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .next-step {
+      background: #fff;
+      border: 1px solid #dbe5ef;
+      border-radius: 10px;
+      padding: 1.6rem;
+      text-align: center;
+    }
+
+    .step-number {
+      width: 38px;
+      height: 38px;
+      margin: 0 auto .9rem;
+      border-radius: 50%;
+      background: var(--bihs-navy);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+    }
+
+    .next-step h3 {
+      font-size: 1.05rem;
+      margin-bottom: .45rem;
+    }
+
+    .next-step p {
+      color: #617386;
+      font-size: .92rem;
+      margin-bottom: 0;
+    }
+
+
+    /* ========================================= */
+    /* ACCESS NOTICE                             */
+    /* ========================================= */
+
+    .access-notice {
+      max-width: 820px;
+      margin: 2rem auto 0;
+      background: #fff;
+      border-left: 4px solid var(--bihs-gold);
+      padding: 1.3rem 1.5rem;
+      border-radius: 6px;
+    }
+
+    .access-notice strong {
+      color: var(--bihs-navy-900);
+    }
+
+    .access-notice p {
+      margin-bottom: .5rem;
+      line-height: 1.6;
+    }
+
+    .access-notice p:last-child {
+      margin-bottom: 0;
+    }
+
+
+    /* ========================================= */
+    /* CANVAS                                    */
+    /* ========================================= */
+
+    .canvas-area {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .canvas-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      border: 1px solid #dbe5ef;
+    }
+
+    .canvas-copy h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--bihs-navy-900);
+      font-weight: 500;
+    }
+
+    .canvas-copy p {
+      line-height: 1.7;
+      color: #526577;
+    }
+
+
+    /* ========================================= */
+    /* CERTIFICATE                               */
+    /* ========================================= */
+
+    .certificate-area {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .certificate-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+      border: 1px solid #dbe5ef;
+      box-shadow: 0 6px 18px rgba(2,38,73,.08);
+    }
+
+    .certificate-copy h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--bihs-navy-900);
+      font-weight: 500;
+    }
+
+    .certificate-copy p {
+      line-height: 1.7;
+      color: #526577;
+    }
+
+
+    /* ========================================= */
+    /* BUTTONS                                   */
+    /* ========================================= */
+
+    .thankyou-button {
+      display: inline-block;
+      background: #e9bd54;
+      color: #10243a;
+      font-weight: 800;
+      padding: .8rem 1.3rem;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-top: .5rem;
+    }
+
+    .thankyou-button:hover {
+      text-decoration: none;
+      filter: brightness(.97);
+    }
+
+
+    /* ========================================= */
+    /* CONTACT                                   */
+    /* ========================================= */
+
+    .thankyou-contact {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .thankyou-contact h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--bihs-navy-900);
+      font-weight: 500;
+    }
+
+    .thankyou-contact p {
+      line-height: 1.7;
+      color: #526577;
+    }
+
+    .thankyou-contact a {
+      font-weight: 700;
+    }
+
+
+    /* ========================================= */
+    /* MOBILE                                    */
+    /* ========================================= */
+
+    @media (max-width: 760px) {
+
+      .next-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .canvas-area,
+      .certificate-area {
+        grid-template-columns: 1fr;
+      }
+
+      .thankyou-hero {
+        padding: 2.8rem var(--pad);
+      }
+
+      .thankyou-section {
+        padding: 2.8rem var(--pad);
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <!-- ========================================= -->
+  <!-- BIHS HEADER / NAVIGATION                  -->
+  <!-- ========================================= -->
+
+  <div id="header"></div>
+
+
+  <!-- ========================================= -->
+  <!-- MAIN PAGE                                 -->
+  <!-- ========================================= -->
+
+  <main class="thankyou-page">
+
+
+    <!-- THANK YOU HERO -->
+
+    <section class="thankyou-hero">
+
+      <div class="container">
+
+        <div class="thankyou-check">
+          <i class="fa-solid fa-check"></i>
+        </div>
+
+        <h1>Thank You for Enrolling!</h1>
+
+        <p class="welcome">
+          Welcome to the BIHS learning community.
+        </p>
+
+        <p>
+          Your payment has been received. We are delighted to have you
+          learning with us and look forward to accompanying you on your
+          BIHS learning journey.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ========================================= -->
+    <!-- WHAT HAPPENS NEXT                         -->
+    <!-- ========================================= -->
+
+    <section class="thankyou-section alt">
+
+      <div class="thankyou-container">
+
+        <div class="thankyou-heading">
+
+          <h2>What Happens Next?</h2>
+
+          <p>
+            Course access is currently activated personally by our BIHS team.
+            Here is what you can expect.
+          </p>
+
+        </div>
+
+
+        <div class="next-steps">
+
+
+          <div class="next-step">
+
+            <div class="step-number">1</div>
+
+            <h3>Enrollment Received</h3>
+
+            <p>
+              We receive and review your enrollment information.
+            </p>
+
+          </div>
+
+
+          <div class="next-step">
+
+            <div class="step-number">2</div>
+
+            <h3>Canvas Access</h3>
+
+            <p>
+              We activate your access to the appropriate BIHS course
+              or courses.
+            </p>
+
+          </div>
+
+
+          <div class="next-step">
+
+            <div class="step-number">3</div>
+
+            <h3>Start Learning</h3>
+
+            <p>
+              You receive your access information by email and can
+              begin studying.
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+        <div class="access-notice">
+
+          <p>
+            <strong>Please allow up to 1–2 business days for course access.</strong>
+            Enrollment is currently activated manually by our BIHS team.
+          </p>
+
+          <p>
+            Your Canvas invitation will be sent to the email address associated
+            with your enrollment. If you would like us to use a different email
+            address for Canvas, please contact us at
+            <a href="mailto:monicad@bihs.org">monicad@bihs.org</a>.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ========================================= -->
+    <!-- CANVAS                                    -->
+    <!-- ========================================= -->
+
+    <section class="thankyou-section">
+
+      <div class="thankyou-container canvas-area">
+
+
+        <div class="canvas-image">
+
+          <!-- ================================= -->
+          <!-- REPLACE WITH YOUR CANVAS PICTURE  -->
+          <!-- ================================= -->
+
+          <img
+            src="img/2026/canvas.jpg"
+            alt="BIHS Canvas learning platform">
+
+        </div>
+
+
+        <div class="canvas-copy">
+
+          <h2>Your BIHS Learning Space</h2>
+
+          <p>
+            BIHS courses are hosted through Canvas, where you will find
+            your course materials, recorded lectures, assessments, and
+            other learning resources.
+          </p>
+
+          <p>
+            <strong>Already have a Canvas account?</strong>
+            You may continue using your existing account. Once your
+            enrollment is activated, your BIHS course will appear there.
+          </p>
+
+          <p>
+            You may visit Canvas now, but your new course will become
+            available once your enrollment has been activated.
+          </p>
+
+
+          <!-- ================================= -->
+          <!-- REPLACE # WITH YOUR CANVAS URL    -->
+          <!-- ================================= -->
+
+          <a class="thankyou-button"
+             href="#"
+             target="_blank"
+             rel="noopener">
+            Go to BIHS Canvas
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ========================================= -->
+    <!-- CERTIFICATE                               -->
+    <!-- ========================================= -->
+
+    <section class="thankyou-section alt">
+
+      <div class="thankyou-container certificate-area">
+
+
+        <div class="certificate-copy">
+
+          <h2>Complete Your Learning Journey</h2>
+
+          <p>
+            Participants who successfully complete the Consciousness Studies
+            requirements are eligible to receive a BIHS Certificate of Completion.
+          </p>
+
+          <p>
+            The certificate recognizes your completion of the program's
+            lectures, reflections, quizzes, and assessments.
+          </p>
+
+        </div>
+
+
+        <div class="certificate-image">
+
+          <!-- ====================================== -->
+          <!-- REPLACE WITH YOUR CERTIFICATE PICTURE  -->
+          <!-- ====================================== -->
+
+          <img
+            src="img/2026/certificate.jpg"
+            alt="BIHS Certificate of Completion">
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ========================================= -->
+    <!-- QUESTIONS                                 -->
+    <!-- ========================================= -->
+
+    <section class="thankyou-section">
+
+      <div class="thankyou-contact">
+
+        <h2>Questions?</h2>
+
+        <p>
+          If you have any difficulty receiving or accessing your course,
+          please contact us. We are happy to help.
+        </p>
+
+        <p>
+          <a href="mailto:monicad@bihs.org">
+            monicad@bihs.org
+          </a>
+        </p>
+
+        <a class="thankyou-button"
+           href="https://bihstudies.org/">
+          Return to BIHS
+        </a>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- ========================================= -->
+  <!-- BIHS FOOTER                               -->
+  <!-- ========================================= -->
+
+  <div id="footer"></div>
+
+
+  <!-- ========================================= -->
+  <!-- LOAD SHARED BIHS HEADER AND FOOTER        -->
+  <!-- ========================================= -->
+
+  <script>
+
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+      });
+
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      });
+
+  </script>
+
+
+</body>
+
+</html>
