@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta name="description"
-        content="Upcoming and past events, gatherings, lectures, workshops, and movie nights from the Bhaktivedanta Institute for Higher Studies.">
+        content="Upcoming events and recent highlights from the Bhaktivedanta Institute for Higher Studies Cultural Hub in Gainesville, Florida.">
 
   <link rel="stylesheet" href="css/site.css">
 
@@ -29,7 +29,7 @@
 
 
     /* ========================================= */
-    /* EVENTS HERO                               */
+    /* HERO                                      */
     /* ========================================= */
 
     .events-hero {
@@ -72,41 +72,39 @@
 
 
     /* ========================================= */
-    /* COMING NEXT                               */
+    /* GENERAL EVENT SECTIONS                    */
     /* ========================================= */
 
-    .coming-next {
+    .events-section {
       padding: 4rem var(--pad);
-      background: #fff;
     }
 
-    .event-card {
-      display: grid;
-      gap: 2.5rem;
+    .events-section.alt {
+      background: var(--bihs-sky);
+    }
+
+    .events-container {
       max-width: 1050px;
       margin: 0 auto;
-      padding: 2rem;
-      border: 1px solid #dbe5ef;
-      border-radius: 14px;
-      background: #fff;
-      box-shadow: 0 8px 26px rgba(2,38,73,.07);
-      align-items: center;
     }
 
-    @media (min-width: 800px) {
-      .event-card {
-        grid-template-columns: .85fr 1.15fr;
-      }
+    .events-heading {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 2.5rem;
     }
 
-    .event-card__media img {
-      width: 100%;
-      height: auto;
-      max-height: 480px;
-      object-fit: contain;
-      border-radius: 10px;
-      display: block;
-      margin: 0 auto;
+    .events-heading h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--bihs-navy-900);
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 500;
+      margin-bottom: .6rem;
+    }
+
+    .events-heading p {
+      color: #5d6e80;
+      line-height: 1.7;
     }
 
     .event-eyebrow {
@@ -118,81 +116,158 @@
       margin-bottom: .5rem;
     }
 
-    .event-card__content h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      color: var(--bihs-navy-900);
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
-      font-weight: 500;
-      margin: 0 0 1rem;
+
+    /* ========================================= */
+    /* FEATURED EVENT CARD                       */
+    /* ========================================= */
+
+    .featured-event {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 2.5rem;
+      align-items: center;
+      background: #fff;
+      border: 1px solid #dbe5ef;
+      border-radius: 14px;
+      padding: 2rem;
+      box-shadow: 0 8px 26px rgba(2,38,73,.07);
     }
 
-    .event-card__content p {
+    .featured-event__poster img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      object-fit: contain;
+      margin: 0 auto;
+      border-radius: 8px;
+    }
+
+    .featured-event__content h2,
+    .featured-event__content h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--bihs-navy-900);
+      font-weight: 500;
+      margin-top: 0;
+    }
+
+    .featured-event__content h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+    }
+
+    .featured-event__content h3 {
+      font-size: 1.65rem;
+    }
+
+    .featured-event__content p {
       color: #526577;
       line-height: 1.7;
     }
 
-    .coming-soon {
+    .event-status {
       color: var(--bihs-navy-900) !important;
-      font-weight: 700;
       font-size: 1.05rem;
+      font-weight: 700;
     }
 
-    .event-card__actions {
+    .event-actions {
       display: flex;
       flex-wrap: wrap;
       gap: .75rem;
-      margin-top: 1.4rem;
+      margin-top: 1.3rem;
     }
 
 
     /* ========================================= */
-    /* PAST EVENTS                               */
+    /* RECENT EVENT HIGHLIGHTS                   */
     /* ========================================= */
 
-    .past-events {
-      padding: 4rem var(--pad);
-      background: var(--bihs-sky);
+    .recent-events {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.6rem;
     }
 
-    .past-events-heading {
-      text-align: center;
-      max-width: 760px;
-      margin: 0 auto 2.5rem;
-    }
-
-    .past-events-heading h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      color: var(--bihs-navy-900);
-      font-size: clamp(1.8rem, 3vw, 2.4rem);
-      font-weight: 500;
-      margin-bottom: .7rem;
-    }
-
-    .past-events-heading p {
-      color: #5d6e80;
-      line-height: 1.7;
-    }
-
-    .past-event-links {
-      max-width: 850px;
-      margin: 0 auto 3rem;
+    .recent-event {
       background: #fff;
       border: 1px solid #dbe5ef;
       border-radius: 12px;
-      padding: 1.5rem 2rem;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(2,38,73,.06);
     }
 
-    .past-event-links ul {
+    .recent-event__poster {
+      background: #f3f6f9;
+      padding: 1.2rem;
+      text-align: center;
+    }
+
+    .recent-event__poster img {
+      display: block;
+      width: 100%;
+      height: 380px;
+      object-fit: contain;
+      margin: 0 auto;
+    }
+
+    .recent-event__content {
+      padding: 1.6rem;
+    }
+
+    .recent-event__content h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--bihs-navy-900);
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin: 0 0 .4rem;
+    }
+
+    .speaker-name {
+      color: var(--bihs-navy);
+      font-weight: 700;
+      margin-bottom: .2rem;
+    }
+
+    .speaker-affiliation {
+      color: #6b7988;
+      font-size: .9rem;
+      margin-bottom: 1rem;
+    }
+
+    .recent-event__content p {
+      color: #526577;
+      line-height: 1.65;
+    }
+
+
+    /* ========================================= */
+    /* CULTURAL HUB                              */
+    /* ========================================= */
+
+    .cultural-hub {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hub-links {
+      background: #fff;
+      border: 1px solid #dbe5ef;
+      border-radius: 12px;
+      padding: 1.7rem 2rem;
+    }
+
+    .hub-links ul {
       margin: 0;
       padding-left: 1.3rem;
     }
 
-    .past-event-links li {
-      margin-bottom: .7rem;
+    .hub-links li {
+      margin-bottom: .75rem;
       color: #526577;
+      line-height: 1.5;
     }
 
-    .past-event-links li:last-child {
+    .hub-links li:last-child {
       margin-bottom: 0;
     }
 
@@ -201,42 +276,40 @@
     /* SADAPUTA BOOK CLUB                        */
     /* ========================================= */
 
-    .past-feature {
+    .book-club {
       display: grid;
-      grid-template-columns: .8fr 1.2fr;
+      grid-template-columns: .7fr 1.3fr;
       gap: 2rem;
-      max-width: 950px;
-      margin: 0 auto;
+      align-items: center;
+      margin-top: 1.6rem;
+      padding: 1.6rem;
       background: #fff;
       border: 1px solid #dbe5ef;
       border-radius: 12px;
-      padding: 1.7rem;
-      align-items: center;
     }
 
-    .past-feature img {
+    .book-club img {
       width: 100%;
       height: auto;
       display: block;
-      border-radius: 9px;
+      border-radius: 8px;
     }
 
-    .past-feature h3 {
+    .book-club h3 {
       font-family: Georgia, "Times New Roman", serif;
       color: var(--bihs-navy-900);
-      font-size: 1.55rem;
+      font-size: 1.5rem;
       font-weight: 500;
+      margin-top: 0;
       margin-bottom: .6rem;
     }
 
-    .past-feature p {
+    .book-club p {
       color: #526577;
       line-height: 1.65;
     }
 
-    .past-photos {
-      display: inline-block;
-      margin-top: .8rem;
+    .book-club a {
       font-weight: 700;
     }
 
@@ -251,25 +324,26 @@
         padding: 3rem var(--pad);
       }
 
-      .coming-next,
-      .past-events {
+      .events-section {
         padding: 3rem var(--pad);
       }
 
-      .event-card {
-        padding: 1.3rem;
-        gap: 1.5rem;
-      }
-
-      .past-feature {
+      .featured-event,
+      .recent-events,
+      .book-club {
         grid-template-columns: 1fr;
       }
 
-      .event-card__actions {
+      .recent-event__poster img {
+        height: auto;
+        max-height: 430px;
+      }
+
+      .event-actions {
         flex-direction: column;
       }
 
-      .event-card__actions .btn {
+      .event-actions .btn {
         text-align: center;
       }
 
@@ -282,7 +356,11 @@
 
 <body class="events-page">
 
-  <!-- BIHS HEADER -->
+
+  <!-- ========================================= -->
+  <!-- BIHS HEADER                               -->
+  <!-- ========================================= -->
+
   <div id="header"></div>
 
 
@@ -304,8 +382,8 @@
         <h1>Events & Gatherings</h1>
 
         <p class="lead">
-          Bringing people together for thoughtful conversation,
-          learning, discovery, and community.
+          Bringing scholars, neighbors, students, and friends together
+          for thoughtful conversation, learning, discovery, and community.
         </p>
 
       </div>
@@ -318,24 +396,24 @@
     <!-- COMING NEXT                               -->
     <!-- ========================================= -->
 
-    <section class="coming-next">
+    <section class="events-section">
 
-      <div class="container">
-
-        <div class="event-card">
+      <div class="events-container">
 
 
-          <!-- MOVIE IMAGE -->
+        <div class="featured-event">
 
-          <div class="event-card__media">
 
-            <!--
-              CHANGE THE IMAGE FILENAME BELOW
-              Example location: img/2026/story-of-everything.jpg
-            -->
+          <!-- MOVIE POSTER -->
+
+          <div class="featured-event__poster">
+
+            <!-- ========================================== -->
+            <!-- CHANGE TO YOUR ACTUAL MOVIE POSTER NAME    -->
+            <!-- ========================================== -->
 
             <img
-              src="img/2026/story-of-everything.jpg"
+              src="img/2026/SoE.jpg"
               alt="The Story of Everything — upcoming BIHS Movie Night"
               loading="lazy">
 
@@ -344,7 +422,7 @@
 
           <!-- MOVIE INFORMATION -->
 
-          <div class="event-card__content">
+          <div class="featured-event__content">
 
             <p class="event-eyebrow">
               Coming Next at BIHS
@@ -360,7 +438,7 @@
               and discussion at the BIHS Cultural Hub.
             </p>
 
-            <p class="coming-soon">
+            <p class="event-status">
               Date and details coming soon.
             </p>
 
@@ -370,13 +448,12 @@
             </p>
 
 
-            <div class="event-card__actions">
+            <div class="event-actions">
 
 
-              <!--
-                IMPORTANT:
-                REPLACE # BELOW WITH YOUR NEWSLETTER SIGN-UP LINK
-              -->
+              <!-- ====================================== -->
+              <!-- ADD YOUR NEWSLETTER SIGN-UP LINK HERE -->
+              <!-- ====================================== -->
 
               <a class="btn primary"
                  href="#">
@@ -408,34 +485,182 @@
 
 
     <!-- ========================================= -->
-    <!-- PAST EVENTS                               -->
+    <!-- RECENT EVENT HIGHLIGHTS                   -->
     <!-- ========================================= -->
 
-    <section class="past-events">
+    <section class="events-section alt">
 
-      <div class="container">
+      <div class="events-container">
 
 
-        <div class="past-events-heading">
+        <div class="events-heading">
 
           <p class="event-eyebrow">
-            Our Community
+            BIHS Cultural Hub
           </p>
 
-          <h2>Past Events</h2>
+          <h2>Recent Event Highlights</h2>
 
           <p>
-            A look back at BIHS gatherings bringing together learning,
-            conversation, community, and thoughtful inquiry.
+            Recent gatherings at BIHS have brought scholars and the
+            wider community together around mathematics, history,
+            culture, philosophy, and the pursuit of knowledge.
           </p>
 
         </div>
 
 
 
-        <!-- EVENT PHOTO LINKS -->
+        <div class="recent-events">
 
-        <div class="past-event-links">
+
+          <!-- ========================================= -->
+          <!-- VASUDHA NARAYANAN — ANGKOR WAT           -->
+          <!-- ========================================= -->
+
+          <article class="recent-event">
+
+
+            <div class="recent-event__poster">
+
+              <!-- ===================================== -->
+              <!-- CHANGE TO YOUR ACTUAL POSTER NAME     -->
+              <!-- ===================================== -->
+
+              <img
+                src="img/2025/Angkorwat.jpeg"
+                alt="Dr. Vasudha Narayanan — Angkor Wat at BIHS"
+                loading="lazy">
+
+            </div>
+
+
+            <div class="recent-event__content">
+
+              <p class="event-eyebrow">
+                Recent Event
+              </p>
+
+              <h3>Angkor Wat</h3>
+
+              <p class="speaker-name">
+                Dr. Vasudha Narayanan
+              </p>
+
+              <p class="speaker-affiliation">
+                Distinguished Professor, University of Florida
+              </p>
+
+              <p>
+                A remarkable evening with Dr. Vasudha Narayanan, whose
+                presentation brought the rich history and symbolism of
+                Angkor Wat to life through art, storytelling, and
+                accessible scholarship.
+              </p>
+
+              <p>
+                The event brought neighbors, scholars, and guests together
+                in an atmosphere of warmth and curiosity.
+              </p>
+
+            </div>
+
+
+          </article>
+
+
+
+          <!-- ========================================= -->
+          <!-- PROF. ALLADI — RAMANUJAN                   -->
+          <!-- ========================================= -->
+
+          <article class="recent-event">
+
+
+            <div class="recent-event__poster">
+
+              <!-- THIS IS THE FILENAME FROM YOUR OLD PAGE -->
+
+              <img
+                src="img/Alladi.Updated.jpeg"
+                alt="Prof. Krishnaswami Alladi — The Remarkable Life, Work, and Influence of Ramanujan"
+                loading="lazy">
+
+            </div>
+
+
+            <div class="recent-event__content">
+
+              <p class="event-eyebrow">
+                Recent Event
+              </p>
+
+              <h3>
+                The Remarkable Life, Work, and Influence of Ramanujan
+              </h3>
+
+              <p class="speaker-name">
+                Prof. Krishnaswami Alladi
+              </p>
+
+              <p class="speaker-affiliation">
+                Department of Mathematics, University of Florida
+              </p>
+
+              <p>
+                BIHS welcomed Prof. Krishnaswami Alladi for a special
+                presentation on the life and legacy of Srinivasa Ramanujan,
+                one of history's most extraordinary mathematical minds.
+              </p>
+
+              <p>
+                Prof. Alladi shared insights into Ramanujan's remarkable
+                mathematical contributions and his continuing influence
+                on modern mathematics.
+              </p>
+
+            </div>
+
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ========================================= -->
+    <!-- MORE FROM THE CULTURAL HUB                -->
+    <!-- ========================================= -->
+
+    <section class="events-section">
+
+      <div class="events-container cultural-hub">
+
+
+        <div class="events-heading">
+
+          <p class="event-eyebrow">
+            Community & Conversation
+          </p>
+
+          <h2>More from the BIHS Cultural Hub</h2>
+
+          <p>
+            BIHS also hosts workshops, discussions, movie screenings,
+            book conversations, and informal opportunities to learn
+            and connect.
+          </p>
+
+        </div>
+
+
+
+        <div class="hub-links">
 
           <ul>
 
@@ -472,10 +697,6 @@
             </li>
 
             <li>
-              Honoring Srila Prabhupada's Disciples — Dinner Series
-            </li>
-
-            <li>
               <a href="https://www.instagram.com/bihs.studies/"
                  target="_blank"
                  rel="noopener">
@@ -493,14 +714,14 @@
         <!-- SADAPUTA BOOK CLUB                        -->
         <!-- ========================================= -->
 
-        <div class="past-feature">
+        <div class="book-club">
 
 
           <div>
 
             <img
               src="img/Bookclub.jpg"
-              alt="Sadaputa Book Club"
+              alt="The Sadaputa Book Club at BIHS"
               loading="lazy">
 
           </div>
@@ -508,20 +729,19 @@
 
           <div>
 
+            <p class="event-eyebrow">
+              Ongoing Community
+            </p>
+
             <h3>The Sadaputa Book Club</h3>
 
             <p>
-              <strong>November 30, 2025</strong>
+              The Sadaputa Book Club brings together readers interested
+              in exploring the works and ideas of Richard L. Thompson
+              (Sadaputa Dasa) through discussion, inquiry, and community.
             </p>
 
-            <p>
-              The Sadaputa Book Club gathered for a discussion of
-              Chapter 12 of <em>Maya: The World as Virtual Reality</em>,
-              “The One and the Many,” followed by a BI House pizza buffet.
-            </p>
-
-            <a class="past-photos"
-               href="https://www.icloud.com/sharedalbum/#B1o5jV79FGLyOSz"
+            <a href="https://www.icloud.com/sharedalbum/#B1o5jV79FGLyOSz"
                target="_blank"
                rel="noopener">
               View Sadaputa Book Club Photos →
@@ -541,11 +761,14 @@
   </main>
 
 
-  <!-- BIHS FOOTER -->
+
+  <!-- ========================================= -->
+  <!-- BIHS FOOTER                               -->
+  <!-- ========================================= -->
+
   <div id="footer"></div>
 
 
-  <!-- SHARED BIHS JAVASCRIPT -->
   <script src="js/site.js"></script>
 
 
