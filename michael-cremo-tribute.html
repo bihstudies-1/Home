@@ -1,0 +1,655 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+
+  <title>
+    Remembering Michael A. Cremo | BIHS
+  </title>
+
+  <meta name="description"
+        content="In memory of Michael A. Cremo
+        (Drutakarma Dasa), with reflections
+        from the leadership and scholars of
+        the Bhaktivedanta Institute for Higher Studies.">
+
+  <link rel="stylesheet" href="css/site.css">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+
+    /* MEMORIAL PAGE */
+
+    .memorial-page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 45px 24px 75px;
+      color: #303940;
+      font-family: inherit;
+    }
+
+    .memorial-header {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .memorial-eyebrow {
+      color: #937b48;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .memorial-header h1 {
+      color: #233c4d;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .memorial-subtitle {
+      font-size: 1.2rem;
+      color: #566471;
+      margin-bottom: 8px;
+    }
+
+    .memorial-dates {
+      color: #79653f;
+      font-size: 1.05rem;
+      letter-spacing: 1px;
+    }
+
+    /* MAIN PHOTOGRAPH */
+
+    .memorial-photo {
+      max-width: 490px;
+      margin: 35px auto;
+      text-align: center;
+    }
+
+    .memorial-photo img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+
+    .memorial-photo figcaption {
+      font-size: 0.88rem;
+      color: #6a737a;
+      margin-top: 12px;
+      font-style: italic;
+    }
+
+    /* OPENING INTRODUCTION */
+
+    .memorial-intro {
+      max-width: 740px;
+      margin: 45px auto 55px;
+      text-align: center;
+    }
+
+    .memorial-intro p {
+      font-size: 1.12rem;
+      line-height: 1.85;
+      color: #47545d;
+    }
+
+    .memorial-divider {
+      width: 100px;
+      height: 2px;
+      background: #b79b5c;
+      border: none;
+      margin: 45px auto;
+    }
+
+    /* CONTRIBUTIONS */
+
+    .memorial-section-heading {
+      text-align: center;
+      font-size: 1.7rem;
+      color: #233c4d;
+      margin-bottom: 40px;
+    }
+
+    .tribute {
+      margin: 0 auto 55px;
+      max-width: 780px;
+    }
+
+    .tribute-category {
+      color: #937b48;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .tribute h2 {
+      color: #233c4d;
+      font-size: 1.75rem;
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+
+    .tribute-author {
+      font-weight: 700;
+      color: #344b5a;
+      font-size: 1.05rem;
+      margin-bottom: 5px;
+    }
+
+    .tribute-role {
+      color: #6c777e;
+      font-size: 0.94rem;
+      margin-bottom: 30px;
+    }
+
+    .tribute-body {
+      font-size: 1.06rem;
+      line-height: 1.9;
+      text-align: left;
+    }
+
+    .tribute-body p {
+      margin-bottom: 1.4em;
+    }
+
+    .tribute-body em {
+      font-style: italic;
+    }
+
+    .tribute-end {
+      border: none;
+      border-top: 1px solid #dfe4e7;
+      margin: 55px auto;
+      max-width: 780px;
+    }
+
+    /* OPTIONAL IMAGE GALLERY */
+
+    .memorial-gallery {
+      margin: 65px auto 55px;
+      max-width: 850px;
+    }
+
+    .memorial-gallery h2 {
+      text-align: center;
+      color: #233c4d;
+      margin-bottom: 25px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .gallery-grid figure {
+      margin: 0;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      display: block;
+    }
+
+    .gallery-grid figcaption {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #6a737a;
+      margin-top: 10px;
+    }
+
+    /* FURTHER READING */
+
+    .memorial-resources {
+      margin-top: 65px;
+      padding: 30px;
+      background: #f5f7f8;
+      border-radius: 8px;
+    }
+
+    .memorial-resources h2 {
+      font-size: 1.45rem;
+      color: #233c4d;
+      margin-bottom: 15px;
+    }
+
+    .memorial-resources ul {
+      padding-left: 22px;
+      line-height: 2;
+    }
+
+    .memorial-page a {
+      color: #28617d;
+    }
+
+    .memorial-page a:hover {
+      text-decoration: underline;
+    }
+
+    .memorial-return {
+      text-align: center;
+      margin-top: 45px;
+    }
+
+    .memorial-return a {
+      display: inline-block;
+      padding: 12px 22px;
+      border: 1px solid #c5d1d8;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    @media (max-width: 650px) {
+
+      .memorial-page {
+        padding: 28px 18px 55px;
+      }
+
+      .memorial-header h1 {
+        font-size: 2rem;
+      }
+
+      .tribute h2 {
+        font-size: 1.45rem;
+      }
+
+      .tribute-body {
+        font-size: 1rem;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .memorial-resources {
+        padding: 22px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- BIHS SHARED HEADER -->
+  <div id="header"></div>
+
+  <main class="memorial-page">
+
+    <!-- PAGE INTRODUCTION -->
+
+    <header class="memorial-header">
+
+      <div class="memorial-eyebrow">
+        In Memoriam
+      </div>
+
+      <h1>
+        Remembering Michael A. Cremo
+      </h1>
+
+      <p class="memorial-subtitle">
+        Drutakarma Dasa
+      </p>
+
+      <p class="memorial-dates">
+        1948–2026
+      </p>
+
+      <figure class="memorial-photo">
+
+        <img src="img/2026/MichaelC.2.jpeg"
+             alt="Michael A. Cremo, known as Drutakarma Dasa">
+
+        <figcaption>
+          Michael A. Cremo (Drutakarma Dasa)
+        </figcaption>
+
+      </figure>
+
+      <p class="memorial-subtitle">
+        A Life of Scholarship, Inquiry, and Devotion
+      </p>
+
+    </header>
+
+
+    <!-- INSTITUTIONAL INTRODUCTION -->
+
+    <section class="memorial-intro">
+
+      <p>
+        The Bhaktivedanta Institute for Higher Studies
+        honors the life and legacy of Michael A. Cremo
+        (Drutakarma Dasa), whose decades of research,
+        writing, and dialogue brought questions of
+        human origins, consciousness, and spiritual
+        knowledge into conversations across the world.
+      </p>
+
+      <p>
+        We share the following reflections from
+        BIHS leadership, colleagues, and friends
+        in appreciation of his intellectual
+        contributions, devotion, and lasting
+        influence on our Institute.
+      </p>
+
+    </section>
+
+    <hr class="memorial-divider">
+
+
+    <h2 class="memorial-section-heading">
+      Tributes &amp; Remembrances
+    </h2>
+
+
+    <!-- ===================================== -->
+    <!-- TRIBUTE 1: EXECUTIVE DIRECTOR        -->
+    <!-- ===================================== -->
+
+    <article class="tribute">
+
+      <div class="tribute-category">
+        From the Executive Director
+      </div>
+
+      <h2>
+        In Appreciation of Michael Cremo,
+        aka Drutakarma Das
+      </h2>
+
+      <div class="tribute-author">
+        Bob Cohen (Brahma Tirtha Dasa)
+      </div>
+
+      <div class="tribute-role">
+        Executive Director,
+        Bhaktivedanta Institute for Higher Studies
+      </div>
+
+      <div class="tribute-body">
+
+        <p>
+          Some people spend their lives asking
+          questions others would rather leave alone.
+          Michael Cremo was one of them.
+        </p>
+
+        <p>
+          His path began unusually. As a young student
+          at George Washington University in the late
+          1960s, he was training for a career in
+          diplomacy or intelligence. Then the
+          upheavals of that era pulled him toward
+          Europe, and from there further east, where
+          he found a spiritual teacher and a lifelong
+          fascination with the ancient texts of India.
+          Those writings describe a human past far older
+          than the one taught in textbooks, and rather
+          than simply accept or dismiss that idea,
+          he decided to investigate it.
+        </p>
+
+        <p>
+          What followed was eight years of painstaking
+          work with his colleague Richard Thompson
+          (Sadaputa Dasa), combing through more than
+          a century of scientific journals, field
+          reports, and forgotten excavation records.
+          The result, <em>Forbidden Archeology</em>,
+          published in 1993, was a massive and
+          meticulously referenced book arguing that
+          evidence of extreme human antiquity had
+          been set aside because it didn't fit the
+          accepted story. Many archaeologists rejected
+          its conclusions, yet he was invited to speak
+          at major archaeological conferences.
+          His critics have acknowledged the sheer
+          scale of the research and the value of its
+          detailed history of how science decides
+          what counts as evidence using a
+          'knowledge filter.' The book became an
+          unlikely bestseller and has been translated
+          into over twenty languages.
+        </p>
+
+        <p>
+          What deserves admiration most is not
+          whether one agrees with him, but how
+          he went about it. He did not stay in
+          the comfortable world of people who
+          already shared his views. He submitted
+          papers to professional conferences,
+          presented his ideas openly before
+          rooms full of skeptical scholars,
+          and engaged with his critics in print.
+          He was candid about his own spiritual
+          commitments rather than disguising them,
+          arguing that every researcher brings
+          a worldview to the evidence and that
+          honesty about it is better than
+          pretending to perfect neutrality.
+        </p>
+
+        <p>
+          Over the decades he wrote prolifically
+          for both academic and popular audiences,
+          lectured around the world, and kept
+          asking a question that matters to everyone:
+          what is a human being, and where did we
+          really come from? His answer, that
+          consciousness is more than chemistry,
+          places him in a long tradition of thinkers
+          who refused to see people as merely machines.
+        </p>
+
+        <p>
+          On a personal level he was my mentor
+          and friend. His cool demeanor, dry humor,
+          and matter-of-fact style won my constant
+          admiration. His loss is a great one to
+          me personally and to our Institute.
+          He was a stalwart advisor and participant
+          in all our major projects. The only
+          consolation is the body of brilliant
+          literature he left behind, which will
+          continue to inspire us.
+        </p>
+
+      </div>
+
+    </article>
+
+
+    <!-- ADD MORE TRIBUTES BELOW THIS LINE. -->
+
+    <!--
+    TEMPLATE: Copy the article section below
+    and replace the text with each author's
+    actual message.
+
+    Remove these comment markers when ready.
+
+    <hr class="tribute-end">
+
+    <article class="tribute">
+
+      <div class="tribute-category">
+        From the Academic Dean
+      </div>
+
+      <h2>
+        A Remembrance of Michael Cremo
+      </h2>
+
+      <div class="tribute-author">
+        Dr. Howard Resnick (HD Goswami)
+      </div>
+
+      <div class="tribute-role">
+        Academic Dean, BIHS
+      </div>
+
+      <div class="tribute-body">
+
+        <p>
+          INSERT THE DEAN'S MESSAGE HERE.
+        </p>
+
+      </div>
+
+    </article>
+
+    -->
+
+
+    <!--
+    THIRD TRIBUTE:
+
+    Copy the article template above.
+
+    Category: From the Director of Academics
+
+    Name: Insert author's name
+
+    Role: Director of Academics, BIHS
+
+    Insert their complete tribute.
+    -->
+
+
+    <!--
+    FOURTH TRIBUTE:
+
+    Copy the article template above.
+
+    Category: From a Scientific Colleague
+
+    Name: Insert scientist's name
+
+    Role: Insert their institutional affiliation
+
+    Insert their complete tribute.
+    -->
+
+
+    <!-- OPTIONAL PHOTO GALLERY -->
+
+    <!--
+    Activate this section when you have
+    additional photographs and permission
+    to publish them.
+
+    <section class="memorial-gallery">
+
+      <hr class="memorial-divider">
+
+      <h2>
+        A Life in Pictures
+      </h2>
+
+      <div class="gallery-grid">
+
+        <figure>
+          <img src="img/2026/MichaelC2.jpg"
+               alt="Michael Cremo presenting a lecture"
+               loading="lazy">
+
+          <figcaption>
+            Michael Cremo sharing his research.
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img src="img/2026/MichaelC3.jpg"
+               alt="Michael Cremo with colleagues"
+               loading="lazy">
+
+          <figcaption>
+            Michael Cremo with colleagues.
+          </figcaption>
+        </figure>
+
+      </div>
+
+    </section>
+    -->
+
+
+    <!-- FURTHER READING -->
+
+    <section class="memorial-resources">
+
+      <h2>
+        Further Reading &amp; Resources
+      </h2>
+
+      <ul>
+
+        <li>
+          <a href="https://mcremo.com/"
+             target="_blank"
+             rel="noopener noreferrer">
+            Michael Cremo — Official Website
+          </a>
+        </li>
+
+        <li>
+          <a href="https://iskconnews.org/drutakarma-dasa-who-academically-challenged-atheistic-science-has-departed/"
+             target="_blank"
+             rel="noopener noreferrer">
+            ISKCON News — Remembering Drutakarma Dasa
+          </a>
+        </li>
+
+        <li>
+          <a href="https://bihs.org/"
+             target="_blank"
+             rel="noopener noreferrer">
+            Bhaktivedanta Institute for Higher Studies
+          </a>
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <!-- RETURN TO NEWS -->
+
+    <div class="memorial-return">
+
+      <a href="news.html">
+        <i class="fa-solid fa-arrow-left"
+           aria-hidden="true"></i>
+        Back to BIHS News
+      </a>
+
+    </div>
+
+  </main>
+
+
+  <!-- BIHS SHARED FOOTER -->
+  <div id="footer"></div>
+
+  <script src="js/site.js"></script>
+
+</body>
+</html>
