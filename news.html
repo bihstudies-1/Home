@@ -1,123 +1,179 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>News & Newsletters | BIHS</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="The latest newsletters and announcements from the Bhaktivedanta Institute for Higher Studies.">
-  <link rel="stylesheet" href="css/site.css">
-  <!-- We don't need the modern-cards.css file for this simple version -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-</head>
-<body>
-  
-  <div id="header"></div>
 
-  <main>
-    <section class="feature-block center">
-      <div class="container">
-        <h1>News & Newsletters</h1>
-      </div>
-    </section>
-    <!-- 2. CONTENT SECTION (This is now fixed) -->
-    <section class="summary-block">
-      <div class="container" style="max-width: 800px; text-align: center;">
+<style>
+  .bihs-news-update {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 35px 20px;
+    color: #28343b;
+    font-family: inherit;
+  }
 
-		  <!-- Current News -->
+  .bihs-news-update h2 {
+    font-size: 1.8rem;
+    margin: 0 0 24px;
+    color: #233c4d;
+  }
 
-<div style="
-  background: #f8f4e8;
-  border-left: 5px solid #c9972f;
-  padding: 1.5rem 1.75rem;
-  margin: 0 auto 2.5rem;
-  border-radius: 8px;
-  text-align: left;
-">
+  .bihs-news-update h3 {
+    color: #233c4d;
+    line-height: 1.3;
+    margin: 10px 0 14px;
+  }
 
-  <div style="
-    color: #c9972f;
+  .bihs-news-update p {
+    line-height: 1.75;
+  }
+
+  .bihs-news-update .news-feature {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 25px;
+    padding: 30px;
+    background: #f7f8f6;
+    border-left: 4px solid #b79b5c;
+    border-radius: 8px;
+    margin-bottom: 30px;
+  }
+
+  .bihs-news-update .news-label {
+    color: #79653f;
+    font-size: .78rem;
     font-weight: 700;
+    letter-spacing: .09em;
     text-transform: uppercase;
-    letter-spacing: .08em;
-    font-size: .85rem;
-    margin-bottom: .5rem;
-  ">
-    Current News
-  </div>
+  }
 
-  <h2 style="
-    color: #0b2f5b;
-    margin: 0 0 .7rem;
-  ">
-    BIHS Brazil 2026 · August 21–22
-  </h2>
+  .bihs-news-update .news-feature h3 {
+    font-size: 1.7rem;
+  }
 
-  <p style="margin: 0 0 1rem;">
-    The Bhaktivedanta Institute for Higher Studies will hold a two-day
-    academic program at Nova Gokula, Brazil, featuring presentations,
-    interdisciplinary dialogue, roundtable discussions, and a concluding
-    synthesis.
-  </p>
+  .bihs-news-update .news-secondary {
+    padding: 24px 0;
+    border-bottom: 1px solid #dfe4e7;
+  }
 
-  <a href="https://bihstudies.org/BIHS_Brazil_2026.html"
-     target="_blank"
-     rel="noopener"
-     style="
-       color: #0b2f5b;
-       font-weight: 700;
-       text-decoration: none;
-     ">
-    View speakers, abstracts and full program →
-  </a>
+  .bihs-news-update .news-secondary h3 {
+    font-size: 1.3rem;
+  }
 
-</div>
-    <h1 style="border-top: 1px solid #e0e0e0; padding-top: 2rem;">Read our latest newsletter and explore the archive</h1>
-        <ul style="list-style: none; padding: 0; margin: 1rem auto 0;">
-           <li style="margin-bottom: 1rem;">
-             <a href="https://conta.cc/4oLyO6D" target="_blank" style="font-weight: 600; font-size: 1.1rem;" >December 8, 2025</a></li>
-          <li style="margin-bottom: 1rem;">
-            <a href="	https://conta.cc/4oZXCZY" target="_blank" rel="noopener" style="font-weight: 600; font-size: 1.1rem;">
-              September 20, 2025
-            </a>
-          </li>
-          <li style="margin-bottom: 1rem;">
-            <a href="https://myemail.constantcontact.com/BIHS-Summer-Update-2025.html?soid=1141936386237&amp;aid=vmaNWnYBqm0" target="_blank" rel="noopener" style="font-weight: 600; font-size: 1.1rem;">
-              June 20, 2025
-            </a>
-          </li>
-          <li style="margin-bottom: 1rem;">
-            <a href="https://conta.cc/4gPY6MJ" target="_blank" style="font-weight: 600; font-size: 1.1rem;">
-              February 24, 2025
-            </a>
-          </li>
-          <li style="margin-bottom: 1rem;">
-            <a href="https://conta.cc/3DCDD0a" target="_blank" rel="noopener" style="font-weight: 600; font-size: 1.1rem;">
-              December 31, 2024
-            </a>
-          </li>
-          <li style="margin-bottom: 1rem;">
-            <a href="https://conta.cc/3ZKoUHR" target="_blank" rel="noopener" style="font-weight: 600; font-size: 1.1rem;">
-              December 20, 2024
-            </a>
-          </li>
-        </ul>
+  .bihs-news-update .news-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: 600;
+    color: #28617d;
+    text-decoration: none;
+  }
 
-    
-<!-- Subscribe Block (Fixed) -->
-        <p style="font-size: 1.1rem;">If you like, please subscribe to receive new and upcoming newsletters.</p>
-        <a href="https://visitor.constantcontact.com/manage/optin?v=001ofP7iK6tkj1Oj6fC5hNRlePeMDVmaYCC8SoRWKBhnFDlvk8-PSRWJlgK2hEnxUJQCHh09citD4TEDpZhA4E32NAfuYTFHK0k" 
-           class="btn primary" 
-           target="_blank" rel="noopener" 
-           style="background: var(--bihs-navy); color: #fff; margin-top: 0.5rem; margin-bottom: 3rem;">
-          Join the BIHS Newsletter
-        </a>
+  .bihs-news-update .news-link:hover {
+    text-decoration: underline;
+  }
 
+  .bihs-news-update .newsletter-feature {
+    margin-top: 38px;
+    padding: 24px 28px;
+    background: #edf3f5;
+    border-radius: 8px;
+  }
+
+  .bihs-news-update .newsletter-feature h3 {
+    font-size: 1.4rem;
+  }
+</style>
+
+<section class="bihs-news-update" aria-labelledby="latest-news">
+
+  <h2 id="latest-news">Latest News</h2>
+
+  <!-- FEATURED MEMORIAL -->
+  <article class="news-feature">
+
+    <div>
+      <div class="news-label">
+        In Memoriam · October 2026
       </div>
-    </section>
 
-  </main>
-  <div id="footer"></div>
+      <h3>
+        Remembering Michael A. Cremo
+        (Drutakarma Dasa)
+      </h3>
 
-  <script src="js/site.js"></script>
-</body>
-</html>
+      <p>
+        The Bhaktivedanta Institute for Higher Studies
+        remembers with deep appreciation Michael A.
+        Cremo (Drutakarma Dasa), whose lifelong
+        dedication to exploring human origins,
+        consciousness, and the relationship between
+        science and spiritual knowledge has left
+        an enduring legacy.
+      </p>
+
+      <p>
+        "Some people spend their lives asking questions
+        others would rather leave alone."
+      </p>
+
+      <p>
+        In a personal tribute, BIHS Executive Director
+        Bob Cohen reflects on Cremo's intellectual
+        contributions, his decades of research,
+        and the friendship and mentorship they shared.
+      </p>
+
+      <a class="news-link"
+         href="michael-cremo-tribute.html">
+        Read the tribute and remembrances &rarr;
+      </a>
+    </div>
+
+  </article>
+
+  <!-- BRAZIL CONFERENCE -->
+  <article class="news-secondary">
+
+    <div class="news-label">
+      Academic Gathering · August 21–22, 2026
+    </div>
+
+    <h3>
+      BIHS Brazil 2026: Academic Dialogue at Nova Gokula
+    </h3>
+
+    <p>
+      The Bhaktivedanta Institute for Higher Studies
+      brought together scholars, researchers, and
+      professionals at Nova Gokula, Brazil, for
+      two days of presentations, interdisciplinary
+      dialogue, and roundtable discussions.
+      The gathering fostered new connections
+      and opportunities for academic collaboration
+      across Latin America.
+    </p>
+
+    <a class="news-link"
+       href="BIHS_Brazil_2026.html">
+      Explore speakers and conference program &rarr;
+    </a>
+
+  </article>
+
+  <!-- LATEST NEWSLETTER -->
+  <section class="newsletter-feature">
+
+    <div class="news-label">BIHS Newsletter</div>
+
+    <h3>Read Our Latest Newsletter</h3>
+
+    <p>
+      Discover recent BIHS activities, academic
+      programs, research initiatives, and news
+      from our growing international community.
+    </p>
+
+    <!-- Replace # with the latest newsletter URL -->
+    <a class="news-link" href="#">
+      Read the latest issue &rarr;
+    </a>
+
+  </section>
+
+</section>
