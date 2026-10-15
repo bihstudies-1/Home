@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="The latest newsletters and announcements from the Bhaktivedanta Institute for Higher Studies.">
   <link rel="stylesheet" href="css/site.css">
-  <!-- We don't need the modern-cards.css file for this simple version -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 </head>
 <body>
@@ -15,225 +14,278 @@
 
   <main>
    
-    <!-- 2. CONTENT SECTION (This is now fixed) -->
     <section class="summary-block">
       <div class="container" style="max-width: 800px; text-align: center;">
 
-<style>
-  .bihs-news-update {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 35px 20px;
-    color: #28343b;
-    font-family: inherit;
-  }
+        <style>
+          .bihs-news-update {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px 0 10px 0;
+            color: #28343b;
+            font-family: inherit;
+            text-align: left;
+          }
 
-  .bihs-news-update h2 {
-    font-size: 1.8rem;
-    margin: 0 0 24px;
-    color: #233c4d;
-  }
+          .bihs-news-update h2 {
+            font-size: 1.8rem;
+            margin: 0 0 24px;
+            color: #233c4d;
+            text-align: center;
+          }
 
-  .bihs-news-update h3 {
-    color: #233c4d;
-    line-height: 1.3;
-    margin: 10px 0 14px;
-  }
+          .bihs-news-update h3 {
+            color: #233c4d;
+            line-height: 1.3;
+            margin: 10px 0 14px;
+          }
 
-  .bihs-news-update p {
-    line-height: 1.75;
-  }
+          .bihs-news-update p {
+            line-height: 1.75;
+            margin-bottom: 1rem;
+          }
 
-  .bihs-news-update .news-feature {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 25px;
-    padding: 30px;
-    background: #f7f8f6;
-    border-left: 4px solid #b79b5c;
-    border-radius: 8px;
-    margin-bottom: 30px;
-  }
+          .bihs-news-update .news-feature {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 24px;
+            padding: 28px;
+            background: #f7f8f6;
+            border-left: 4px solid #b79b5c;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            align-items: start;
+          }
 
-  .bihs-news-update .news-label {
-    color: #79653f;
-    font-size: .78rem;
-    font-weight: 700;
-    letter-spacing: .09em;
-    text-transform: uppercase;
-  }
+          .bihs-news-update .news-feature-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            object-fit: cover;
+          }
 
-  .bihs-news-update .news-feature h3 {
-    font-size: 1.7rem;
-  }
+          .bihs-news-update .news-label {
+            color: #79653f;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+          }
 
-  .bihs-news-update .news-secondary {
-    padding: 24px 0;
-    border-bottom: 1px solid #dfe4e7;
-  }
+          .bihs-news-update .news-feature h3 {
+            font-size: 1.7rem;
+            margin-top: 0;
+          }
 
-  .bihs-news-update .news-secondary h3 {
-    font-size: 1.3rem;
-  }
+          .bihs-news-update .news-secondary {
+            padding: 24px 0;
+            border-bottom: 1px solid #dfe4e7;
+            text-align: left;
+          }
 
-  .bihs-news-update .news-link {
-    display: inline-block;
-    margin-top: 10px;
-    font-weight: 600;
-    color: #28617d;
-    text-decoration: none;
-  }
+          .bihs-news-update .news-secondary h3 {
+            font-size: 1.3rem;
+          }
 
-  .bihs-news-update .news-link:hover {
-    text-decoration: underline;
-  }
+          .bihs-news-update .news-link {
+            display: inline-block;
+            margin-top: 8px;
+            font-weight: 600;
+            color: #28617d;
+            text-decoration: none;
+          }
 
-  .bihs-news-update .newsletter-feature {
-    margin-top: 38px;
-    padding: 24px 28px;
-    background: #edf3f5;
-    border-radius: 8px;
-  }
+          .bihs-news-update .news-link:hover {
+            text-decoration: underline;
+          }
 
-  .bihs-news-update .newsletter-feature h3 {
-    font-size: 1.4rem;
-  }
-</style>
+          .bihs-news-update .newsletter-feature {
+            margin-top: 38px;
+            padding: 24px 28px;
+            background: #edf3f5;
+            border-radius: 8px;
+            text-align: left;
+          }
 
-<section class="bihs-news-update" aria-labelledby="latest-news">
+          .bihs-news-update .newsletter-feature h3 {
+            font-size: 1.4rem;
+            margin-top: 8px;
+          }
 
-  <h2 id="latest-news">Latest News</h2>
+          .newsletter-archive-title {
+            border-top: 1px solid #e0e0e0;
+            padding-top: 2rem;
+            margin-top: 2.5rem;
+            color: #233c4d;
+          }
 
-  <!-- FEATURED MEMORIAL -->
-  <article class="news-feature">
+          .newsletter-archive-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem auto 0;
+          }
 
-    <div>
-      <div class="news-label">
-        In Memoriam · October 2026
-      </div>
+          .newsletter-archive-list li {
+            margin-bottom: 1rem;
+          }
 
-      <h3>
-        Remembering Michael A. Cremo
-        (Drutakarma Dasa)
-      </h3>
+          .newsletter-archive-list a {
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            color: #28617d;
+          }
 
-      <p>
-        The Bhaktivedanta Institute for Higher Studies
-        remembers with deep appreciation Michael A.
-        Cremo (Drutakarma Dasa), whose lifelong
-        dedication to exploring human origins,
-        consciousness, and the relationship between
-        science and spiritual knowledge has left
-        an enduring legacy.
-      </p>
+          .newsletter-archive-list a:hover {
+            text-decoration: underline;
+          }
 
-      <p>
-        "Some people spend their lives asking questions
-        others would rather leave alone."
-      </p>
+          @media (max-width: 700px) {
+            .bihs-news-update .news-feature {
+              grid-template-columns: 1fr;
+            }
 
-      <p>
-        In a personal tribute, BIHS Executive Director
-        Bob Cohen reflects on Cremo's intellectual
-        contributions, his decades of research,
-        and the friendship and mentorship they shared.
-      </p>
+            .bihs-news-update .news-feature-image {
+              max-width: 260px;
+              margin: 0 auto;
+            }
 
-      <a class="news-link"
-         href="michael-cremo-tribute.html">
-        Read the tribute and remembrances &rarr;
-      </a>
-    </div>
+            .bihs-news-update h2 {
+              font-size: 1.6rem;
+            }
 
-  </article>
+            .bihs-news-update .news-feature h3 {
+              font-size: 1.45rem;
+            }
+          }
+        </style>
 
-  <!-- BRAZIL CONFERENCE -->
-  <article class="news-secondary">
+        <section class="bihs-news-update" aria-labelledby="latest-news">
 
-    <div class="news-label">
-      Academic Gathering · August 21–22, 2026
-    </div>
+          <h2 id="latest-news">Latest News</h2>
 
-    <h3>
-      BIHS Brazil 2026: Academic Dialogue at Nova Gokula
-    </h3>
+          <!-- FEATURED MEMORIAL -->
+          <article class="news-feature">
+            <div class="news-feature-image">
+              <img src="img/2026/MichaelC.jpg" alt="Michael A. Cremo (Drutakarma Dasa)">
+            </div>
 
-    <p>
-      The Bhaktivedanta Institute for Higher Studies
-      brought together scholars, researchers, and
-      professionals at Nova Gokula, Brazil, for
-      two days of presentations, interdisciplinary
-      dialogue, and roundtable discussions.
-      The gathering fostered new connections
-      and opportunities for academic collaboration
-      across Latin America.
-    </p>
+            <div>
+              <div class="news-label">
+                In Memoriam · October 2026
+              </div>
 
-    <a class="news-link"
-       href="BIHS_Brazil_2026.html">
-      Explore speakers and conference program &rarr;
-    </a>
+              <h3>
+                Remembering Michael A. Cremo
+                (Drutakarma Dasa)
+              </h3>
 
-  </article>
+              <p>
+                The Bhaktivedanta Institute for Higher Studies remembers with deep appreciation
+                Michael A. Cremo (Drutakarma Dasa), whose lifelong dedication to exploring human
+                origins, consciousness, and the relationship between science and spiritual knowledge
+                has left an enduring legacy.
+              </p>
 
-  <!-- LATEST NEWSLETTER -->
-  <section class="newsletter-feature">
+              <p>
+                “Some people spend their lives asking questions others would rather leave alone.”
+              </p>
 
-    <div class="news-label">BIHS Newsletter</div>
+              <p>
+                In a personal tribute, BIHS Executive Director Bob Cohen reflects on Cremo’s
+                intellectual contributions, his decades of research, and the friendship and
+                mentorship they shared.
+              </p>
 
-    <h3>Read Our Latest Newsletter</h3>
+              <a class="news-link" href="michael-cremo-tribute.html">
+                Read the tribute and remembrances &rarr;
+              </a>
+            </div>
+          </article>
 
-    <p>
-      Discover recent BIHS activities, academic
-      programs, research initiatives, and news
-      from our growing international community.
-    </p>
+          <!-- BRAZIL CONFERENCE -->
+          <article class="news-secondary">
+            <div class="news-label">
+              Academic Gathering · August 21–22, 2026
+            </div>
 
-    <!-- Replace # with the latest newsletter URL -->
-    <a class="news-link" href="#">
-      Read the latest issue &rarr;
-    </a>
+            <h3>
+              BIHS Brazil 2026: Academic Dialogue at Nova Gokula
+            </h3>
 
-  </section>
+            <p>
+              The Bhaktivedanta Institute for Higher Studies brought together scholars, researchers,
+              and professionals at Nova Gokula, Brazil, for two days of presentations,
+              interdisciplinary dialogue, and roundtable discussions. The gathering fostered new
+              connections and opportunities for academic collaboration across Latin America.
+            </p>
 
-</section>
-<h1 style="border-top: 1px solid #e0e0e0; padding-top: 2rem;"> Explore the BIHS News Archive</h1>
-        <ul style="list-style: none; padding: 0; margin: 1rem auto 0;">
-           <li style="margin-bottom: 1rem;">
-             <a href="https://conta.cc/4oLyO6D" target="_blank" style="font-weight: 600; font-size: 1.1rem;" >December 8, 2025</a></li>
-          <li style="margin-bottom: 1rem;">
-            <a href="	https://conta.cc/4oZXCZY" target="_blank" rel="noopener" style="font-weight: 600; font-size: 1.1rem;">
+            <a class="news-link" href="BIHS_Brazil_2026.html">
+              Explore speakers and conference program &rarr;
+            </a>
+          </article>
+
+          <!-- LATEST NEWSLETTER -->
+          <section class="newsletter-feature">
+            <div class="news-label">BIHS Newsletter</div>
+
+            <h3>Read Our Latest Newsletter</h3>
+
+            <p>
+              Discover recent BIHS activities, academic programs, research initiatives, and news
+              from our growing international community.
+            </p>
+
+            <a class="news-link" href="https://conta.cc/4oLyO6D" target="_blank" rel="noopener">
+              Read the latest issue (December 8, 2025) &rarr;
+            </a>
+          </section>
+
+        </section>
+
+        <h1 class="newsletter-archive-title">Explore the BIHS News Archive</h1>
+        <ul class="newsletter-archive-list">
+          <li>
+            <a href="https://conta.cc/4oLyO6D" target="_blank" rel="noopener">
+              December 8, 2025
+            </a>
+          </li>
+          <li>
+            <a href="https://conta.cc/4oZXCZY" target="_blank" rel="noopener">
               September 20, 2025
             </a>
           </li>
-          <li style="margin-bottom: 1rem;">
-            <a href="https://myemail.constantcontact.com/BIHS-Summer-Update-2025.html?soid=1141936386237&amp;aid=vmaNWnYBqm0" target="_blank" rel="noopener" style="font-weight: 600; font-size: 1.1rem;">
+          <li>
+            <a href="https://myemail.constantcontact.com/BIHS-Summer-Update-2025.html?soid=1141936386237&amp;aid=vmaNWnYBqm0" target="_blank" rel="noopener">
               June 20, 2025
             </a>
           </li>
-          <li style="margin-bottom: 1rem;">
-            <a href="https://conta.cc/4gPY6MJ" target="_blank" style="font-weight: 600; font-size: 1.1rem;">
+          <li>
+            <a href="https://conta.cc/4gPY6MJ" target="_blank" rel="noopener">
               February 24, 2025
             </a>
           </li>
-          <li style="margin-bottom: 1rem;">
-            <a href="https://conta.cc/3DCDD0a" target="_blank" rel="noopener" style="font-weight: 600; font-size: 1.1rem;">
+          <li>
+            <a href="https://conta.cc/3DCDD0a" target="_blank" rel="noopener">
               December 31, 2024
             </a>
           </li>
-          <li style="margin-bottom: 1rem;">
-            <a href="https://conta.cc/3ZKoUHR" target="_blank" rel="noopener" style="font-weight: 600; font-size: 1.1rem;">
+          <li>
+            <a href="https://conta.cc/3ZKoUHR" target="_blank" rel="noopener">
               December 20, 2024
             </a>
           </li>
         </ul>
 
-    
-<!-- Subscribe Block (Fixed) -->
-        <p style="font-size: 1.1rem;">If you like, please subscribe to receive new and upcoming newsletters.</p>
-        <a href="https://visitor.constantcontact.com/manage/optin?v=001ofP7iK6tkj1Oj6fC5hNRlePeMDVmaYCC8SoRWKBhnFDlvk8-PSRWJlgK2hEnxUJQCHh09citD4TEDpZhA4E32NAfuYTFHK0k" 
-           class="btn primary" 
-           target="_blank" rel="noopener" 
+        <p style="font-size: 1.1rem; margin-top: 2rem;">
+          If you like, please subscribe to receive new and upcoming newsletters.
+        </p>
+
+        <a href="https://visitor.constantcontact.com/manage/optin?v=001ofP7iK6tkj1Oj6fC5hNRlePeMDVmaYCC8SoRWKBhnFDlvk8-PSRWJlgK2hEnxUJQCHh09citD4TEDpZhA4E32NAfuYTFHK0k"
+           class="btn primary"
+           target="_blank" rel="noopener"
            style="background: var(--bihs-navy); color: #fff; margin-top: 0.5rem; margin-bottom: 3rem;">
           Join the BIHS Newsletter
         </a>
@@ -242,6 +294,7 @@
     </section>
 
   </main>
+
   <div id="footer"></div>
 
   <script src="js/site.js"></script>
