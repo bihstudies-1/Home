@@ -40,15 +40,15 @@
     }
 /* =========================================
    ORIGINAL BRAND DESIGN — DISABLED FOR TEST
-   =========================================
+   =========================================*/
     .brand { display: inline-flex; gap: 13px; align-items: center; text-decoration: none; }
     .brand img { width: 77px; height: 77px; object-fit: contain; }
     .brand-name { font-size: clamp(12px,1.22vw,16px); font-weight: 700; letter-spacing: .018em; line-height: 1.18; }
-END ORIGINAL BRAND DESIGN */
+/*END ORIGINAL BRAND DESIGN */
 
 /* =========================================
    NEW BRAND DESIGN — EXPERIMENT
-   ========================================= */
+   ========================================= 
 
 .brand {
   display: inline-flex;
@@ -64,13 +64,17 @@ END ORIGINAL BRAND DESIGN */
   width: 82px;
   height: 82px;
   padding: 9px;
+	aspect-ratio:1/1;
+	padding:9px;
+	box-sizing: border-box;
   object-fit: contain;
   flex-shrink: 0;
+	object-fit: contain;
   border-radius: 50%;
   background: #183a58;
 }
 
-/* Blue institutional wordmark */
+
 
 .brand .brand-wordmark {
   display: block;
@@ -79,7 +83,7 @@ END ORIGINAL BRAND DESIGN */
   height: auto;
   object-fit: contain;
 }
-
+*/
 
 
     .header-actions { display: flex; align-items: center; gap: 18px; }
