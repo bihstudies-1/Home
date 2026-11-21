@@ -38,9 +38,50 @@
       content: ""; position: absolute; bottom: 0; left: clamp(22px,5vw,90px); right: clamp(22px,5vw,90px);
       height: 2px; background: linear-gradient(90deg, var(--gold), transparent 65%); opacity: .65;
     }
+/* =========================================
+   ORIGINAL BRAND DESIGN — DISABLED FOR TEST
+   =========================================
     .brand { display: inline-flex; gap: 13px; align-items: center; text-decoration: none; }
     .brand img { width: 77px; height: 77px; object-fit: contain; }
     .brand-name { font-size: clamp(12px,1.22vw,16px); font-weight: 700; letter-spacing: .018em; line-height: 1.18; }
+END ORIGINAL BRAND DESIGN */
+
+/* =========================================
+   NEW BRAND DESIGN — EXPERIMENT
+   ========================================= */
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  text-decoration: none;
+  min-width: 0;
+}
+
+/* White round logo on navy background */
+
+.brand .brand-seal {
+  width: 82px;
+  height: 82px;
+  padding: 9px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #183a58;
+}
+
+/* Blue institutional wordmark */
+
+.brand .brand-wordmark {
+  display: block;
+  width: 220px;
+  max-width: 45vw;
+  height: auto;
+  object-fit: contain;
+}
+
+
+
     .header-actions { display: flex; align-items: center; gap: 18px; }
     .donate {
       display: inline-flex; align-items: center; justify-content: center; gap: 22px;
