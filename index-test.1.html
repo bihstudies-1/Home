@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bhaktivedanta Institute for Higher Studies: Science, philosophy, and the Bhāgavata tradition in dialogue.">
+  <title>BIHS | Homepage Redesign Preview</title>
+  <style>
+    :root {
+      --navy: #183a58;
+      --navy-dark: #102f49;
+      --gold: #b17c27;
+      --gold-soft: #dbb76e;
+      --cream: #faf8f2;
+      --text-muted: #456074;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--navy); background: var(--cream); }
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+    /* THIS FIRST EXPERIMENT CHANGES ONLY THE TOP SECTION. */
+    .top-section {
+      position: relative;
+      isolation: isolate;
+      min-height: 780px;
+      overflow: hidden;
+      background: radial-gradient(ellipse at 74% 9%, #e1edf0 0%, transparent 52%),
+                  linear-gradient(125deg, #fffcf6 0%, #f8f6ee 58%, #edf0e9 100%);
+    }
+    .top-section::after {
+      content: ""; position: absolute; pointer-events: none; z-index: -1;
+      width: 690px; height: 690px; top: -300px; right: -240px;
+      background: radial-gradient(circle, rgba(222,179,91,.22), transparent 70%);
+    }
+    .header {
+      position: relative; z-index: 10; width: 100%; min-height: 106px;
+      padding: 12px clamp(22px,5vw,90px);
+      display: flex; justify-content: space-between; align-items: center; gap: 20px;
+      background: rgba(250,248,242,.86); border-bottom: 1px solid rgba(177,124,39,.4);
+    }
+    .header::after {
+      content: ""; position: absolute; bottom: 0; left: clamp(22px,5vw,90px); right: clamp(22px,5vw,90px);
+      height: 2px; background: linear-gradient(90deg, var(--gold), transparent 65%); opacity: .65;
+    }
+    .brand { display: inline-flex; gap: 13px; align-items: center; text-decoration: none; }
+    .brand img { width: 77px; height: 77px; object-fit: contain; }
+    .brand-name { font-size: clamp(12px,1.22vw,16px); font-weight: 700; letter-spacing: .018em; line-height: 1.18; }
+    .header-actions { display: flex; align-items: center; gap: 18px; }
+    .donate {
+      display: inline-flex; align-items: center; justify-content: center; gap: 22px;
+      padding: 14px 24px; text-decoration: none; font-size: 18px; font-weight: 800;
+      border: 2px solid #be8a28; border-radius: 100px; background: #fff4d8;
+      box-shadow: 0 5px 15px rgba(175,131,51,.11);
+    }
+    .donate:hover { background: #f8dfaa; }
+    .donate-arrow { font-size: 26px; line-height: .8; color: #9c6d1c; }
+    .menu-button { display: grid; place-items: center; padding: 8px; width: 51px; height: 51px;
+      border: none; border-radius: 8px; background: transparent; color: var(--navy); cursor: pointer; }
+    .menu-button:hover { background: rgba(177,124,39,.08); }
+    .menu-button svg { width: 37px; height: 37px; }
+    .menu-panel { position: absolute; top: calc(100% - 7px); right: clamp(22px,5vw,90px);
+      z-index: 20; display: none; min-width: 220px; padding: 12px; background: #fff;
+      border: 1px solid #e1c796; border-radius: 16px; box-shadow: 0 20px 50px rgba(17,40,58,.18); }
+    .menu-panel.open { display: grid; }
+    .menu-panel a { text-decoration: none; padding: 12px 14px; border-radius: 8px; font-weight: 700; }
+    .menu-panel a:hover { background: #fcf2db; }
+    .hero { max-width: 1600px; min-height: 640px; margin: 0 auto;
+      display: grid; grid-template-columns: 57% 43%; align-items: center;
+      padding: 25px clamp(22px,7vw,112px) 74px; }
+    .hero-copy { position: relative; z-index: 2; max-width: 740px; }
+    .eyebrow { display: inline-block; padding: 12px 16px; background: #fff6dd;
+      border: 1px solid #e4cd9b; border-radius: 30px; font-size: 12px;
+      color: #75571f; font-weight: 800; letter-spacing: .11em; }
+    .eyebrow .spark { color: var(--gold); margin: 0 5px; }
+    h1 { margin: 29px 0 22px; font-size: clamp(55px,6.8vw,108px); line-height: 1.01;
+      font-weight: 800; letter-spacing: -.063em; }
+    h1 em { position: relative; color: var(--gold); font-style: normal; white-space: nowrap; }
+    h1 em::after { content: ""; position: absolute; left: 2%; bottom: -9px;
+      width: 83%; height: 8px; border-radius: 70% 25%; transform: rotate(-1deg);
+      background: linear-gradient(90deg, var(--gold-soft), #e9d6a0, transparent); }
+    .lead { margin: 0 0 30px; max-width: 580px; font-size: clamp(18px,2vw,24px);
+      line-height: 1.48; color: var(--text-muted); }
+    .hero-links { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-links a { padding: 15px 23px; border-radius: 6px; text-decoration: none;
+      font-weight: bold; background: #1d4969; color: white; }
+    .hero-links a + a { color: #72531e; background: #fff8e8; border: 1px solid #d4b574; }
+
+    /* Place your own image at: img/bihs-library.jpg */
+    .hero-visual { position: relative; min-height: 570px; align-self: stretch; pointer-events: none; }
+    .library-image { position: absolute; top: -3%; left: -26%; right: -22%; height: 108%;
+      background-image: url('img/bihs-library.jpg'); background-size: cover; background-position: center;
+      opacity: .91;
+      -webkit-mask-image: radial-gradient(ellipse 74% 74% at 73% 45%, #000 13%, rgba(0,0,0,.8) 46%, transparent 100%);
+      mask-image: radial-gradient(ellipse 74% 74% at 73% 45%, #000 13%, rgba(0,0,0,.8) 46%, transparent 100%); }
+    .library-image::after { content: ""; position: absolute; inset: 0;
+      background: linear-gradient(90deg, rgba(250,248,242,.43), transparent 32%),
+                  linear-gradient(0deg, rgba(250,248,242,.65), transparent 38%); }
+    .hero-visual::after { content: "✦"; position: absolute; top: 10%; right: 8%; font-size: 78px;
+      color: #c99e53; opacity: .7; }
+    .fade-bottom { position: absolute; bottom: 0; left: 0; right: 0; height: 130px;
+      pointer-events: none; background: linear-gradient(transparent, var(--cream)); }
+    @media (max-width: 900px) {
+      .header { min-height: 90px; }
+      .brand img { width: 61px; height: 61px; }
+      .hero { display: flex; flex-direction: column; align-items: stretch; min-height: 0; }
+      .hero-visual { height: 360px; min-height: 360px; }
+      .library-image { left: -12%; right: -10%; }
+    }
+    @media (max-width: 530px) {
+      .header { min-height: 82px; padding: 10px 15px; gap: 8px; }
+      .brand { gap: 6px; } .brand img { width: 49px; height: 49px; }
+      .brand-name { font-size: 9px; max-width: 110px; }
+      .header-actions { gap: 4px; }
+      .donate { font-size: 13px; padding: 10px 12px; gap: 7px; }
+      .donate-arrow { font-size: 19px; }
+      .menu-button { width: 36px; padding: 3px; }
+      .menu-button svg { width: 29px; }
+      .hero { padding: 18px 22px 34px; }
+      .eyebrow { font-size: 10px; letter-spacing: .06em; }
+      h1 { font-size: clamp(45px,11vw,68px); }
+      .hero-visual { height: 260px; min-height: 260px; }
+      .hero-visual::after { font-size: 42px; }
+      .menu-panel { right: 12px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <div class="top-section">
+    <header class="header">
+      <a class="brand" href="https://bihs.org/" aria-label="BIHS homepage">
+        <img src="img/BIHS_logo_tight.png" alt="BIHS official logo">
+        <span class="brand-name">Bhaktivedanta Institute<br>for Higher Studies</span>
+      </a>
+      <div class="header-actions">
+        <!-- TODO: Replace #donate-test with BIHS's verified donation page URL. -->
+        <a class="donate" href="#donate-test">Donate <span class="donate-arrow" aria-hidden="true">↗</span></a>
+        <button class="menu-button" type="button" id="menu-button" aria-expanded="false" aria-controls="menu-panel" aria-label="Open menu">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 8H29M3 16H29M3 24H29" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <nav class="menu-panel" id="menu-panel" aria-label="Site navigation">
+        <a href="https://bihs.org/">About BIHS</a>
+        <a href="https://bihs.org/courses.html">Courses</a>
+        <a href="https://bihs.org/news.html">News &amp; events</a>
+        <a href="#donate-test">Donate (test)</a>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Science <span class="spark">✦</span> Philosophy <span class="spark">✦</span> Bhāgavata Wisdom</div>
+        <h1>Explore the<br><em>big questions.</em></h1>
+        <p class="lead">Science, philosophy, and the wisdom of the Bhāgavata tradition in dialogue.</p>
+        <div class="hero-links">
+          <a href="https://bihs.org/">Discover BIHS</a>
+          <a href="https://bihs.org/courses.html">Explore our courses</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="BIHS library photo gently fading into the background">
+        <div class="library-image" role="img" aria-label="BIHS library"></div>
+      </div>
+    </main>
+    <div class="fade-bottom" aria-hidden="true"></div>
+  </div>
+  <!-- TEST PAGE ONLY: the Donate button will point here until we add the real link. -->
+  <div id="donate-test" style="padding:18px 5%;font-size:14px;color:#597084;">
+    Homepage design preview only. The Donate button is not yet connected to a payment page.
+  </div>
+  <script>
+    const menuButton = document.getElementById('menu-button');
+    const menuPanel = document.getElementById('menu-panel');
+    function closeMenu() { menuPanel.classList.remove('open'); menuButton.setAttribute('aria-expanded', 'false'); menuButton.setAttribute('aria-label', 'Open menu'); }
+    menuButton.addEventListener('click', () => {
+      const isOpen = menuPanel.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+      menuButton.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+    document.addEventListener('click', (e) => { if (!e.target.closest('.header')) closeMenu(); });
+  </script>
+</body>
+</html>
