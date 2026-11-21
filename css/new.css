@@ -170,7 +170,7 @@
     .about-inner { max-width:1290px; margin:auto; display:grid; grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr); align-items:center; gap:clamp(34px,6vw,94px); }
     /* Version 7: Yogesvara's gold wordmark as an unapproved concept, paired with the original round logo in the header. */
     .about-art { position:relative; margin:0; min-height:520px; display:flex; align-items:center; justify-content:center; padding:22px 38px 70px 0; }
-    .about-art::before { content:""; position:absolute; width:82%; height:80%; top:2%; left:4%; border:1px solid rgba(177,124,39,.42); border-radius:50% 47% 45% 51%; transform:rotate(-7deg); }
+
     .logo-concept-frame { position:relative; z-index:1; width:88%; background:#f9f5ec; padding:13px; border:1px solid #dbc293; border-radius:24px; box-shadow:0 22px 65px rgba(19,52,78,.13); transform:rotate(-2deg); }
     .logo-concept-frame img { display:block; width:100%; height:auto; border-radius:14px; }
     .about-house-inset { position:absolute; z-index:2; display:block; width:48%; aspect-ratio:1.6; object-fit:cover; right:0; bottom:34px; border:7px solid #fffdf9; border-radius:15px; box-shadow:0 16px 42px rgba(19,52,78,.22); transform:rotate(3deg); }
@@ -214,7 +214,7 @@
   grid-template-columns: 1.1fr .9fr;
   gap: clamp(25px, 5vw, 75px);
   align-items: end;
-  margin-bottom: 38px;
+  margin-bottom: 28px;
 }
 
 .research-kicker {
@@ -501,7 +501,7 @@
 
 .education-heading {
   max-width: 850px;
-  margin-bottom: 45px;
+  margin-bottom: 30px;
 }
 
 .education-kicker {
@@ -765,7 +765,7 @@
 
 .people-heading {
   max-width: 850px;
-  margin-bottom: 45px;
+  margin-bottom: 15px;
 }
 
 .people-kicker {
