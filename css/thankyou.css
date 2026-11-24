@@ -1,0 +1,252 @@
+
+/* ==========================================
+   BIHS THANK-YOU PAGE
+   Founding Supporters – $1,000
+
+   Soft Blue, Ivory & Gold
+   Works alongside css/site.css
+   ========================================== */
+
+
+/* PAGE BACKGROUND */
+
+body.thankyou-page {
+  --ty-navy: #183a58;
+  --ty-blue: #315d7b;
+  --ty-gold: #c6a05d;
+  --ty-ivory: #fffdf8;
+  --ty-mist: #edf3f6;
+
+  background: linear-gradient(
+    155deg,
+    #edf3f6 0%,
+    #fffdf8 65%,
+    #f8f1e5 100%
+  );
+
+  color: #334c5f;
+}
+
+
+/* MAIN CONTENT AREA */
+
+.thankyou-page .thankyou-main {
+  max-width: 960px;
+  margin: 45px auto 55px;
+  padding: 0 20px;
+}
+
+
+/* THANK-YOU CARD */
+
+.thankyou-page .thankyou-card {
+  background: var(--ty-ivory);
+
+  border: 1px solid #e9e0d0;
+  border-top: 4px solid var(--ty-gold);
+  border-radius: 8px;
+
+  padding: 45px 35px;
+  text-align: center;
+
+  box-shadow: 0 15px 45px rgba(24, 58, 88, 0.08);
+}
+
+
+/* SMALL HEADING ABOVE TITLE */
+
+.thankyou-page .thankyou-eyebrow {
+  color: var(--ty-blue);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+
+/* MAIN THANK-YOU TITLE */
+
+.thankyou-page .thankyou-card h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(38px, 5vw, 58px);
+  font-weight: normal;
+  line-height: 1.15;
+
+  color: var(--ty-navy);
+  margin: 12px 0 18px;
+}
+
+
+/* SHORT INTRODUCTION */
+
+.thankyou-page .thankyou-intro {
+  max-width: 650px;
+  margin: 0 auto 30px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  line-height: 1.65;
+
+  color: #506b80;
+}
+
+
+/* FOUNDING 100 IMAGE */
+
+.thankyou-page .founder-figure {
+  max-width: 650px;
+  margin: 28px auto;
+}
+
+.thankyou-page .founder-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  border-radius: 6px;
+
+  box-shadow:
+    0 10px 30px rgba(24, 58, 88, 0.12);
+}
+
+
+/* FOUNDING SUPPORTER RECOGNITION */
+
+.thankyou-page .recognition {
+  max-width: 650px;
+  margin: 28px auto 0;
+}
+
+.thankyou-page .recognition h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: normal;
+
+  color: var(--ty-navy);
+  margin-bottom: 12px;
+}
+
+.thankyou-page .recognition p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #445d70;
+}
+
+.thankyou-page .recognition strong {
+  color: var(--ty-navy);
+}
+
+
+/* CLOSING MESSAGE */
+
+.thankyou-page .closing {
+  margin: 25px auto 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  font-style: italic;
+  line-height: 1.7;
+
+  color: #557184;
+}
+
+
+/* CONTACT INFORMATION */
+
+.thankyou-page .contact {
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 8px 20px;
+
+  margin-top: 30px;
+  padding: 20px;
+
+  background: #e8f0f4;
+  border: 1px solid #d6e3e8;
+  border-radius: 5px;
+
+  font-size: 14px;
+  text-align: center;
+}
+
+.thankyou-page .contact span {
+  color: var(--ty-navy);
+  font-weight: 600;
+}
+
+.thankyou-page .contact a {
+  color: var(--ty-blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.thankyou-page .contact a:hover {
+  color: var(--ty-navy);
+}
+
+
+/* RETURN TO BIHS BUTTON */
+
+.thankyou-page .return-home {
+  display: inline-block;
+
+  margin-top: 25px;
+  padding: 11px 25px;
+
+  background: var(--ty-navy);
+  color: #ffffff;
+
+  border-radius: 5px;
+
+  font-size: 14px;
+  text-decoration: none;
+
+  transition: background 0.2s ease;
+}
+
+.thankyou-page .return-home:hover {
+  background: var(--ty-blue);
+  color: #ffffff;
+}
+
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 600px) {
+
+  .thankyou-page .thankyou-main {
+    margin: 22px auto 30px;
+    padding: 0 12px;
+  }
+
+  .thankyou-page .thankyou-card {
+    padding: 32px 18px;
+  }
+
+  .thankyou-page .thankyou-card h1 {
+    font-size: 38px;
+  }
+
+  .thankyou-page .thankyou-intro {
+    font-size: 17px;
+  }
+
+  .thankyou-page .founder-figure {
+    margin: 22px auto;
+  }
+
+  .thankyou-page .recognition p {
+    font-size: 15px;
+  }
+
+  .thankyou-page .contact {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+}
